@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block internal/development leftovers
+Disallow: /.trash/
+Disallow: /.vscode/
+Disallow: /.venv/
+
+Sitemap: https://www.cosmicskyrocket.com/sitemap.xml
