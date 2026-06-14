@@ -4,7 +4,7 @@ window.SEARCH_DATA = [
     "subtitle": "Cosmic Skyrocket",
     "section": "Pages",
     "url": "index.html",
-    "keywords": "home cosmic skyrocket natural stone tiles exporter rajasthan india"
+    "keywords": "home cosmic skyrocket Natural Stones tiles exporter rajasthan india"
   },
   {
     "title": "About Us",
@@ -18,14 +18,14 @@ window.SEARCH_DATA = [
     "subtitle": "All Stone Products",
     "section": "Pages",
     "url": "stones-category.html",
-    "keywords": "natural stone category sandstone limestone kota sagar jaisalmer"
+    "keywords": "Natural Stones category sandstone limestone kota sagar jaisalmer"
   },
   {
     "title": "Tiles",
     "subtitle": "All Tile Collections",
     "section": "Pages",
     "url": "tiles-category.html",
-    "keywords": "tiles category italian marble moroccan wooden material other stone"
+    "keywords": "tiles category italian marble moroccan wooden material Other Stones"
   },
   {
     "title": "Packaging & Shipping",
@@ -162,129 +162,129 @@ window.SEARCH_DATA = [
   },
   {
     "title": "Borghi Italiani",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Borghi_Italiani/Borghi_Italiani.html",
-    "keywords": "borghi italiani other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Borghi_Italiani/Borghi_Italiani.html",
+    "keywords": "borghi italiani Other Stones tiles"
   },
   {
     "title": "Jungle Stone",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Jungle_Stone/Jungle_Stone.html",
-    "keywords": "jungle stone other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Jungle_Stone/Jungle_Stone.html",
+    "keywords": "jungle stone Other Stones tiles"
   },
   {
     "title": "Dolomiti",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Dolomiti/Dolomiti.html",
-    "keywords": "dolomiti other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Dolomiti/Dolomiti.html",
+    "keywords": "dolomiti Other Stones tiles"
   },
   {
     "title": "Chianca",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Chianca/Chianca.html",
-    "keywords": "chianca other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Chianca/Chianca.html",
+    "keywords": "chianca Other Stones tiles"
   },
   {
     "title": "Irish Onyx",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Irish_Onyx/Irish_Onyx.html",
-    "keywords": "irish onyx other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Irish_Onyx/Irish_Onyx.html",
+    "keywords": "irish onyx Other Stones tiles"
   },
   {
     "title": "Nautilus",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Nautilus/Nautilus.html",
-    "keywords": "nautilus other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Nautilus/Nautilus.html",
+    "keywords": "nautilus Other Stones tiles"
   },
   {
     "title": "Gemstone",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Gemstone/Gemstone.html",
-    "keywords": "gemstone other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Gemstone/Gemstone.html",
+    "keywords": "gemstone Other Stones tiles"
   },
   {
     "title": "Copacabana Emperor",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Copacabana_Emperor/Copacabana_Emperor.html",
-    "keywords": "copacabana emperor other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Copacabana_Emperor/Copacabana_Emperor.html",
+    "keywords": "copacabana emperor Other Stones tiles"
   },
   {
     "title": "Sahara Noir",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Sahara_Noir/Sahara_Noir.html",
-    "keywords": "sahara noir other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Sahara_Noir/Sahara_Noir.html",
+    "keywords": "sahara noir Other Stones tiles"
   },
   {
     "title": "Noble Stone",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Noble_Stone/Noble_Stone.html",
-    "keywords": "noble stone other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Noble_Stone/Noble_Stone.html",
+    "keywords": "noble stone Other Stones tiles"
   },
   {
     "title": "Bolgheri Stone",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Bolgheri_Stone/Bolgheri_Stone.html",
-    "keywords": "bolgheri stone other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Bolgheri_Stone/Bolgheri_Stone.html",
+    "keywords": "bolgheri stone Other Stones tiles"
   },
   {
     "title": "Royal Stone",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Royal_Stone/Royal_Stone.html",
-    "keywords": "royal stone other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Royal_Stone/Royal_Stone.html",
+    "keywords": "royal stone Other Stones tiles"
   },
   {
     "title": "Quarzi",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Quarzi/Quarzi.html",
-    "keywords": "quarzi other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Quarzi/Quarzi.html",
+    "keywords": "quarzi Other Stones tiles"
   },
   {
     "title": "Castle",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Castle/Castle.html",
-    "keywords": "castle other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Castle/Castle.html",
+    "keywords": "castle Other Stones tiles"
   },
   {
     "title": "Ardesia",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Ardesia/Ardesia.html",
-    "keywords": "ardesia other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Ardesia/Ardesia.html",
+    "keywords": "ardesia Other Stones tiles"
   },
   {
     "title": "Imperial",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Imperial/Imperial.html",
-    "keywords": "imperial other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Imperial/Imperial.html",
+    "keywords": "imperial Other Stones tiles"
   },
   {
     "title": "Storm",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Storm/Storm.html",
-    "keywords": "storm other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Storm/Storm.html",
+    "keywords": "storm Other Stones tiles"
   },
   {
     "title": "Blue Evolution",
-    "subtitle": "Other Stone",
+    "subtitle": "Other Stones",
     "section": "Tiles",
-    "url": "product_details/Tiles/Other Stone/Blue_Evolution/Blue_Evolution.html",
-    "keywords": "blue evolution other stone tiles"
+    "url": "product_details/Tiles/Other Stones/Blue_Evolution/Blue_Evolution.html",
+    "keywords": "blue evolution Other Stones tiles"
   },
   {
     "title": "Honeywood",

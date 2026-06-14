@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Image Collage</title>
+
+<style>
+  body{
+    margin:0;
+    padding:0;
+    background:#f4f4f4;
+    font-family:sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow:hidden;
+  }
+
+  .collage {
+    width:100vw;
+    height:100vh;
+    display:flex;
+    gap:0;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    box-sizing:border-box;
+  }
+
+  .collage img{
+    object-fit:cover;
+    display:block;
+  }
+
+  /* Container for middle column (60x120 and 120x120) */
+  .middle-column {
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    height:100%;
+    justify-content:center;
+  }
+
+  /* Image sizes - proportional to screen */
+  
+  /* 160 x 320 - Leftmost */
+  .i1{
+    width:20em;
+    height:40em;
+  }
+
+  /* 60 x 120 - Middle top */
+  .i4{
+    width: 15em;
+    height:7.5em;
+  }
+
+  /* 120 x 120 - Middle bottom */
+  .i3{
+    width:15em;
+    height:15em;
+  }
+
+  /* 120 x 280 - Rightmost */
+  .i2{
+    width:15em;
+    height:35em;
+  }
+
+  @media (min-width: 768px) {
+    .collage {
+      gap:10px;
+    }
+    
+    .middle-column {
+      gap:10px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="collage">
+  <!-- Leftmost: 160 x 320 -->
+  <img src="https://picsum.photos/300/600"  class="i1">
+  
+  <!-- Middle column: 60x120 on top, 120x120 on bottom -->
+  <div class="middle-column">
+    <img src="https://picsum.photos/200/400"  class="i4">
+    <img src="https://picsum.photos/300/300"  class="i3">
+  </div>
+  
+  <!-- Rightmost: 120 x 280 -->
+  <img src="https://picsum.photos/300/500"  class="i2">
+</div>
+
+</body>
+</html>

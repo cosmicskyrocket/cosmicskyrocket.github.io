@@ -1482,7 +1482,7 @@
                 </li>
                 <li class="menu-item menu-item-has-children">
                   <a href="#!" class="menu-link menu-dropdown-toggle">
-                    Natural Stone
+                    Natural Stones
                     <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                   </a>
                   <ul class="submenu">
@@ -1504,7 +1504,7 @@
                       <a href="../../../../tiles-category.html#italian-marble" class="submenu-link">Italian Marble</a>
                     </li>
                     <li class="submenu-item">
-                      <a href="../../../../tiles-category.html#other-stone" class="submenu-link">Other Stone</a>
+                      <a href="../../../../tiles-category.html#other-stone" class="submenu-link">Other Stones</a>
                     </li>
                     <li class="submenu-item">
                       <a href="../../../../tiles-category.html#moroccan" class="submenu-link">Moroccan</a>
@@ -1799,8 +1799,8 @@
                           <img src="../../../../assets/img/gallery/human_size.PNG" alt="Human Reference 170cm" style="height:  391px; width: auto; max-width:  138px; object-fit: contain; object-position: bottom;">
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
-                          <strong style="font-size: clamp(0.648rem, 1vw, 1.008rem); color: #333;">170 cm</strong>
-                          <p style="font-size: clamp(0.576rem, 0.89vw, 0.896rem); color: #666; margin: 0;">Human Height</p>
+                          <strong style="font-size: clamp(0.648rem, 1vw, 1.008rem); color: #ffffff;"> - </strong>
+                          <p style="font-size: clamp(0.576rem, 0.89vw, 0.896rem); color: #fff; margin: 0;"> - </p>
                         </div>
                       </div>
 
@@ -1854,8 +1854,8 @@
                           <img src="../../../../assets/img/gallery/human_size.PNG" alt="Human Reference 170cm" style="height:  391px; width: auto; max-width:  138px; object-fit: contain; object-position: bottom;">
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
-                          <strong style="font-size: clamp(0.648rem, 1vw, 1.008rem); color: #333;">170 cm</strong>
-                          <p style="font-size: clamp(0.576rem, 0.89vw, 0.896rem); color: #666; margin: 0;">Human Height</p>
+                          <strong style="font-size: clamp(0.648rem, 1vw, 1.008rem); color: #ffffff;"> - </strong>
+                          <p style="font-size: clamp(0.576rem, 0.89vw, 0.896rem); color: #fff; margin: 0;"> - </p>
                         </div>
                       </div>
 
@@ -1927,7 +1927,7 @@
                     <!-- Factory Address -->
                     <div class="d-flex gap-2 align-items-start text-white footer-contact-link" style="text-decoration: none;">
                       <i class="bi bi-geo-alt" style="color: #fff; flex-shrink: 0; font-size: 1.2rem;"></i>
-                      <span style="font-size: 1.125rem;"><b style="font-size: 1.4rem;">Factory Address</b> <br> <span class="footer-hover-value">B-93-C, Road No. 3, IPIA, <br> Kota, Rajasthan, 324005</span></span>
+                      <span style="font-size: 1.125rem;"><b style="font-size: 1.4rem;">Factory Address</b> <br> <span class="footer-hover-value">B-93-D, Road No. 4, IPIA, <br> Kota, Rajasthan, 324005</span></span>
                     </div>
                     <br>
                     <!-- Phone (WhatsApp) -->
@@ -1982,7 +1982,7 @@
                 <h5 class="text-white mb-3" style="font-weight: 700; font-size: 1.4rem;">Tiles</h5>
                 <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-1">
                   <li><a class="link-hover text-white text-decoration-none" href="../../../../tiles-category.html#italian-marble" style="font-size: 1.2rem;">Italian Marble</a></li>
-                  <li><a class="link-hover text-white text-decoration-none" href="../../../../tiles-category.html#other-stone" style="font-size: 1.2rem;">Other Stone</a></li>
+                  <li><a class="link-hover text-white text-decoration-none" href="../../../../tiles-category.html#other-stone" style="font-size: 1.2rem;">Other Stones</a></li>
                   <li><a class="link-hover text-white text-decoration-none" href="../../../../tiles-category.html#moroccan" style="font-size: 1.2rem;">Moroccan</a></li>
                   <li><a class="link-hover text-white text-decoration-none" href="../../../../tiles-category.html#material" style="font-size: 1.2rem;">Material</a></li>
                   <li><a class="link-hover text-white text-decoration-none" href="../../../../tiles-category.html#wooden" style="font-size: 1.2rem;">Wooden</a></li>
@@ -2000,7 +2000,7 @@
           <!-- Brand watermark and copyright -->
           <div style="margin-top: 2.5rem; padding-top: 1.5rem; text-align: center;">
             <p class="mb-0 text-white" style="font-family: 'Cinzel', serif; font-size: clamp(0.75rem, 8.7vw, 14rem); font-weight: 600; letter-spacing: 1px; line-height: 1.1; white-space: nowrap;">COSMIC SKYROCKET</p>
-            <p class="mb-0 text-white" style="color: rgba(255,255,255,0.7) !important; font-size: 1.05rem; margin-top: -0.2rem;">© 2026 Cosmic Skyrocket. All Rights Reserved.</p>
+            <p class="mb-0 text-white" style="color: rgba(255,255,255,0.7) !important; font-size: 1.05rem; margin-top: -0.2rem;">© 2024 cosmic Skyrocket. All Rights Reserved.</p>
           </div>
         </footer>
 

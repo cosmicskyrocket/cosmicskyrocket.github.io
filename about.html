@@ -27,7 +27,7 @@
         "@type": "AboutPage",
         "name": "About Cosmic Skyrocket",
         "url": "https://www.cosmicskyrocket.com/about.html",
-        "description": "Quarry-owned natural stone and tile manufacturing company serving B2B clients.",
+        "description": "Quarry-owned Natural Stones and tile manufacturing company serving B2B clients.",
         "publisher": {
           "@type": "Organization",
           "name": "Cosmic Skyrocket",
@@ -65,10 +65,11 @@
 
       /* ── Navbar ── */
       #mainNavbar {
-        background: rgba(255,255,255,0.95);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(22px) saturate(180%);
+        -webkit-backdrop-filter: blur(22px) saturate(180%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
       }
       #cosmicBrand .fw-bold {
         color: #000;
@@ -274,7 +275,7 @@
         line-height: 1;
       }
       .story-img-badge .badge-label { font-size: clamp(0.54rem, 0.83vw, 0.84rem); font-weight: 600; letter-spacing: 1px; }
-      .story-text h2 { font-size: clamp(1.872rem, 2.89vw, 2.912rem); line-height: 1.2; color: #000000; margin-bottom: 1rem; }
+      .story-text h2 { font-size: clamp(1.5rem, 2.3vw, 2.3rem); line-height: 1.2; color: #000000; margin-bottom: 1rem; }
       .story-text p { font-size: clamp(0.7056rem, 1.09vw, 1.0976rem); color: #555; line-height: 1.9; margin-bottom: 1.25rem; }
       .story-bullet {
         display: flex; align-items: flex-start; gap: 12px; margin-bottom: 1rem;
@@ -285,7 +286,7 @@
       .story-bullet i { color: #FFA15C; font-size: clamp(0.792rem, 1.22vw, 1.232rem); margin-top: 2px; flex-shrink: 0; }
       .story-bullet-icon { width: 20px; height: 20px; margin-top: 2px; flex-shrink: 0; }
       .story-bullet-icon-stone { width: 24px; height: 24px; }
-      .story-bullet p { margin: 0; font-size: clamp(0.6624rem, 1.02vw, 1.0304rem); color: #555; line-height: 1.6; }
+      .story-bullet p { margin: 0; font-size: clamp(0.6rem, 0.88vw, 0.92rem); color: #555; line-height: 1.6; }
 
       /* ── Stats ── */
       .stats-section {
@@ -312,30 +313,45 @@
       .mv-section { padding: 90px 0; background: #fff; }
       .mv-card {
         padding: 2.5rem 2rem; border-radius: 30px; height: 100%;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
       }
       .mv-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
-      .mv-card.dark { background: #1a1a1a; }
+      /* light is the base for both cards */
+      .mv-card.dark { background: #fff; border: 2px solid #1a1a1a; }
       .mv-card.light { background: #fff; border: 2px solid #1a1a1a; }
+      /* on hover, both cards flip to black */
+      .mv-card.dark:hover { background: #1a1a1a; }
+      .mv-card.light:hover { background: #1a1a1a; }
       .mv-icon {
         width: 60px; height: 60px; border-radius: 30px;
         display: flex; align-items: center; justify-content: center;
         margin-bottom: 1.5rem; font-size: clamp(1.152rem, 1.78vw, 1.792rem);
+        transition: background 0.3s ease, color 0.3s ease, outline 0.3s ease;
       }
-      .mv-card.dark .mv-icon { background: rgba(0, 0, 0, 0.25); color: #ffffff; outline: 2px solid #fff }
+      .mv-card.dark .mv-icon { background: #ffffff; color: #000000; outline: 2px solid #1a1a1a; }
+      .mv-card.dark:hover .mv-icon { background: rgba(0,0,0,0.25); color: #ffffff; outline: 2px solid #fff; }
       .mv-card.light .mv-icon { background: #ffffff; color: #000000; outline: 2px solid #1a1a1a; }
-      .mv-card.dark h3 { color: #fff; font-size: clamp(1.152rem, 1.78vw, 1.792rem); margin-bottom: 1rem; }
+      .mv-card.light:hover .mv-icon { background: rgba(0,0,0,0.25); color: #ffffff; outline: 2px solid #fff; }
+      .mv-card.dark h3 { color: #000000; font-size: clamp(1.152rem, 1.78vw, 1.792rem); margin-bottom: 1rem; transition: color 0.3s ease; }
+      .mv-card.dark:hover h3 { color: #fff; }
       .mv-card.light h3 { color: #000000; font-size: clamp(1.152rem, 1.78vw, 1.792rem); margin-bottom: 1rem; }
-      .mv-card.dark p { color: rgba(255,255,255,1); font-size: clamp(0.684rem, 1.05vw, 1.064rem); line-height: 1.8; }
+      .mv-card.light:hover h3 { color: #fff; }
+      .mv-card.dark p { color: #000000; font-size: clamp(0.684rem, 1.05vw, 1.064rem); line-height: 1.8; transition: color 0.3s ease; }
+      .mv-card.dark:hover p { color: rgba(255,255,255,1); }
       .mv-card.light p { color: #000000; font-size: clamp(0.684rem, 1.05vw, 1.064rem); line-height: 1.8; }
+      .mv-card.light:hover p { color: rgba(255,255,255,1); }
       .mv-point {
         display: flex; align-items: center; gap: 10px; margin-top: 1rem;
       }
-      .mv-point i { font-size: clamp(0.612rem, 0.94vw, 0.952rem); flex-shrink: 0; }
-      .mv-card.dark .mv-point i { color: #bdbdbd; }
+      .mv-point i { font-size: clamp(0.612rem, 0.94vw, 0.952rem); flex-shrink: 0; transition: color 0.3s ease; }
+      .mv-card.dark .mv-point i { color: #8a8a8a; }
+      .mv-card.dark:hover .mv-point i { color: #bdbdbd; }
       .mv-card.light .mv-point i { color: #8a8a8a; }
-      .mv-card.dark .mv-point span { font-size: clamp(0.6336rem, 0.98vw, 0.9856rem); color: #ffffff; }
+      .mv-card.light:hover .mv-point i { color: #bdbdbd; }
+      .mv-card.dark .mv-point span { font-size: clamp(0.6336rem, 0.98vw, 0.9856rem); color: #000000; transition: color 0.3s ease; }
+      .mv-card.dark:hover .mv-point span { color: #ffffff; }
       .mv-card.light .mv-point span { font-size: clamp(0.6336rem, 0.98vw, 0.9856rem); color: #000000; }
+      .mv-card.light:hover .mv-point span { color: #ffffff; }
 
       /* ── Services ── */
       .services-section { padding: 90px 0; background: #f8f8f8; }
@@ -419,7 +435,7 @@
       }
       .big-quote::before {
         content: '\201C';
-        font-size: clamp(5.76rem, 8.88vw, 8.96rem); color: rgba(255,161,92,0.15);
+        font-size: clamp(5.76rem, 8.88vw, 8.96rem); color: #FFA15C;
         font-family: 'Crimson Text', serif; font-style: normal;
         line-height: 0; position: absolute; top: 2rem; left: -2rem;
       }
@@ -429,6 +445,10 @@
         letter-spacing: 1px; text-transform: uppercase;
       }
       .quote-author span { color: #FFA15C; }
+      .quote-author .quote-location {
+        font-size: clamp(0.56rem, 0.86vw, 0.86rem);
+        color: #000000;
+      }
 
       /* ── CTA ── */
       .cta-section { padding: 80px 0; background: #fff; text-align: center; }
@@ -443,14 +463,14 @@
       }
       .cta-btn {
         display: inline-block; padding: 0.9rem 3rem;
-        background: #1a1a1a; color: #fff; border-radius: 30px;
+        background: #fff; border: 2px solid #1a1a1a; color: #000000; border-radius: 30px;
         font-weight: 600; text-decoration: none; font-size: clamp(0.684rem, 1.05vw, 1.064rem);
         letter-spacing: 0.5px; transition: all 0.3s ease;
       }
-      .cta-btn:hover { background: #333; color: #fff; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+      .cta-btn:hover { background: #1a1a1a; color: #fff; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
       .cta-btn-outline {
         display: inline-block; padding: 0.9rem 3rem;
-        border: 2px solid #1a1a1a; color: #000000; border-radius: 30px;
+        background: #fff; border: 2px solid #1a1a1a; color: #000000; border-radius: 30px;
         font-weight: 600; text-decoration: none; font-size: clamp(0.684rem, 1.05vw, 1.064rem);
         letter-spacing: 0.5px; transition: all 0.3s ease;
       }
@@ -471,6 +491,10 @@
         .search-container { right: 1rem; left: 1rem; width: auto; }
       }
     </style>
+  
+    <!-- Google Fonts - Cinzel -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   </head>
 
   <body>
@@ -530,7 +554,7 @@
                 </li>
                 <li class="menu-item menu-item-has-children">
                   <a href="#!" class="menu-link menu-dropdown-toggle">
-                    Natural Stone
+                    Natural Stones
                     <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                   </a>
                   <ul class="submenu">
@@ -564,7 +588,7 @@
                       <a href="tiles-category.html#italian-marble" class="submenu-link">Italian Marble</a>
                     </li>
                     <li class="submenu-item">
-                      <a href="tiles-category.html#other-stone" class="submenu-link">Other Stone</a>
+                      <a href="tiles-category.html#other-stone" class="submenu-link">Other Stones</a>
                     </li>
                     <li class="submenu-item">
                       <a href="tiles-category.html#moroccan" class="submenu-link">Moroccan</a>
@@ -626,7 +650,7 @@
                 <div class="hero-label">Our Story</div>
                 <h1>Building the World,<br>One <span>Surface</span> at a Time.</h1>
                 <p class="hero-sub">
-                  Driven by a commitment to quality, innovation, and operational excellence, <b>Cosmic Skyrocket</b> provides internationally recognized natural stone and tile solutions through integrated manufacturing capabilities, stringent quality systems, and a robust global supply network.
+                  Driven by a commitment to quality, innovation, and operational excellence, <b>Cosmic Skyrocket</b> provides internationally recognized Natural Stones and tile solutions through integrated manufacturing capabilities, stringent quality systems, and a robust global supply network.
                 </p>
                 <div class="hero-badge-row">
                   <span class="hero-badge-pill"><i class="bi bi-award-fill"></i> 28+ Years Experience</span>
@@ -646,15 +670,15 @@
                   </div>
                   <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 1.5rem; text-align: center;">
                     <div style="font-size: clamp(1.584rem, 2.44vw, 2.464rem); font-weight: 700; color: #fff; font-family: 'Crimson Text', serif; line-height: 1;"><span class="hero-count-num" data-target="47">0</span><span style="font-size: clamp(0.72rem, 1.11vw, 1.12rem);">+ ha</span></div>
-                    <div style="font-size: clamp(0.5184rem, 0.8vw, 0.8064rem); color: rgba(255,255,255,0.4); letter-spacing: 1.2px; margin-top: 0.3rem;">Operational Quarrying Area</div>
+                    <div style="font-size: clamp(0.5184rem, 0.8vw, 0.8064rem); color: rgba(255,255,255,0.4); letter-spacing: 1.2px; margin-top: 0.3rem;">operational quarrying area</div>
                   </div>
                   <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 1.5rem; text-align: center;">
                     <div style="font-size: clamp(1.584rem, 2.44vw, 2.464rem); font-weight: 700; color: #fff; font-family: 'Crimson Text', serif; line-height: 1;"><span class="hero-count-num" data-target="5">0</span><span style="font-size: clamp(0.72rem, 1.11vw, 1.12rem);">+</span></div>
-                    <div style="font-size: clamp(0.5184rem, 0.8vw, 0.8064rem); color: rgba(255,255,255,0.4); letter-spacing: 1.2px; margin-top: 0.3rem;">Tile mfg. Units</div>
+                    <div style="font-size: clamp(0.5184rem, 0.8vw, 0.8064rem); color: rgba(255,255,255,0.4); letter-spacing: 1.2px; margin-top: 0.3rem;">tile mfg. units</div>
                   </div>
                   <div style="background: rgba(255,161,92,0.12); border: 1px solid rgba(255,161,92,0.3); border-radius: 14px; padding: 1.5rem; text-align: center;">
-                    <div style="font-size: clamp(1.584rem, 2.44vw, 2.464rem); font-weight: 700; color: #FFA15C; font-family: 'Crimson Text', serif; line-height: 1;"><span class="hero-count-num" data-target="183">0</span><span style="font-size: clamp(0.72rem, 1.11vw, 1.12rem);">+cbm</span></div>
-                    <div style="font-size: clamp(0.5184rem, 0.8vw, 0.8064rem); color: rgba(255,255,255,0.5); letter-spacing: 1.2px; margin-top: 0.3rem;">stone-ex / day</div>
+                    <div style="font-size: clamp(1.584rem, 2.44vw, 2.464rem); font-weight: 700; color: #FFA15C; font-family: 'Crimson Text', serif; line-height: 1;"><span class="hero-count-num" data-target="183">0</span><span style="font-size: clamp(0.72rem, 1.11vw, 1.12rem);">+ cbm</span></div>
+                    <div style="font-size: clamp(0.5184rem, 0.8vw, 0.8064rem); color: rgba(255,255,255,0.5); letter-spacing: 1.2px; margin-top: 0.3rem;">calibration cap. / day</div>
                   </div>
                 </div>
               </div>
@@ -667,20 +691,17 @@
 
         <!-- ── OUR STORY ── -->
         <section class="story-section">
-          <div class="container">
+          <div class="container-fluid" style="padding-left: clamp(12px, 3vw, 48px); padding-right: clamp(12px, 3vw, 48px);">
             <div class="row align-items-stretch g-5">
               <div class="col-lg-5 d-flex" data-aos="fade-right">
                 <div class="story-img-wrap" style="width: 100%;">
                   <img src="assets/img/index/excellence-index.png" alt="Cosmic Skyrocket - Premium Natural Stones & Tiles" style="width: 100%; height: 100%; object-fit: cover; min-height: 350px;">
-                  <div class="story-img-badge">
-                    <div class="badge-num">28+</div>
-                    <div class="badge-label">Years of<br>Excellence</div>
-                  </div>
+
                 </div>
               </div>
               <div class="col-lg-7 story-text" data-aos="fade-left" data-aos-delay="100">
                 <span class="section-badge">Who We Are</span>
-                <h2>Transforming Spaces with<br>Premium Materials</h2>
+                <h2>Transforming Spaces with Premium Materials</h2>
                 <div class="section-line"></div>
                 <p>
                   Cosmic Skyrocket is a globally trusted manufacturer and exporter of premium natural stones and tiles, delivering high-performance architectural materials to projects worldwide. Our integrated approach to sourcing, manufacturing, quality assurance, and international distribution enables us to consistently meet the requirements of architects, developers, contractors, distributors, and procurement professionals across diverse markets.
@@ -690,7 +711,7 @@
                 </p>
                 <div class="story-bullet">
                   <img src="assets/img/svg/stone.svg" class="story-bullet-icon story-bullet-icon-stone" alt="Stone icon">
-                  <p>Premium natural stone solutions manufactured from carefully selected sandstone, limestone, and specialty stone reserves, supported by integrated quarrying, mining, and processing operations in Rajasthan, India.</p>
+                  <p>Premium Natural Stones solutions manufactured from carefully selected sandstone, limestone, and specialty stone reserves, supported by integrated quarrying, mining, and processing operations in Rajasthan, India.</p>
                 </div>
                 <div class="story-bullet">
                   <img src="assets/img/svg/tiles.svg" class="story-bullet-icon" alt="Tiles icon">
@@ -726,13 +747,13 @@
               <div class="col-6 col-lg-3">
                 <div class="stat-card">
                   <div class="stat-num"><span class="count-num" data-target="234">0</span><span class="stat-suffix">+</span></div>
-                  <div class="stat-label">Natural Stone & Tile Collections</div>
+                  <div class="stat-label">Natural Stones & Tile Collections</div>
                   <div class="stat-desc">Premium surfaces crafted for timeless spaces.</div>
                 </div>
               </div>
               <div class="col-6 col-lg-3">
                 <div class="stat-card">
-                  <div class="stat-num"><span class="count-num" data-target="26">0</span><span class="stat-suffix">+</span></div>
+                  <div class="stat-num"><span class="count-num" data-target="31">0</span><span class="stat-suffix">+</span></div>
                   <div class="stat-label">Business Partners</div>
                   <div class="stat-desc">Creating value through trusted business alliances.</div>
                 </div>
@@ -756,7 +777,7 @@
                 <div class="mv-card dark">
                   <div class="mv-icon"><i class="bi bi-bullseye"></i></div>
                   <h3>Our Mission</h3>
-                  <p><b>Our mission is to uphold the highest standards of excellence in the quarrying, manufacturing, and global distribution of natural stone and tile products through disciplined operational practices, internationally aligned quality systems, technological advancement, and responsible business conduct, while creating sustainable long-term value for customers, business partners, employees, and other stakeholders across global markets.</b></p>
+                  <p><b>Our mission is to uphold the highest standards of excellence in the quarrying, manufacturing, and global distribution of Natural Stones and tile products through disciplined operational practices, internationally aligned quality systems, technological advancement, and responsible business conduct, while creating sustainable long-term value for customers, business partners, employees, and other stakeholders across global markets.</b></p>
                   <div class="mv-point"><i class="bi bi-check2-circle"></i><span>Maintain rigorous quality assurance standards, product consistency, and operational excellence across all stages of quarrying, manufacturing, inspection, packaging, and distribution.</span></div>
                   <div class="mv-point"><i class="bi bi-check2-circle"></i><span>Continuously invest in advanced manufacturing technologies, process optimization, innovation, and workforce development to meet evolving industry requirements and customer expectations.</span></div>
                   <div class="mv-point"><i class="bi bi-check2-circle"></i><span>Ensure reliable global supply chain performance through efficient logistics management, export compliance, timely order fulfillment, and responsive customer support.</span></div>
@@ -766,7 +787,7 @@
                 <div class="mv-card light">
                   <div class="mv-icon"><i class="bi bi-eye"></i></div>
                   <h3>Our Vision</h3>
-                  <p><b>Our vision is to be recognized as a globally respected and trusted leader in the natural stone and tile industry, distinguished by manufacturing excellence, operational reliability, sustainable growth, technological innovation, and an enduring commitment to quality, customer satisfaction, and responsible business practices.</b></p>
+                  <p><b>Our vision is to be recognized as a globally respected and trusted leader in the Natural Stones and tile industry, distinguished by manufacturing excellence, operational reliability, sustainable growth, technological innovation, and an enduring commitment to quality, customer satisfaction, and responsible business practices.</b></p>
                   <div class="mv-point"><i class="bi bi-check2-circle"></i><span>Strengthen our position as a preferred manufacturing and export partner for distributors, developers, architects, contractors, consultants, and infrastructure stakeholders across international markets.</span></div>
                   <div class="mv-point"><i class="bi bi-check2-circle"></i><span>Advance responsible quarrying practices, efficient resource utilization, sustainable manufacturing processes, and environmentally conscious business operations.</span></div>
                   <div class="mv-point"><i class="bi bi-check2-circle"></i><span>Expand our international presence through strategic market development, long-term business partnerships, and continued investment in manufacturing and supply chain capabilities.</span></div>
@@ -794,7 +815,7 @@
                 <div class="service-card">
                   <div class="svc-icon"><i class="bi bi-gem"></i></div>
                   <h5>Integrated Quarrying &amp; Manufacturing</h5>
-                  <p>Leveraging integrated quarrying, processing, and manufacturing operations, Cosmic Skyrocket produces premium natural stone and tile solutions that meet stringent quality, performance, and aesthetic requirements for residential, commercial, hospitality, and infrastructure applications.</p>
+                  <p>Leveraging integrated quarrying, processing, and manufacturing operations, Cosmic Skyrocket produces premium Natural Stones and tile solutions that meet stringent quality, performance, and aesthetic requirements for residential, commercial, hospitality, and infrastructure applications.</p>
                 </div>
               </div>
               <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
@@ -950,9 +971,9 @@
         <section class="quote-section">
           <div class="container" data-aos="fade-up">
             <p class="big-quote">
-              Every surface we deliver carries the weight of our heritage — the quarries of Rajasthan, the hands of 300 craftsmen, and the trust of clients across 26 countries who rely on us to bring their spaces to life.
+              Our legacy is defined by craftsmanship, integrity, and an unwavering commitment to excellence—principles that continue to guide every product we manufacture and every partnership we build.
             </p>
-            <p class="quote-author">— <span>Cosmic Skyrocket</span>, Rajasthan, India</p>
+            <p class="quote-author">— <span>Cosmic Skyrocket</span> <br> <span class="quote-location">Rajasthan, INDIA</span></p>
           </div>
         </section>
 
@@ -962,18 +983,18 @@
             <h2>Ready to Work With Us?</h2>
             <p>Reach out to our team to explore products, request samples, or get a custom export quote.</p>
             <div class="cta-buttons">
-              <a href="tiles-category.html" class="cta-btn-outline">Browse Tiles</a>
-              <a href="contact.html" class="cta-btn">Get in Touch</a>
               <a href="stones-category.html" class="cta-btn-outline">Browse Natural Stones</a>
+              <a href="contact.html" class="cta-btn">Get in Touch</a>
+              <a href="tiles-category.html" class="cta-btn-outline">Browse CSR Tiles</a>
             </div>
           </div>
         </section>
 
-        <!-- ── FOOTER ── -->
+        <!-- FOOTER -->
         <footer class="footer py-4 py-lg-6" style="background: linear-gradient(180deg, #d3d3d3 0%, #808080 45%, #333333 100%) !important; padding-top: 0 !important; padding-bottom: 1rem !important;">
           <!-- Logo -->
           <div style="text-align: center; padding-top: 3rem; padding-bottom: 3rem;">
-            <img src="assets/img/CSR Logos Transparent/CSR_White_logo.PNG" alt="Cosmic Skyrocket Logo" style="max-height: 100px; width: auto;">
+            <img src="/assets/img/CSR Logos Transparent/CSR.png" alt="Cosmic Skyrocket Logo" style="max-height: 120px; width: auto;">
           </div>
           <div style="width: 100%; margin: 0 0 3rem 0; border-top: 1px solid rgba(255,255,255,0.2);"></div>
           <div class="container-fluid" style="margin-top: 0; padding-left: clamp(12px, 2.2vw, 28px); padding-right: clamp(12px, 2.2vw, 28px);">
@@ -985,21 +1006,21 @@
                     <!-- Head Office Address -->
                     <div class="d-flex gap-2 align-items-start text-white footer-contact-link" style="text-decoration: none;">
                       <i class="bi bi-geo-alt" style="color: #fff; flex-shrink: 0; font-size: 1.2rem;"></i>
-                      <span style="font-size: 1.125rem;"><b style="font-size: 1.4rem;">Head Office</b> <br> <span class="footer-hover-value">Yardena - I, 1st floor, GH 23, Dadabari, <br> Kota, Rajasthan, 324009</span></span>
+                      <span style="font-size: 1.125rem;"><b style="font-size: 1.4rem; font-family: 'Lora', serif; font-style: italic; font-weight: 500; color: #000;">Head Office</b> <br> <span class="footer-hover-value">Yardena - I, 1st floor, GH 23, Dadabari, <br> Kota, Rajasthan, 324009</span></span>
                     </div>
                     <br>
                     <!-- Factory Address -->
                     <div class="d-flex gap-2 align-items-start text-white footer-contact-link" style="text-decoration: none;">
                       <i class="bi bi-geo-alt" style="color: #fff; flex-shrink: 0; font-size: 1.2rem;"></i>
-                      <span style="font-size: 1.125rem;"><b style="font-size: 1.4rem;">Factory Address</b> <br> <span class="footer-hover-value">B-93-C, Road No. 3, IPIA, <br> Kota, Rajasthan, 324005</span></span>
+                      <span style="font-size: 1.125rem;"><b style="font-size: 1.4rem; font-family: 'Lora', serif; font-style: italic; font-weight: 500; color: #000;">Factory Address</b> <br> <span class="footer-hover-value">B-93-D, Road No. 4, IPIA, <br> Kota, Rajasthan, 324005</span></span>
                     </div>
                     <br>
                     <!-- Phone (WhatsApp) -->
                     <div class="d-flex gap-2 align-items-start text-white footer-contact-link" style="text-decoration: none;">
-                      <i class="bi bi-whatsapp" style="color: #fff; flex-shrink: 0; font-size: 1.2rem;"></i>
+                      <i class="bi bi-telephone" style="color: #fff; flex-shrink: 0; font-size: 1.2rem;"></i>
                       <span style="font-size: 1.125rem; ">
-                        <a href="https://wa.me/918209851679" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 82098 51679</a>,
-                        <a href="https://wa.me/917300122901" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 73001 22901</a>
+                        <a href="tel:+918209851679" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 82098 51679</a>,
+                        <a href="tel:+917300122901" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 73001 22901</a>
                       </span>
                     </div>
                     <!-- Email -->
@@ -1013,58 +1034,62 @@
 
               <!-- Column 2: Quick Links -->
               <div class="col-sm-6 col-md-3 col-lg-2 mb-4 mb-lg-0">
-                <h5 class="text-white mb-3" style="font-weight: 700; font-size: 1.4rem;">Quick Links</h5>
+                <h5 class="mb-3" style="font-size: 1.4rem; font-family: 'Lora', serif; font-style: italic; font-weight: 500; color: #000;">Quick Links</h5>
                 <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-1">
-                  <li><a class="link-hover text-white text-decoration-none" href="index.html" style="font-size: 1.2rem;">Home</a></li>
-                  <li><a class="link-hover text-white text-decoration-none" href="about.html" style="font-size: 1.2rem;">About Us</a></li>
-                  <li><a class="link-hover text-white text-decoration-none" href="contact.html" style="font-size: 1.2rem;">Contact Us</a></li>
-                  <li><a class="link-hover text-white text-decoration-none" href="packaging.html" style="font-size: 1.2rem;">Packaging</a></li>
-                  <li><a class="link-hover text-white text-decoration-none" href="blogs.html" style="font-size: 1.2rem;">Blogs</a></li>
+                  <li><a class="link-hover text-white text-decoration-none" href="/index.html" style="font-size: 1.2rem;">Home</a></li>
+
+                  <li><a class="link-hover text-white text-decoration-none" href="/about.html" style="font-size: 1.2rem;">About Us</a></li>
+
+                  <li><a class="link-hover text-white text-decoration-none" href="/packaging.html" style="font-size: 1.2rem;">Packaging</a></li>
+
+                  <li><a class="link-hover text-white text-decoration-none" href="/blogs.html" style="font-size: 1.2rem;">Blogs</a></li>
+
+                  <li><a class="link-hover text-white text-decoration-none" href="/contact.html" style="font-size: 1.2rem;">Contact Us</a></li>
                 </ul>
               </div>
 
 <!-- Column 3: Natural Stones -->
               <div class="col-sm-6 col-md-3 col-lg-2 mb-4 mb-lg-0">
-                <h5 class="text-white mb-3" style="font-weight: 700; font-size: 1.4rem;">Natural Stones</h5>
+                <h5 class="mb-3" style="font-size: 1.4rem; font-family: 'Lora', serif; font-style: italic; font-weight: 500; color: #000;">Natural Stones</h5>
                 <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-1">
-                  <li><a class="link-hover text-white text-decoration-none" href="stones-category.html#sandstone" style="font-size: 1.2rem;">Sandstone</a></li>
+                  <li><a class="link-hover text-white text-decoration-none" href="/stones-category.html#sandstone" style="font-size: 1.2rem;">Sandstone</a></li>
 
-                  <li><a class="link-hover text-white text-decoration-none" href="stones-category.html#limestone" style="font-size: 1.2rem;">Limestone</a></li>
+                  <li><a class="link-hover text-white text-decoration-none" href="/stones-category.html#limestone" style="font-size: 1.2rem;">Limestone</a></li>
 
-                  <li><a class="link-hover text-white text-decoration-none" href="product_details/Natural-Stones/Circles/circles.html" style="font-size: 1.2rem;">Circles</a></li>
+                  <li><a class="link-hover text-white text-decoration-none" href="/product_details/Natural-Stones/Setts and cobbles/sets-and-cobbles.html" style="font-size: 1.2rem;">Setts &amp; Cobbles</a></li>
 
-                  <li><a class="link-hover text-white text-decoration-none" href="product_details/Natural-Stones/Cladding/cladding.html" style="font-size: 1.2rem;">Cladding</a></li>
+                  <li><a class="link-hover text-white text-decoration-none" href="/product_details/Natural-Stones/Circles/circles.html" style="font-size: 1.2rem;">Circles</a></li>
 
-                  <li><a class="link-hover text-white text-decoration-none" href="product_details/Natural-Stones/Edgings/edgings.html" style="font-size: 1.2rem;">Edging</a></li>
+                  <li><a class="link-hover text-white text-decoration-none" href="/product_details/Natural-Stones/Cladding/cladding.html" style="font-size: 1.2rem;">Claddings</a></li>
 
-                  <li><a class="link-hover text-white text-decoration-none" href="product_details/Natural-Stones/Setts and cobbles/sets-and-cobbles.html" style="font-size: 1.2rem;">Setts &amp; Cobbles</a></li>
+                  <li><a class="link-hover text-white text-decoration-none" href="/product_details/Natural-Stones/Edgings/edgings.html" style="font-size: 1.2rem;">Edgings</a></li>
                 </ul>
               </div>
 
               <!-- Column 4: Tiles -->
               <div class="col-sm-6 col-md-3 col-lg-2 mb-4 mb-lg-0">
-                <h5 class="text-white mb-3" style="font-weight: 700; font-size: 1.4rem;">Tiles</h5>
+                <h5 class="mb-3" style="font-size: 1.4rem; font-family: 'Lora', serif; font-style: italic; font-weight: 500; color: #000;">Tiles</h5>
                 <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-1">
-                  <li><a class="link-hover text-white text-decoration-none" href="tiles-category.html#italian-marble" style="font-size: 1.2rem;">Italian Marble</a></li>
-                  <li><a class="link-hover text-white text-decoration-none" href="tiles-category.html#other-stone" style="font-size: 1.2rem;">Other Stone</a></li>
-                  <li><a class="link-hover text-white text-decoration-none" href="tiles-category.html#moroccan" style="font-size: 1.2rem;">Moroccan</a></li>
-                  <li><a class="link-hover text-white text-decoration-none" href="tiles-category.html#material" style="font-size: 1.2rem;">Material</a></li>
-                  <li><a class="link-hover text-white text-decoration-none" href="tiles-category.html#wooden" style="font-size: 1.2rem;">Wooden</a></li>
+                  <li><a class="link-hover text-white text-decoration-none" href="/tiles-category.html#italian-marble" style="font-size: 1.2rem;">Italian Marble</a></li>
+                  <li><a class="link-hover text-white text-decoration-none" href="/tiles-category.html#other-stone" style="font-size: 1.2rem;">Other Stones</a></li>
+                  <li><a class="link-hover text-white text-decoration-none" href="/tiles-category.html#moroccan" style="font-size: 1.2rem;">Moroccan</a></li>
+                  <li><a class="link-hover text-white text-decoration-none" href="/tiles-category.html#material" style="font-size: 1.2rem;">Material</a></li>
+                  <li><a class="link-hover text-white text-decoration-none" href="/tiles-category.html#wooden" style="font-size: 1.2rem;">Wooden</a></li>
                 </ul>
               </div>
 
               <!-- Column 5: Company Info -->
               <div class="col-md-3 col-lg-2 mb-4 mb-lg-0">
-                <h5 class="text-white mb-3" style="font-weight: 700; font-size: 1.4rem;">About Us</h5>
+                <h5 class="mb-3" style="font-size: 1.4rem; font-family: 'Lora', serif; font-style: italic; font-weight: 500; color: #000;">About Us</h5>
                 <p class="mb-0 text-white" style="font-size: 1.125rem; line-height: 1.5;">With over 28 years of industry expertise, Cosmic Skyrocket provides world-class natural stones and tiles that transform residential, commercial, and landscape spaces.</p>
               </div>
             </div>
           </div>
 
           <!-- Brand watermark and copyright -->
-          <div style="margin-top: 2.5rem; padding-top: 1.5rem; text-align: center;">
+          <div style="margin-top: 1rem; padding-top: 1.5rem; text-align: center;">
             <p class="mb-0 text-white" style="font-family: 'Cinzel', serif; font-size: clamp(0.75rem, 8.7vw, 14rem); font-weight: 600; letter-spacing: 1px; line-height: 1.1; white-space: nowrap;">COSMIC SKYROCKET</p>
-            <p class="mb-0 text-white" style="color: rgba(255,255,255,0.7) !important; font-size: 1.05rem; margin-top: -0.2rem;">© 2026 Cosmic Skyrocket. All Rights Reserved.</p>
+            <p class="mb-0 text-white" style="color: rgba(255,255,255,0.7) !important; font-size: 1.05rem; margin-top: -0.2rem;">© 2024 cosmic Skyrocket. All Rights Reserved.</p>
           </div>
         </footer>
 
@@ -1113,12 +1138,12 @@
             overflow-wrap: anywhere;
             word-break: break-word;
           }
-          .footer .bi-whatsapp + span {
+          .footer .bi-telephone + span {
             white-space: normal !important;
             overflow-wrap: anywhere;
             word-break: break-word;
           }
-          .footer .bi-whatsapp + span a {
+          .footer .bi-telephone + span a {
             white-space: normal !important;
           }
           .footer .row.gx-0 {

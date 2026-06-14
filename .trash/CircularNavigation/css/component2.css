@@ -1,0 +1,537 @@
+/* ============================================
+   CONFIGURATION VARIABLES
+   Customize these to adjust the navigation behavior
+   ============================================ */
+:root {
+	/* Color Scheme */
+	--cn-primary-color: #52be7f;
+	--cn-secondary-color: #429a67;
+	--cn-hover-color: #449e6a;
+	--cn-trigger-bg: #fff;
+	--cn-trigger-color: #52be7f;
+	
+	/* Trigger Element (Button/Card) Sizing */
+	--cn-trigger-size: 4.5em;
+	--cn-trigger-font-size: 1.5em;
+	--cn-trigger-border-radius: 50%; /* Use 8px for cards, 50% for circles */
+	
+	/* Menu Wrapper Sizing */
+	--cn-menu-diameter: 27em;
+	--cn-menu-item-size: 10em;
+	--cn-menu-item-font-size: 1.5em;
+	
+	/* Positioning */
+	--cn-trigger-offset-horizontal: 50%; /* Distance from left edge */
+	--cn-trigger-offset-vertical: 100%; /* Distance from top edge */
+	--cn-trigger-margin-left: calc(var(--cn-trigger-size) / -2); /* Center adjustment */
+	--cn-trigger-margin-top: calc(var(--cn-trigger-size) / -2);
+	
+	/* Right Menu Positioning */
+	--cn-trigger-right-margin-left: 5em; /* Offset for second menu */
+	
+	/* Animation Timing */
+	--cn-transition-duration: 0.3s;
+	--cn-transition-delay: 0.3s;
+	--cn-transition-easing: ease;
+	
+	/* Menu Item Angles (Left Menu - 5 items) */
+	--cn-angle-base: -14deg;
+	--cn-angle-1: -85deg;
+	--cn-angle-2: -50deg;
+	--cn-angle-3: -15deg;
+	--cn-angle-4: 20deg;
+	--cn-angle-5: 55deg;
+	
+	/* Menu Item Angles (Right Menu - 2 items) */
+	--cn-angle-right-base: 90deg;
+	--cn-angle-right-1: 45deg;
+	--cn-angle-right-2: 135deg;
+}
+
+* {
+	position: relative;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background: var(--cn-primary-color);
+	color: #fff;
+}
+
+/* ============================================
+   COMPONENT CONTAINER
+   Flexible container that adapts to content
+   ============================================ */
+.component {
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	gap: calc(var(--cn-trigger-size) + 2em);
+	margin-bottom: 3em;
+	min-height: 15em;
+	padding: 2em;
+	background: rgba(0,0,0,0.05);
+	font-family: 'Lato', Arial, sans-serif;
+}
+
+.component > h2 {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	white-space: nowrap;
+	font-weight: 300;
+	font-style: italic;
+	font-size: 12em;
+	opacity: 0.1;
+	cursor: default;
+}
+
+/* ============================================
+   TRIGGER ELEMENTS (Button, Card, Image, etc)
+   Flexible trigger that works with any element type
+   ============================================ */
+
+/* Shared trigger styles */
+.cn-button,
+.cn-button-right {
+	position: relative;
+	z-index: 11;
+	width: var(--cn-trigger-size);
+	height: var(--cn-trigger-size);
+	border: none;
+	border-radius: var(--cn-trigger-border-radius);
+	background-color: var(--cn-trigger-bg);
+	color: var(--cn-trigger-color);
+	text-align: center;
+	font-weight: 700;
+	font-size: var(--cn-trigger-font-size);
+	text-transform: uppercase;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all var(--cn-transition-duration) var(--cn-transition-easing);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	overflow: hidden;
+}
+
+/* Hover states for triggers */
+.cn-button:hover,
+.cn-button-right:hover {
+	transform: scale(1.05);
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Support for image/card triggers */
+.cn-button img,
+.cn-button-right img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: inherit;
+}
+
+/* ============================================
+   MENU WRAPPER - Left Menu
+   Circular navigation container
+   ============================================ */
+.csstransforms .cn-wrapper {
+	position: fixed;
+	bottom: var(--cn-trigger-size);
+	left: 50%;
+	transform: translateX(-50%) scale(0.1);
+	z-index: 10;
+	width: var(--cn-menu-diameter);
+	height: var(--cn-menu-diameter);
+	margin-left: calc(var(--cn-trigger-size) / -2 - var(--cn-trigger-right-margin-left) / 2);
+	border-radius: 50%;
+	background: transparent;
+	opacity: 0;
+	transition: all var(--cn-transition-duration) var(--cn-transition-easing) var(--cn-transition-delay);
+	-webkit-transform: translateX(-50%) scale(0.1);
+	-moz-transform: translateX(-50%) scale(0.1);
+	-ms-transform: translateX(-50%) scale(0.1);
+	pointer-events: none;
+	overflow: hidden;
+}
+
+/*cover to prevent extra space of anchors from being clickable*/
+.csstransforms .cn-wrapper:after{
+  content:".";
+  display:block;
+  font-size:2em;
+  width:6.2em;
+  height:6.2em;
+  position: absolute;
+  left: 50%;
+  margin-left: -3.1em;
+  top:50%;
+  margin-top: -3.1em;
+  border-radius: 50%;
+  z-index:10;
+  color: transparent;
+}
+
+.csstransforms .opened-nav {
+	border-radius: 50%;
+	opacity: 1;
+	transition: all var(--cn-transition-duration) var(--cn-transition-easing);
+	-webkit-transition: all var(--cn-transition-duration) var(--cn-transition-easing);
+	-moz-transition: all var(--cn-transition-duration) var(--cn-transition-easing);
+	transform: translateX(-50%) scale(1);
+	-webkit-transform: translateX(-50%) scale(1);
+	-moz-transform: translateX(-50%) scale(1);
+	-ms-transform: translateX(-50%) scale(1);
+	pointer-events: auto;
+}
+
+.csstransforms .cn-wrapper li {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	overflow: hidden;
+	margin-top: -1.3em;
+	margin-left: calc(var(--cn-menu-item-size) * -1);
+	width: var(--cn-menu-item-size);
+	height: var(--cn-menu-item-size);
+	font-size: var(--cn-menu-item-font-size);
+	transition: all var(--cn-transition-duration) var(--cn-transition-easing);
+	-webkit-transition: all var(--cn-transition-duration) var(--cn-transition-easing);
+	-moz-transition: all var(--cn-transition-duration) var(--cn-transition-easing);
+	transform: rotate(var(--cn-angle-base)) skew(60deg);
+	-webkit-transform: rotate(var(--cn-angle-base)) skew(60deg);
+	-moz-transform: rotate(var(--cn-angle-base)) skew(60deg);
+	-ms-transform: rotate(var(--cn-angle-base)) skew(60deg);
+	transform-origin: 100% 100%;
+	-webkit-transform-origin: 100% 100%;
+	-moz-transform-origin: 100% 100%;
+	pointer-events: none;
+}
+
+.csstransforms .cn-wrapper li a {
+	position: absolute;
+	right: -7.25em;
+	bottom: -7.25em;
+	display: block;
+	width: 14.5em;
+	height: 14.5em;
+	border-radius: 50%;
+	background: var(--cn-secondary-color);
+	background: -webkit-radial-gradient(transparent 35%, var(--cn-secondary-color) 35%);
+	background: -moz-radial-gradient(transparent 35%, var(--cn-secondary-color) 35%);
+	background: radial-gradient(transparent 35%, var(--cn-secondary-color) 35%);
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1.2em;
+	line-height: 2;
+	transform: skew(-60deg) rotate(-75deg) scale(1);
+	-webkit-transform: skew(-60deg) rotate(-75deg) scale(1);
+	-moz-transform: skew(-60deg) rotate(-75deg) scale(1);
+	-ms-transform: skew(-60deg) rotate(-75deg) scale(1);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	pointer-events: auto;
+}
+
+.csstransforms .cn-wrapper li a span {
+	position: relative;
+	top: 1.8em;
+	display: block;
+	font-size: .5em;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.csstransforms .cn-wrapper li a:hover,
+.csstransforms .cn-wrapper li a:active,
+.csstransforms .cn-wrapper li a:focus {
+	background: -webkit-radial-gradient(transparent 35%, var(--cn-hover-color) 35%);
+	background: -moz-radial-gradient(transparent 35%, var(--cn-hover-color) 35%);
+	background: radial-gradient(transparent 35%, var(--cn-hover-color) 35%);
+}
+.csstransforms .cn-wrapper li a:focus {
+    position: fixed; /* fix the displacement bug in webkit browsers when using tab key */
+}
+
+.csstransforms .opened-nav li {
+	transition: all var(--cn-transition-duration) var(--cn-transition-easing) var(--cn-transition-delay);
+	-webkit-transition: all var(--cn-transition-duration) var(--cn-transition-easing) var(--cn-transition-delay);
+	-moz-transition: all var(--cn-transition-duration) var(--cn-transition-easing) var(--cn-transition-delay);
+}
+
+.csstransforms .opened-nav li:first-child {
+	transform: rotate(var(--cn-angle-1)) skew(60deg);
+	-webkit-transform: rotate(var(--cn-angle-1)) skew(60deg);
+	-moz-transform: rotate(var(--cn-angle-1)) skew(60deg);
+	-ms-transform: rotate(var(--cn-angle-1)) skew(60deg);
+}
+
+.csstransforms .opened-nav li:nth-child(2) {
+	transform: rotate(var(--cn-angle-2)) skew(60deg);
+	-webkit-transform: rotate(var(--cn-angle-2)) skew(60deg);
+	-moz-transform: rotate(var(--cn-angle-2)) skew(60deg);
+	-ms-transform: rotate(var(--cn-angle-2)) skew(60deg);
+}
+
+.csstransforms .opened-nav  li:nth-child(3) {
+	transform: rotate(var(--cn-angle-3)) skew(60deg);
+	-webkit-transform: rotate(var(--cn-angle-3)) skew(60deg);
+	-moz-transform: rotate(var(--cn-angle-3)) skew(60deg);
+	-ms-transform: rotate(var(--cn-angle-3)) skew(60deg);
+}
+
+.csstransforms .opened-nav li:nth-child(4) {
+	transform: rotate(var(--cn-angle-4)) skew(60deg);
+	-webkit-transform: rotate(var(--cn-angle-4)) skew(60deg);
+	-moz-transform: rotate(var(--cn-angle-4)) skew(60deg);
+	-ms-transform: rotate(var(--cn-angle-4)) skew(60deg);
+}
+
+.csstransforms .opened-nav li:nth-child(5) {
+	transform: rotate(var(--cn-angle-5)) skew(60deg);
+	-webkit-transform: rotate(var(--cn-angle-5)) skew(60deg);
+	-moz-transform: rotate(var(--cn-angle-5)) skew(60deg);
+	-ms-transform: rotate(var(--cn-angle-5)) skew(60deg);
+}
+
+.no-csstransforms .cn-wrapper {
+	overflow: hidden;
+	margin: 10em auto;
+	padding: .5em;
+	text-align: center;
+}
+
+.no-csstransforms .cn-wrapper ul {
+	display: inline-block;
+}
+
+.no-csstransforms .cn-wrapper li {
+	float: left;
+	width: 5em;
+	height: 5em;
+	background-color: #fff;
+	text-align: center;
+	font-size: 1em;
+	line-height: 5em;
+}
+
+.no-csstransforms .cn-wrapper li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: inherit;
+	text-decoration: none;
+}
+
+.no-csstransforms .cn-wrapper li a:hover,
+.no-csstransforms .cn-wrapper li a:active,
+.no-csstransforms .cn-wrapper li a:focus {
+	background-color: #f8f8f8;
+}
+
+.no-csstransforms .cn-wrapper li.active a{
+	background-color: #6F325C;
+	color: #fff;
+}
+
+.no-csstransforms .cn-button {
+	display: none;
+}
+
+@media only screen and (max-width: 620px) {
+	.no-csstransforms li {
+		width: 4em;
+		height: 4em;
+		line-height: 4em;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.no-csstransforms .cn-wrapper {
+		padding: .5em;
+	}
+
+	.no-csstransforms .cn-wrapper li {
+		width: 4em;
+		height: 4em;
+		font-size: .9em;
+		line-height: 4em;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.csstransforms .cn-wrapper {
+		font-size: .68em;
+	}
+
+	.cn-button {
+		font-size: 1em;
+	}
+}
+
+@media only screen and (max-width:420px) {
+	.no-csstransforms .cn-wrapper li {
+		width: 100%;
+		height: 3em;
+		line-height: 3em;
+	}
+}
+/* ============================================
+   RIGHT MENU STYLES
+   Second circular navigation menu
+   ============================================ */
+
+/* Right menu wrapper */
+.csstransforms .cn-wrapper-right {
+	position: fixed;
+	bottom: var(--cn-trigger-size);
+	left: 50%;
+	transform: translateX(-50%) scale(0.1);
+	z-index: 10;
+	width: var(--cn-menu-diameter);
+	height: var(--cn-menu-diameter);
+	margin-left: calc(var(--cn-trigger-size) / 2 + var(--cn-trigger-right-margin-left) / 2);
+	border-radius: 50%;
+	background: transparent;
+	opacity: 0;
+	transition: all var(--cn-transition-duration) var(--cn-transition-easing) var(--cn-transition-delay);
+	-webkit-transition: all var(--cn-transition-duration) var(--cn-transition-easing) var(--cn-transition-delay);
+	-moz-transition: all var(--cn-transition-duration) var(--cn-transition-easing) var(--cn-transition-delay);
+	-webkit-transform: translateX(-50%) scale(0.1);
+	-ms-transform: translateX(-50%) scale(0.1);
+	-moz-transform: translateX(-50%) scale(0.1);
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.csstransforms .cn-wrapper-right:after{
+  content:".";
+  display:block;
+  font-size:2em;
+  width:6.2em;
+  height:6.2em;
+  position: absolute;
+  left: 50%;
+  margin-left: -3.1em;
+  top:50%;
+  margin-top: -3.1em;
+  border-radius: 50%;
+  z-index:10;
+  color: transparent;
+}
+
+.csstransforms .opened-nav-right {
+	border-radius: 50%;
+	opacity: 1;
+	transition: all var(--cn-transition-duration) var(--cn-transition-easing);
+	-webkit-transition: all var(--cn-transition-duration) var(--cn-transition-easing);
+	-moz-transition: all var(--cn-transition-duration) var(--cn-transition-easing);
+	transform: translateX(-50%) scale(1);
+	-webkit-transform: translateX(-50%) scale(1);
+	-moz-transform: translateX(-50%) scale(1);
+	-ms-transform: translateX(-50%) scale(1);
+	pointer-events: auto;
+}
+
+.csstransforms .cn-wrapper-right li {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	overflow: hidden;
+	margin-top: -1.3em;
+	margin-left: calc(var(--cn-menu-item-size) * -1);
+	width: var(--cn-menu-item-size);
+	height: var(--cn-menu-item-size);
+	font-size: var(--cn-menu-item-font-size);
+	transition: all var(--cn-transition-duration) var(--cn-transition-easing);
+	-webkit-transition: all var(--cn-transition-duration) var(--cn-transition-easing);
+	-moz-transition: all var(--cn-transition-duration) var(--cn-transition-easing);
+	transform: rotate(var(--cn-angle-right-base)) skew(10deg);
+	-webkit-transform: rotate(var(--cn-angle-right-base)) skew(10deg);
+	-moz-transform: rotate(var(--cn-angle-right-base)) skew(10deg);
+	-ms-transform: rotate(var(--cn-angle-right-base)) skew(10deg);
+	transform-origin: 100% 100%;
+	-webkit-transform-origin: 100% 100%;
+	-moz-transform-origin: 100% 100%;
+	pointer-events: none;
+}
+
+.csstransforms .cn-wrapper-right li a {
+	position: absolute;
+	right: -7.25em;
+	bottom: -7.25em;
+	display: block;
+	width: 14.5em;
+	height: 14.5em;
+	border-radius: 50%;
+	background: var(--cn-secondary-color);
+	background: -webkit-radial-gradient(transparent 35%, var(--cn-secondary-color) 35%);
+	background: -moz-radial-gradient(transparent 35%, var(--cn-secondary-color) 35%);
+	background: radial-gradient(transparent 35%, var(--cn-secondary-color) 35%);
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1.2em;
+	line-height: 2;
+	transform: skew(-10deg) rotate(-50deg) scale(1);
+	-webkit-transform: skew(-10deg) rotate(-50deg) scale(1);
+	-moz-transform: skew(-10deg) rotate(-50deg) scale(1);
+	-ms-transform: skew(-10deg) rotate(-50deg) scale(1);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	pointer-events: auto;
+}
+
+.csstransforms .cn-wrapper-right li a span {
+	position: relative;
+	top: 1.8em;
+	display: block;
+	font-size: .5em;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.csstransforms .cn-wrapper-right li a:hover,
+.csstransforms .cn-wrapper-right li a:active,
+.csstransforms .cn-wrapper-right li a:focus {
+	background: -webkit-radial-gradient(transparent 35%, var(--cn-hover-color) 35%);
+	background: -moz-radial-gradient(transparent 35%, var(--cn-hover-color) 35%);
+	background: radial-gradient(transparent 35%, var(--cn-hover-color) 35%);
+}
+.csstransforms .cn-wrapper-right li a:focus {
+    position: fixed;
+}
+
+.csstransforms .opened-nav-right li {
+	transition: all var(--cn-transition-duration) var(--cn-transition-easing) var(--cn-transition-delay);
+	-webkit-transition: all var(--cn-transition-duration) var(--cn-transition-easing) var(--cn-transition-delay);
+	-moz-transition: all var(--cn-transition-duration) var(--cn-transition-easing) var(--cn-transition-delay);
+}
+
+.csstransforms .opened-nav-right li:first-child {
+	transform: rotate(var(--cn-angle-right-1)) skew(10deg);
+	-webkit-transform: rotate(var(--cn-angle-right-1)) skew(10deg);
+	-moz-transform: rotate(var(--cn-angle-right-1)) skew(10deg);
+	-ms-transform: rotate(var(--cn-angle-right-1)) skew(10deg);
+}
+
+.csstransforms .opened-nav-right li:nth-child(2) {
+	transform: rotate(var(--cn-angle-right-2)) skew(10deg);
+	-webkit-transform: rotate(var(--cn-angle-right-2)) skew(10deg);
+	-moz-transform: rotate(var(--cn-angle-right-2)) skew(10deg);
+	-ms-transform: rotate(var(--cn-angle-right-2)) skew(10deg);
+}

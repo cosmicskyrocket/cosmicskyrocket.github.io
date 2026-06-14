@@ -587,6 +587,10 @@ body {
   color: #000000;
 }
 
+.stats .stats-item .purecounter.tile-production-counter::after {
+  content: 'k+';
+}
+
 .stats .stats-item p {
   color: rgba(68, 68, 68, 0.6);
   padding: 15px 0 0 0;

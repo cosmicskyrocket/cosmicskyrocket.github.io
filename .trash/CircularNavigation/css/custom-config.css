@@ -1,0 +1,211 @@
+/* ============================================
+   CIRCULAR NAVIGATION - CUSTOM CONFIGURATION
+   Copy this into your own CSS file or at the end of component2.css
+   to override the default settings
+   ============================================ */
+
+:root {
+	/* ============================================
+	   COLOR SCHEME
+	   ============================================ */
+	
+	/* Main background color of the page */
+	--cn-primary-color: #52be7f;
+	
+	/* Color of the menu items in the circular menu */
+	--cn-secondary-color: #429a67;
+	
+	/* Color when hovering over menu items */
+	--cn-hover-color: #449e6a;
+	
+	/* Background color of the trigger button/card */
+	--cn-trigger-bg: #fff;
+	
+	/* Text/icon color of the trigger button/card */
+	--cn-trigger-color: #52be7f;
+	
+	
+	/* ============================================
+	   TRIGGER ELEMENT SIZING
+	   (The button or card that opens the menu)
+	   ============================================ */
+	
+	/* Width and height of trigger (use same value for square/circle) */
+	--cn-trigger-size: 4.5em;
+	
+	/* Font size of text inside trigger */
+	--cn-trigger-font-size: 1.5em;
+	
+	/* Border radius - 50% for circle, 8px-16px for rounded cards */
+	--cn-trigger-border-radius: 50%;
+	
+	
+	/* ============================================
+	   MENU SIZING
+	   ============================================ */
+	
+	/* Diameter of the circular menu (should be proportional to trigger size) */
+	--cn-menu-diameter: 27em;
+	
+	/* Size of each menu item container */
+	--cn-menu-item-size: 10em;
+	
+	/* Font size of menu items */
+	--cn-menu-item-font-size: 1.5em;
+	
+	
+	/* ============================================
+	   POSITIONING
+	   ============================================ */
+	
+	/* Horizontal position of trigger from left edge (50% = center) */
+	--cn-trigger-offset-horizontal: 50%;
+	
+	/* Vertical position of trigger from top edge (100% = bottom) */
+	--cn-trigger-offset-vertical: 100%;
+	
+	/* Horizontal centering adjustment (usually trigger-size / -2) */
+	--cn-trigger-margin-left: calc(var(--cn-trigger-size) / -2);
+	
+	/* Vertical centering adjustment (usually trigger-size / -2) */
+	--cn-trigger-margin-top: calc(var(--cn-trigger-size) / -2);
+	
+	/* Spacing between left and right menus */
+	--cn-trigger-right-margin-left: 5em;
+	
+	
+	/* ============================================
+	   ANIMATION SETTINGS
+	   ============================================ */
+	
+	/* How fast animations play (in seconds) */
+	--cn-transition-duration: 0.3s;
+	
+	/* Delay before menu starts opening (in seconds) */
+	--cn-transition-delay: 0.3s;
+	
+	/* Animation style: ease, linear, ease-in, ease-out, ease-in-out */
+	--cn-transition-easing: ease;
+	
+	
+	/* ============================================
+	   MENU ITEM ANGLES - LEFT MENU
+	   Adjust these to change the spread of menu items
+	   Each item rotates to this angle from center
+	   ============================================ */
+	
+	/* Base angle (closed state) */
+	--cn-angle-base: -14deg;
+	
+	/* Individual item angles (opened state) */
+	--cn-angle-1: -85deg;   /* First item (leftmost) */
+	--cn-angle-2: -50deg;   /* Second item */
+	--cn-angle-3: -15deg;   /* Third item (center) */
+	--cn-angle-4: 20deg;    /* Fourth item */
+	--cn-angle-5: 55deg;    /* Fifth item (rightmost) */
+	
+	
+	/* ============================================
+	   MENU ITEM ANGLES - RIGHT MENU
+	   ============================================ */
+	
+	/* Base angle (closed state) */
+	--cn-angle-right-base: 90deg;
+	
+	/* Individual item angles (opened state) */
+	--cn-angle-right-1: 45deg;    /* First item */
+	--cn-angle-right-2: 135deg;   /* Second item */
+}
+
+
+/* ============================================
+   PRESET CONFIGURATIONS
+   Uncomment one of these to quickly apply a preset
+   ============================================ */
+
+/* PRESET 1: Large Cards
+:root {
+	--cn-trigger-size: 10em;
+	--cn-trigger-border-radius: 16px;
+	--cn-menu-diameter: 32em;
+}
+*/
+
+/* PRESET 2: Small Minimalist
+:root {
+	--cn-trigger-size: 3em;
+	--cn-trigger-font-size: 1em;
+	--cn-menu-diameter: 22em;
+	--cn-trigger-bg: transparent;
+	--cn-trigger-color: white;
+}
+
+.cn-button, .cn-button-right {
+	border: 2px solid white;
+}
+*/
+
+/* PRESET 3: Dark Theme
+:root {
+	--cn-primary-color: #1a1a1a;
+	--cn-secondary-color: #333333;
+	--cn-hover-color: #444444;
+	--cn-trigger-bg: #2a2a2a;
+	--cn-trigger-color: #ffffff;
+}
+
+body {
+	background: var(--cn-primary-color);
+	color: #ffffff;
+}
+*/
+
+/* PRESET 4: Wide Spread (7 items)
+:root {
+	--cn-angle-1: -90deg;
+	--cn-angle-2: -60deg;
+	--cn-angle-3: -30deg;
+	--cn-angle-4: 0deg;
+	--cn-angle-5: 30deg;
+	--cn-angle-6: 60deg;
+	--cn-angle-7: 90deg;
+}
+
+.csstransforms .opened-nav li:nth-child(6) {
+	transform: rotate(var(--cn-angle-6)) skew(60deg);
+	-webkit-transform: rotate(var(--cn-angle-6)) skew(60deg);
+	-moz-transform: rotate(var(--cn-angle-6)) skew(60deg);
+	-ms-transform: rotate(var(--cn-angle-6)) skew(60deg);
+}
+
+.csstransforms .opened-nav li:nth-child(7) {
+	transform: rotate(var(--cn-angle-7)) skew(60deg);
+	-webkit-transform: rotate(var(--cn-angle-7)) skew(60deg);
+	-moz-transform: rotate(var(--cn-angle-7)) skew(60deg);
+	-ms-transform: rotate(var(--cn-angle-7)) skew(60deg);
+}
+*/
+
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   Uncomment and modify as needed
+   ============================================ */
+
+/*
+@media only screen and (max-width: 768px) {
+	:root {
+		--cn-trigger-size: 3.5em;
+		--cn-menu-diameter: 20em;
+		--cn-trigger-font-size: 1.2em;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	:root {
+		--cn-trigger-size: 3em;
+		--cn-menu-diameter: 18em;
+		--cn-trigger-font-size: 1em;
+	}
+}
+*/
