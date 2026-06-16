@@ -602,7 +602,19 @@
         }
       }
 
-      @media (max-width: 991px) {
+      
+      @media (min-width: 992px) {
+        .lower-left {
+          width: 52%;
+        }
+        .lower-right {
+          left: 52%;
+          width: 48%;
+          transform: translateX(-22px);
+        }
+      }
+
+@media (max-width: 991px) {
         .tile-preview-img {
           position: static;
           width: 280px;
@@ -759,7 +771,7 @@
       .thickness-tile-list li a {
         text-decoration: none;
         display: block;
-        width: 310px;
+        width: 480px;
         height: 165px;
         background: #fff;
         text-align: left;
@@ -804,12 +816,13 @@
 
       /* Image fills the tile */
       .thickness-tile-list li a img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 50%;
+        left: 50%;
+        width: 34.375%;
+        height: 290.909%;
+        object-fit: cover;
+        transform: translate(-50%, -50%) rotate(90deg);
         transition: 0.5s;
         border-radius: 4px;
         z-index: 1;
@@ -960,7 +973,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 60px;
+        gap: 80px;
         width: 100%;
       }
 
@@ -975,7 +988,7 @@
         width: 100%;
         min-height: 200px;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: center;
       }
 
@@ -984,7 +997,7 @@
         content: '';
         position: absolute;
         left: 30%;
-        top: 0;
+        top: -20px;
         bottom: 0;
         width: 2px;
         background: #333;
@@ -1007,12 +1020,13 @@
         content: '';
         position: absolute;
         left: 50%;
-        top: 0;
+        top: 20px;
         bottom: 0;
         width: 2px;
         background: #333;
         transform: translateX(-50%);
         z-index: 1;
+        display: none;
       }
 
       /* Left side of upper section - 06 and APPLICATIONS */
@@ -1021,22 +1035,22 @@
         left: 0;
         width: 30%;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: flex-end;
-        gap: 20px;
-        padding-right: 15px;
+        gap: 10px;
+        padding-right: 6px;
         z-index: 2;
       }
 
       .upper-left .big-num {
-        font-size: clamp(86.4px, 8.33vw, 134.4px);
+        font-size: clamp(70.4px, 6.8vw, 109.6px);
         font-weight: 700;
         line-height: 1;
         font-family: Georgia, "Times New Roman", serif;
         color: transparent;
         -webkit-text-stroke: 3px #333;
         text-stroke: 3px #333;
-        transform: translateY(-40px);
+        transform: translateY(10px);
       }
 
       .upper-left .vtext {
@@ -1055,8 +1069,8 @@
         left: 30%;
         width: 70%;
         display: flex;
-        align-items: center;
-        padding-left: 20px;
+        align-items: flex-end;
+        padding-left: 18px;
         z-index: 2;
       }
 
@@ -1067,6 +1081,7 @@
         font-size: clamp(13px, 1.25vw, 20.2px);
         color: #999;
         line-height: 1.4;
+        transform: translateY(4px);
       }
 
       /* Left side of lower section - Surface finishes list */
@@ -1077,8 +1092,9 @@
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
-        padding-right: 20px;
+        padding-right: 18px;
         z-index: 2;
+        bottom: 0;
       }
 
       .lower-left .list-items {
@@ -1097,10 +1113,11 @@
         left: 50%;
         width: 50%;
         display: flex;
-        align-items: center;
-        gap: 20px;
-        padding-left: 15px;
+        align-items: flex-end;
+        gap: 10px;
+        padding-left: 18px;
         z-index: 2;
+        bottom: 0;
       }
 
       .lower-right .vtext {
@@ -1111,17 +1128,30 @@
         letter-spacing: 3px;
         font-size: clamp(20.55px, 1.98vw, 31.95px);
         color: #333;
+        position: relative;
+      }
+
+      .lower-right .vtext::before {
+        content: '';
+        position: absolute;
+        left: -6px;
+        right: auto;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #333;
       }
 
       .lower-right .big-num {
-        font-size: clamp(86.4px, 8.33vw, 134.4px);
+        font-size: clamp(70.4px, 6.8vw, 109.6px);
         font-weight: 700;
         line-height: 1;
         font-family: Georgia, "Times New Roman", serif;
         color: transparent;
         -webkit-text-stroke: 3px #333;
         text-stroke: 3px #333;
-        transform: translateY(40px);
+        transform: none;
+        align-self: flex-start;
       }
 
       /* Responsive */
@@ -1201,8 +1231,13 @@
         }
 
         .thickness-tile-list li a {
-          width: 230px;
+          width: 360px;
           height: 125px;
+        }
+
+        .thickness-tile-list li a img {
+          width: 34.722%;
+          height: 288%;
         }
 
         .thickness-title {
@@ -1249,8 +1284,13 @@
         }
 
         .thickness-tile-list li a {
-          width: 200px;
+          width: 315px;
           height: 110px;
+        }
+
+        .thickness-tile-list li a img {
+          width: 34.92%;
+          height: 286.364%;
         }
       }
 
@@ -1412,7 +1452,7 @@
         left: 50%;
         margin-left: -50vw;
         margin-top: 3rem;
-        margin-bottom: 0;
+        margin-bottom: 4rem;
         line-height: 0;
       }
 
@@ -1422,7 +1462,11 @@
         display: block;
       }
 
-    </style>
+    
+      .collage-fullwidth + .row {
+        margin-top: 2rem;
+      }
+</style>
 
   </head>
 
@@ -1790,10 +1834,10 @@
             <!-- Size Comparison Chart -->
             <div class="size-comparison-wrapper" data-aos="fade-up" data-aos-delay="100">
               <div style="display: flex; align-items: flex-start; justify-content: center; gap: 10px;">
-                <div class="size-comparison-container" style="display: block; min-width: max-content;">
-                  <div style="margin-bottom: 28px;">
+                <div class="size-comparison-container" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 28px 56px; width: 100%; min-width: 0;">
+                  <div style="margin-bottom: 0;">
                     <div style="display: flex; align-items: flex-end; gap: 24px; width: max-content; min-width: max-content;">
-                      <div style="display: flex; align-items: flex-end; gap: 12px;">
+                      <div style="display: flex; align-items: flex-end; gap: 12px; margin-bottom: 60px;">
                         <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 2px;">
                           <div style="font-size: clamp(40px, 4.2vw, 62px); font-weight: 700; line-height: 1; font-family: Georgia, 'Times New Roman', serif; color: transparent; -webkit-text-stroke: 2px #333; text-stroke: 2px #333;">05</div>
                           <div style="font-size: clamp(1.45rem, 1.9vw, 1.85rem); font-weight: 600; color: #333; line-height: 1;">6 mm</div>
@@ -1805,7 +1849,7 @@
                       </div>
                       <div class="size-item" style="display: flex; flex-direction: column; align-items: center; flex: 0 0 auto;">
                         <div class="size-visual" style="height: 340px; display: flex; align-items: flex-end; justify-content: center;">
-                          <img src="../../../../assets/img/gallery/human_size.PNG" alt="Human Reference 170cm" style="height:  391px; width: auto; max-width:  138px; object-fit: contain; object-position: bottom;">
+                          <img src="../../../../assets/img/gallery/human_size.PNG" alt="Human Reference 170cm" style="height:  219.9375px; width: auto; max-width:  77.625px; object-fit: contain; object-position: bottom;">
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
                           <strong style="font-size: clamp(0.648rem, 1vw, 1.008rem); color: #ffffff;"> - </strong>
@@ -1820,7 +1864,7 @@
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
                           <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">60 x 120 cm</strong>
-                          <p style="font-size: clamp(0.72rem, 1.11vw, 1.12rem); color: #666; margin: 0;">6 mm</p>
+                          <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">23.6 x 47.2 in</p>
                         </div>
                       </div>
 
@@ -1830,7 +1874,7 @@
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
                           <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">30 x 120 cm</strong>
-                          <p style="font-size: clamp(0.72rem, 1.11vw, 1.12rem); color: #666; margin: 0;">6 mm</p>
+                          <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">11.8 x 47.2 in</p>
                         </div>
                       </div>
 
@@ -1840,7 +1884,7 @@
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
                           <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">20 x 120 cm</strong>
-                          <p style="font-size: clamp(0.72rem, 1.11vw, 1.12rem); color: #666; margin: 0;">6 mm</p>
+                          <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">7.9 x 47.2 in</p>
                         </div>
                       </div>
 
@@ -1850,7 +1894,7 @@
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
                           <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">60 x 60 cm</strong>
-                          <p style="font-size: clamp(0.72rem, 1.11vw, 1.12rem); color: #666; margin: 0;">6 mm</p>
+                          <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">23.6 x 23.6 in</p>
                         </div>
                       </div>
 
@@ -1860,15 +1904,15 @@
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
                           <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">30 x 60 cm</strong>
-                          <p style="font-size: clamp(0.72rem, 1.11vw, 1.12rem); color: #666; margin: 0;">6 mm</p>
+                          <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">11.8 x 23.6 in</p>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div style="margin-bottom: 28px;">
+                  <div style="margin-bottom: 0;">
                     <div style="display: flex; align-items: flex-end; gap: 24px; width: max-content; min-width: max-content;">
-                      <div style="display: flex; align-items: flex-end; gap: 12px;">
+                      <div style="display: flex; align-items: flex-end; gap: 12px; margin-bottom: 60px;">
                         <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 2px;">
                           <div style="font-size: clamp(40px, 4.2vw, 62px); font-weight: 700; line-height: 1; font-family: Georgia, 'Times New Roman', serif; color: transparent; -webkit-text-stroke: 2px #333; text-stroke: 2px #333;">03</div>
                           <div style="font-size: clamp(1.45rem, 1.9vw, 1.85rem); font-weight: 600; color: #333; line-height: 1;">9 mm</div>
@@ -1880,7 +1924,7 @@
                       </div>
                       <div class="size-item" style="display: flex; flex-direction: column; align-items: center; flex: 0 0 auto;">
                         <div class="size-visual" style="height: 340px; display: flex; align-items: flex-end; justify-content: center;">
-                          <img src="../../../../assets/img/gallery/human_size.PNG" alt="Human Reference 170cm" style="height:  391px; width: auto; max-width:  138px; object-fit: contain; object-position: bottom;">
+                          <img src="../../../../assets/img/gallery/human_size.PNG" alt="Human Reference 170cm" style="height:  219.9375px; width: auto; max-width:  77.625px; object-fit: contain; object-position: bottom;">
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
                           <strong style="font-size: clamp(0.648rem, 1vw, 1.008rem); color: #ffffff;"> - </strong>
@@ -1895,7 +1939,7 @@
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
                           <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">100 x 100 cm</strong>
-                          <p style="font-size: clamp(0.72rem, 1.11vw, 1.12rem); color: #666; margin: 0;">9 mm</p>
+                          <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">39.4 x 39.4 in</p>
                         </div>
                       </div>
 
@@ -1905,7 +1949,7 @@
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
                           <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">60 x 60 cm</strong>
-                          <p style="font-size: clamp(0.72rem, 1.11vw, 1.12rem); color: #666; margin: 0;">9 mm</p>
+                          <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">23.6 x 23.6 in</p>
                         </div>
                       </div>
 
@@ -1915,7 +1959,7 @@
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
                           <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">30 x 60 cm</strong>
-                          <p style="font-size: clamp(0.72rem, 1.11vw, 1.12rem); color: #666; margin: 0;">9 mm</p>
+                          <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">11.8 x 23.6 in</p>
                         </div>
                       </div>
                     </div>

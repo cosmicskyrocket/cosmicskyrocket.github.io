@@ -315,6 +315,15 @@
         appearance: none; -webkit-appearance: none;
         transition: border-color 0.25s ease;
       }
+      .cs-select.is-placeholder {
+        color: #e0e0e0 !important;
+        -webkit-text-fill-color: #e0e0e0;
+      }
+      .cs-select.is-placeholder:focus {
+        color: #e0e0e0 !important;
+        -webkit-text-fill-color: #e0e0e0;
+      }
+      .cs-select option { color: #1a1a1a; }
       .cs-select:focus { border-bottom-color: #7A8C98; }
       .cs-select.is-error { border-bottom-color: #e53e3e; }
       .cs-select-wrap { position: relative; }
@@ -706,8 +715,9 @@
                     <!-- Row 3: Designation + Country -->
                     <div class="row g-4 mb-4">
                       <div class="col-sm-6">
-                        <div class="form-group-label">Designation / Role</div>
-                        <input type="text" id="fieldDesignation" class="cs-input" placeholder="Procurement Manager">
+                        <div class="form-group-label">Designation / Role <span style="color:#e53e3e;">*</span></div>
+                        <input type="text" id="fieldDesignation" class="cs-input" placeholder="Procurement Manager" required>
+                        <div class="field-error" id="errDesignation">Please enter your designation / role.</div>
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group-label">Country <span style="color:#e53e3e;">*</span></div>
@@ -1187,12 +1197,24 @@
 
       /* Real-time clear on input */
       [['fieldName','errName'], ['fieldEmail','errEmail'], ['fieldPhone','errPhone'],
-       ['fieldCompany','errCompany'], ['fieldCountry','errCountry']].forEach(function (pair) {
+       ['fieldCompany','errCompany'], ['fieldDesignation','errDesignation'], ['fieldCountry','errCountry']].forEach(function (pair) {
         var el = document.getElementById(pair[0]);
         if (el) el.addEventListener('input', function () { showError(pair[0], pair[1], false); });
       });
       var countryEl = document.getElementById('fieldCountry');
       if (countryEl) countryEl.addEventListener('change', function () { showError('fieldCountry', 'errCountry', false); });
+
+      /* ─── Select placeholder color state ─── */
+      function syncSelectPlaceholder(selectEl) {
+        if (!selectEl) return;
+        selectEl.classList.toggle('is-placeholder', !selectEl.value);
+      }
+      ['fieldCountry', 'fieldQuantity'].forEach(function (id) {
+        var selectEl = document.getElementById(id);
+        if (!selectEl) return;
+        syncSelectPlaceholder(selectEl);
+        selectEl.addEventListener('change', function () { syncSelectPlaceholder(selectEl); });
+      });
 
       /* ─── Phone: digits/spaces/+-()/. only ─── */
       var phoneEl = document.getElementById('fieldPhone');
@@ -1219,6 +1241,7 @@
         var email   = document.getElementById('fieldEmail').value.trim();
         var phone   = document.getElementById('fieldPhone').value.trim();
         var company = document.getElementById('fieldCompany').value.trim();
+        var designation = document.getElementById('fieldDesignation').value.trim();
         var country = document.getElementById('fieldCountry').value;
         var inquiry = document.getElementById('fieldInquiryType').value.trim();
         var products = document.getElementById('fieldProducts').value.trim();
@@ -1227,6 +1250,7 @@
         if (!EMAIL_RE.test(email))       { showError('fieldEmail',       'errEmail',       true); ok = false; }
         if (phone.replace(/\D/g,'').length < 6) { showError('fieldPhone', 'errPhone',      true); ok = false; }
         if (!company)                    { showError('fieldCompany',     'errCompany',     true); ok = false; }
+        if (!designation)                { showError('fieldDesignation', 'errDesignation', true); ok = false; }
         if (!country)                    { showError('fieldCountry',     'errCountry',     true); ok = false; }
         if (!inquiry)                    { showError('fieldInquiryType', 'errInquiryType', true); ok = false; }
         if (!products)                   { showError('fieldProducts',    'errProducts',    true); ok = false; }
@@ -1267,6 +1291,9 @@
         window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
           .then(function () {
             document.getElementById('contactForm').reset();
+            ['fieldCountry', 'fieldQuantity'].forEach(function (id) {
+              syncSelectPlaceholder(document.getElementById(id));
+            });
             setStatus('success', '✓ Thank you! Your inquiry has been sent. We will get back to you within 24 hours.');
           })
           .catch(function (err) {

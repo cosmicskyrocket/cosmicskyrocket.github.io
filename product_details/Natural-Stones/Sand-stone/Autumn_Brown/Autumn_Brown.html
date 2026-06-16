@@ -153,7 +153,7 @@
       .hamburger-menu-header {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
         margin-bottom: 2rem;
         padding-bottom: 1rem;
         border-bottom: 2px solid rgba(255, 255, 255, 0.3);
@@ -183,7 +183,7 @@
       .menu-link {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
         padding: 0.75rem 1rem;
         color: #ffffff;
         text-decoration: none;
@@ -232,7 +232,7 @@
       .sub-submenu-link {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
         padding: 0.6rem 1rem;
         color: rgba(255, 255, 255, 0.85);
         text-decoration: none;
@@ -601,7 +601,7 @@
         width: 350px;
         height: 180px;
         background: #d3d3d3;
-        padding-left: 20px;
+        padding-left: 18px;
         text-align: left;
         transform: rotate(-30deg) skew(25deg) translate(0, 0);
         transition: 0.5s;
@@ -750,7 +750,7 @@
       .thickness-tile-list li a {
         text-decoration: none;
         display: block;
-        width: 310px;
+        width: 480px;
         height: 165px;
         background: #fff;
         text-align: left;
@@ -795,12 +795,13 @@
 
       /* Image fills the tile */
       .thickness-tile-list li a img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 50%;
+        left: 50%;
+        width: 34.375%;
+        height: 290.909%;
+        object-fit: cover;
+        transform: translate(-50%, -50%) rotate(90deg);
         transition: 0.5s;
         border-radius: 4px;
         z-index: 1;
@@ -951,8 +952,14 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 60px;
+        gap: 80px;
         width: 100%;
+      }
+
+      .specs-fullbleed-row {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
       }
 
       /* Central vertical line - Now split into two */
@@ -966,7 +973,7 @@
         width: 100%;
         min-height: 200px;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: center;
       }
 
@@ -974,8 +981,8 @@
       .upper-section::after {
         content: '';
         position: absolute;
-        left: 30%;
-        top: 0;
+        left: 28%;
+        top: -20px;
         bottom: 0;
         width: 2px;
         background: #333;
@@ -998,36 +1005,37 @@
         content: '';
         position: absolute;
         left: 50%;
-        top: 0;
+        top: 20px;
         bottom: 0;
         width: 2px;
         background: #333;
         transform: translateX(-50%);
         z-index: 1;
+        display: none;
       }
 
       /* Left side of upper section - 06 and APPLICATIONS */
       .upper-left {
         position: absolute;
         left: 0;
-        width: 30%;
+        width: 28%;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: flex-end;
-        gap: 20px;
-        padding-right: 15px;
+        gap: 10px;
+        padding-right: 6px;
         z-index: 2;
       }
 
       .upper-left .big-num {
-        font-size: clamp(86.4px, 8.33vw, 134.4px);
+        font-size: clamp(70.4px, 6.8vw, 109.6px);
         font-weight: 700;
         line-height: 1;
         font-family: Georgia, "Times New Roman", serif;
         color: transparent;
         -webkit-text-stroke: 3px #333;
         text-stroke: 3px #333;
-        transform: translateY(-40px);
+        transform: translateY(10px);
       }
 
       .upper-left .vtext {
@@ -1043,11 +1051,11 @@
       /* Right side of upper section - Applications list */
       .upper-right {
         position: absolute;
-        left: 30%;
-        width: 70%;
+        left: 28%;
+        width: 72%;
         display: flex;
-        align-items: center;
-        padding-left: 20px;
+        align-items: flex-end;
+        padding-left: 18px;
         z-index: 2;
       }
 
@@ -1058,6 +1066,7 @@
         font-size: clamp(13px, 1.25vw, 20.2px);
         color: #999;
         line-height: 1.4;
+        transform: translateY(4px);
       }
 
       /* Left side of lower section - Surface finishes list */
@@ -1068,8 +1077,9 @@
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
-        padding-right: 20px;
+        padding-right: 16px;
         z-index: 2;
+        bottom: 0;
       }
 
       .lower-left .list-items {
@@ -1088,10 +1098,11 @@
         left: 50%;
         width: 50%;
         display: flex;
-        align-items: center;
-        gap: 20px;
-        padding-left: 15px;
+        align-items: flex-end;
+        gap: 10px;
+        padding-left: 24px;
         z-index: 2;
+        bottom: 0;
       }
 
       .lower-right .vtext {
@@ -1102,17 +1113,30 @@
         letter-spacing: 3px;
         font-size: clamp(20.55px, 1.98vw, 31.95px);
         color: #333;
+        position: relative;
+      }
+
+      .lower-right .vtext::before {
+        content: '';
+        position: absolute;
+        left: -6px;
+        right: auto;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #333;
       }
 
       .lower-right .big-num {
-        font-size: clamp(86.4px, 8.33vw, 134.4px);
+        font-size: clamp(70.4px, 6.8vw, 109.6px);
         font-weight: 700;
         line-height: 1;
         font-family: Georgia, "Times New Roman", serif;
         color: transparent;
         -webkit-text-stroke: 3px #333;
         text-stroke: 3px #333;
-        transform: translateY(40px);
+        transform: none;
+        align-self: flex-start;
       }
 
       .thickness-layout {
@@ -1172,7 +1196,19 @@
       }
 
       /* Responsive */
-      @media (max-width: 991px) {
+      
+      @media (min-width: 992px) {
+        .lower-left {
+          width: 52%;
+        }
+        .lower-right {
+          left: 52%;
+          width: 48%;
+          transform: translateX(-22px);
+        }
+      }
+
+@media (max-width: 991px) {
         .specifications-container {
           gap: 36px;
         }
@@ -1290,8 +1326,13 @@
         }
 
         .thickness-tile-list li a {
-          width: 230px;
+          width: 360px;
           height: 125px;
+        }
+
+        .thickness-tile-list li a img {
+          width: 34.722%;
+          height: 288%;
         }
 
         .thickness-title {
@@ -1323,8 +1364,8 @@
 
         .upper-right,
         .lower-left {
-          padding-left: 10px;
-          padding-right: 10px;
+          padding-left: 18px;
+          padding-right: 18px;
         }
 
         .upper-right .list-items,
@@ -1373,8 +1414,13 @@
         }
 
         .thickness-tile-list li a {
-          width: 200px;
+          width: 315px;
           height: 110px;
+        }
+
+        .thickness-tile-list li a img {
+          width: 34.92%;
+          height: 286.364%;
         }
       }
 
@@ -1384,7 +1430,11 @@
 
       .size-comparison-wrapper {
         padding: 0.35rem 0 0.15rem;
-        overflow-x: auto;
+        overflow-x: visible;
+        width: min(1520px, calc(100vw - 2rem));
+        margin-left: calc(50% - 50vw + 1rem);
+        margin-right: 0;
+        transform: none;
       }
 
       .size-comparison-container {
@@ -1849,7 +1899,7 @@
         left: 50%;
         margin-left: -50vw;
         margin-top: 3rem;
-        margin-bottom: 0;
+        margin-bottom: 4rem;
         overflow: hidden;
       }
 
@@ -1859,7 +1909,11 @@
         display: block;
       }
 
-      </style>
+      
+      .collage-fullwidth + .row {
+        margin-top: 2rem;
+      }
+</style>
 
   </head>
 
@@ -2093,7 +2147,7 @@
             </section>
 
                         <!-- Post-Collage: Specifications + STEPS -->
-            <div class="row align-items-start">
+            <div class="row specs-fullbleed-row">
 
               <!-- Left Half - Edge Profiles & Surface Finishes -->
               <div class="col-lg-8">
@@ -2139,7 +2193,7 @@
                     <!-- Right: SURFACE FINISHES vertical text and 06 -->
                     <div class="lower-right">
                       <div class="vtext">SURFACE FINISHES</div>
-                      <div class="big-num">06</div>
+                      <div class="big-num">05</div>
                     </div>
                   </div>
                 </div>
@@ -2147,7 +2201,7 @@
               </div>
 
               <!-- Right Half - Available Thickness -->
-              <div class="col-lg-4" data-aos="fade-left" data-aos-delay="200">
+              <div class="col-lg-4">
                 <div class="thickness-section" data-aos="fade-up" data-aos-delay="400">
                   <div class="thickness-layout">
                     <!-- Left Side - Available Thickness Text -->
@@ -2192,19 +2246,19 @@
             
             <!-- Section Title -->
             <div class="steps-section-header" data-aos="fade-up" style="padding-bottom: 0.05rem;">
-                <div class="steps-section-title" style="margin-bottom: 0;">Stone Size Reference</div>
+                <div class="steps-section-title" style="margin-bottom: 2.5rem;">Stone Size Reference</div>
                 <div class="steps-section-line" style="margin-bottom: 0.1rem;"></div>
               </div>
 
             <!-- Size Comparison Chart -->
             <div class="size-comparison-wrapper" data-aos="fade-up" data-aos-delay="100">
               <div style="display: flex; align-items: flex-start; justify-content: center; gap: 10px;">
-                <div class="size-comparison-container" style="display: block; min-width: max-content;">
+                <div class="size-comparison-container" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 28px 56px; width: 100%; min-width: 0;">
                   <div style="margin-bottom: 8px;">
-                    <div style="display: flex; align-items: flex-end; gap: 24px; width: max-content; min-width: max-content;">
-                      <div style="display: flex; align-items: flex-end; gap: 12px;">
+                    <div style="display: flex; align-items: flex-end; gap: 24px; width: 100%; justify-content: center; flex-wrap: wrap;">
+                      <div style="display: flex; align-items: flex-end; gap: 12px; margin-bottom: 60px;">
                         <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 2px;">
-                          <div style="font-size: clamp(40px, 4.2vw, 62px); font-weight: 700; line-height: 1; font-family: Georgia, 'Times New Roman', serif; color: transparent; -webkit-text-stroke: 2px #333; text-stroke: 2px #333;">05</div>
+                          <div style="font-size: clamp(40px, 4.2vw, 62px); font-weight: 700; line-height: 1; font-family: Georgia, 'Times New Roman', serif; color: transparent; -webkit-text-stroke: 2px #333; text-stroke: 2px #333;">06</div>
                         </div>
                         <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end;">
                           <div style="writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); font-weight: 700; letter-spacing: 3px; font-size: clamp(8px, 0.9vw, 13px); color: #333; margin-bottom: 8px;">SIZES</div>
@@ -2228,7 +2282,7 @@
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
                           <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">600 x 1200 mm</strong>
-                          <p style="font-size: clamp(0.72rem, 1.11vw, 1.12rem); color: #666; margin: 0;">Paver Size</p>
+                          <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">23.6 x 47.2 in</p>
                         </div>
                       </div>
 
@@ -2238,7 +2292,7 @@
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
                           <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">600 x 900 mm</strong>
-                          <p style="font-size: clamp(0.72rem, 1.11vw, 1.12rem); color: #666; margin: 0;">Paver Size</p>
+                          <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">23.6 x 35.4 in</p>
                         </div>
                       </div>
 
@@ -2248,7 +2302,7 @@
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
                           <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">600 x 600 mm</strong>
-                          <p style="font-size: clamp(0.72rem, 1.11vw, 1.12rem); color: #666; margin: 0;">Paver Size</p>
+                          <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">23.6 x 23.6 in</p>
                         </div>
                       </div>
 
@@ -2258,7 +2312,7 @@
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
                           <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">450 x 600 mm</strong>
-                          <p style="font-size: clamp(0.72rem, 1.11vw, 1.12rem); color: #666; margin: 0;">Paver Size</p>
+                          <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">17.7 x 23.6 in</p>
                         </div>
                       </div>
 
@@ -2268,7 +2322,7 @@
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
                           <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">300 x 600 mm</strong>
-                          <p style="font-size: clamp(0.72rem, 1.11vw, 1.12rem); color: #666; margin: 0;">Paver Size</p>
+                          <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">11.8 x 23.6 in</p>
                         </div>
                       </div>
 
@@ -2278,7 +2332,7 @@
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
                           <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">300 x 300 mm</strong>
-                          <p style="font-size: clamp(0.72rem, 1.11vw, 1.12rem); color: #666; margin: 0;">Paver Size</p>
+                          <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">11.8 x 11.8 in</p>
                         </div>
                       </div>
 
