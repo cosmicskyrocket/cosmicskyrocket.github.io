@@ -272,6 +272,15 @@ var navbarInit = function navbarInit() {
   };
   var navbar = document.querySelector(Selector.NAVBAR); // responsive nav collapsed
 
+  if (!navbar) {
+    return;
+  }
+
+  // Index page has a custom hero-to-navbar animation and manages scroll styles itself.
+  if (navbar.id === 'mainNavbar' && document.getElementById('cosmicBrand')) {
+    return;
+  }
+
   navbar.addEventListener('click', function (e) {
     if (e.target.classList.contains('nav-link') && window.innerWidth < utils.getBreakpoint(navbar)) {
       navbar.querySelector(Selector.NAVBAR_TOGGLER).click();
@@ -371,6 +380,128 @@ var scrollToTop = function scrollToTop() {
       window.location.hash = id;
     });
   });
+};
+
+/* -------------------------------------------------------------------------- */
+
+/*                        Tiles Size Reference Enhancements                   */
+
+/* -------------------------------------------------------------------------- */
+
+
+var tilesSizeReferenceInit = function tilesSizeReferenceInit() {
+  var pathName = window.location.pathname || '';
+
+  if (pathName.indexOf('/product_details/Tiles/') === -1 && pathName.indexOf('product_details/Tiles/') === -1) {
+    return;
+  }
+
+  document.body.classList.add('tiles-size-reference-page');
+
+  var applyDesktopLayout = function applyDesktopLayout() {
+    var isDesktop = window.innerWidth >= 992;
+    document.querySelectorAll('.size-comparison-wrapper').forEach(function (wrapper) {
+      var rootRow = wrapper.querySelector(':scope > div');
+      var container = wrapper.querySelector('.size-comparison-container');
+
+      if (isDesktop) {
+        wrapper.style.overflowX = 'visible';
+        wrapper.style.width = 'calc(100vw - 2rem)';
+        wrapper.style.maxWidth = 'none';
+        wrapper.style.marginLeft = 'calc(50% - 50vw + 1rem)';
+        wrapper.style.marginRight = '0';
+
+        if (rootRow) {
+          rootRow.style.width = '100%';
+          rootRow.style.minWidth = '0';
+          rootRow.style.flexWrap = 'wrap';
+          rootRow.style.justifyContent = 'center';
+        }
+
+        if (container) {
+          container.style.width = '100%';
+          container.style.minWidth = '0';
+          container.style.justifyContent = 'center';
+        }
+      } else {
+        wrapper.style.width = '';
+        wrapper.style.maxWidth = '';
+        wrapper.style.marginLeft = '';
+        wrapper.style.marginRight = '';
+      }
+    });
+  };
+
+  document.querySelectorAll('.size-comparison-container').forEach(function (container) {
+    var sizeItems = Array.from(container.querySelectorAll('.size-item'));
+
+    if (!sizeItems.length) {
+      return;
+    }
+
+    var processedParents = new Set();
+    sizeItems.forEach(function (item) {
+      var parent = item.parentElement;
+
+      if (!parent || processedParents.has(parent)) {
+        return;
+      }
+
+      processedParents.add(parent);
+      var siblingSizeItems = Array.from(parent.children).filter(function (child) {
+        return child.classList && child.classList.contains('size-item');
+      });
+
+      if (!siblingSizeItems.length) {
+        return;
+      }
+
+      var nonRectangleItems = [];
+      var rectangleItems = [];
+      siblingSizeItems.forEach(function (sibling, index) {
+        var rectangle = sibling.querySelector('.tile-rectangle');
+
+        if (!rectangle) {
+          nonRectangleItems.push({
+            item: sibling,
+            index: index
+          });
+          return;
+        }
+
+        var inlineStyle = rectangle.getAttribute('style') || '';
+        var heightMatch = inlineStyle.match(/height:\s*([\d.]+)px/i);
+        var height = heightMatch ? parseFloat(heightMatch[1]) : rectangle.getBoundingClientRect().height;
+        rectangleItems.push({
+          item: sibling,
+          index: index,
+          height: height
+        });
+      });
+
+      rectangleItems.sort(function (a, b) {
+        if (b.height !== a.height) {
+          return b.height - a.height;
+        }
+
+        return a.index - b.index;
+      });
+
+      var fragment = document.createDocumentFragment();
+      nonRectangleItems.sort(function (a, b) {
+        return a.index - b.index;
+      }).forEach(function (entry) {
+        fragment.appendChild(entry.item);
+      });
+      rectangleItems.forEach(function (entry) {
+        fragment.appendChild(entry.item);
+      });
+      parent.appendChild(fragment);
+    });
+  });
+
+  applyDesktopLayout();
+  window.addEventListener('resize', applyDesktopLayout);
 }; // /* -------------------------------------------------------------------------- */
 // /*                            Theme Initialization                            */
 // /* -------------------------------------------------------------------------- */
@@ -379,4 +510,5 @@ var scrollToTop = function scrollToTop() {
 docReady(navbarInit);
 docReady(detectorInit);
 docReady(scrollToTop);
+docReady(tilesSizeReferenceInit);
 //# sourceMappingURL=theme.js.map

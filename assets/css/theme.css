@@ -18722,3 +18722,198 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .search-tag:hover .search-tag-icon {
   filter: brightness(0);
 }
+
+/* ============================================
+   GLOBAL FOOTER NORMALIZATION (all pages)
+   ============================================ */
+.footer > div[style*="text-align: center"][style*="padding-top: 3rem"][style*="padding-bottom: 3rem"] {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-top: 3.65rem !important;
+}
+
+.footer > div[style*="text-align: center"][style*="padding-top: 3rem"][style*="padding-bottom: 3rem"] img[alt="Cosmic Skyrocket Logo"] {
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+.footer > div[style*="border-top"] {
+  border-top-color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.footer .footer-contact-link > i.bi {
+  color: #000 !important;
+}
+
+/* ============================================
+   BLOG HERO FULL-HEIGHT OVERRIDE
+   ============================================ */
+.blog-hero,
+.blogs-hero {
+  min-height: calc(100vh - 72px) !important;
+}
+
+@supports (height: 100dvh) {
+  .blog-hero,
+  .blogs-hero {
+    min-height: calc(100dvh - 72px) !important;
+  }
+}
+
+/* ============================================
+   PRODUCT INTRO HORIZONTAL SPACING FIX
+   ============================================ */
+.product-details-section > .container {
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: clamp(12px, 2vw, 28px) !important;
+  padding-right: clamp(12px, 2vw, 28px) !important;
+}
+
+.product-details-section .product-intro-text {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* ============================================
+   PRODUCT SIZE REFERENCE TYPOGRAPHY TUNING
+   ============================================ */
+.product-details-section .size-comparison-wrapper [style*="writing-mode: vertical-rl"] {
+  font-size: clamp(11px, 1.2vw, 18px) !important;
+}
+
+.product-details-section .size-comparison-wrapper .size-label strong {
+  font-size: clamp(0.7rem, 0.95vw, 0.95rem) !important;
+}
+
+/* ============================================
+   TILES SIZE REFERENCE DESKTOP LAYOUT
+   ============================================ */
+@media (min-width: 992px) {
+  .tiles-size-reference-page .size-comparison-wrapper {
+    overflow-x: visible !important;
+    width: 100% !important;
+  }
+
+  .tiles-size-reference-page .size-comparison-wrapper > div {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .tiles-size-reference-page .size-comparison-wrapper .size-comparison-container {
+    width: 100% !important;
+    min-width: 0 !important;
+    justify-content: center !important;
+  }
+
+  .tiles-size-reference-page .size-comparison-wrapper [style*="width: max-content"],
+  .tiles-size-reference-page .size-comparison-wrapper [style*="min-width: max-content"] {
+    width: 100% !important;
+    min-width: 0 !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+}
+
+/* ============================================
+   TILES AVAILABLE DESIGNS CARD SPACING
+   ============================================ */
+.tiles-size-reference-page .patterns-section {
+  padding-left: clamp(20px, 2.8vw, 48px);
+  padding-right: clamp(20px, 2.8vw, 48px);
+}
+
+.tiles-size-reference-page .patterns-section > .row {
+  width: min(1320px, calc(100vw - 4rem));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tiles-size-reference-page .patterns-section .pattern-card {
+  max-width: 208px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tiles-size-reference-page .patterns-section .pattern-card img {
+  height: clamp(150px, 14vw, 182px) !important;
+}
+
+/* ============================================
+   SIZE REFERENCE CENTER ALIGNMENT
+   ============================================ */
+.size-comparison-wrapper {
+  width: min(1520px, 100%) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  transform: none !important;
+}
+
+.size-comparison-container {
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ============================================
+   COLLAGE MARGINS PARITY (NATURAL + TILES)
+   ============================================ */
+.collage-fullwidth {
+  margin-top: 3rem !important;
+  margin-bottom: 4rem !important;
+  overflow: hidden !important;
+}
+
+.collage-fullwidth + .row {
+  margin-top: 2rem !important;
+}
+
+.tiles-size-reference-page .collage-fullwidth {
+  width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  margin-left: -50vw !important;
+  margin-top: 3rem !important;
+  margin-bottom: 4rem !important;
+  overflow: hidden !important;
+  line-height: normal !important;
+}
+
+.tiles-size-reference-page .collage-fullwidth img {
+  width: 106% !important;
+  max-width: none !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 0 0 -3% !important;
+}
+
+.tiles-size-reference-page .collage-fullwidth + .row {
+  margin-top: 2rem !important;
+}
+
+/* ============================================
+   3D THICKNESS SIDE COLORS BY CATEGORY
+   ============================================ */
+.product-details-section .thickness-tile-list li a::before,
+.product-details-section .thickness-tile-list li a::after {
+  background-color: #6a4a3a !important;
+  background: #6a4a3a !important;
+}
+
+.tiles-size-reference-page .thickness-tile-list li a::before,
+.tiles-size-reference-page .thickness-tile-list li a::after {
+  background-color: #EDE8D0 !important;
+  background: #EDE8D0 !important;
+}
+
+/* ============================================
+   SURFACE FINISHES SECTION SHIFT (DESKTOP)
+   ============================================ */
+@media (min-width: 1200px) {
+  .product-details-section .specifications-container .lower-section {
+    transform: translateX(10vw) !important;
+  }
+}
+
+

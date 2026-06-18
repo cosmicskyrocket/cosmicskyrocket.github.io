@@ -1117,19 +1117,19 @@
       .lower-right {
         position: absolute;
         left: 50%;
-        bottom: 0;
         width: 50%;
         display: flex;
         align-items: flex-end;
         gap: 10px;
-        padding-left: 24px;
+        padding-left: 18px;
         z-index: 2;
+        bottom: 0;
       }
 
       .lower-right .vtext {
         writing-mode: vertical-rl;
         text-orientation: mixed;
-        transform: rotate(180deg);
+        transform: none;
         font-weight: 500;
         letter-spacing: 3px;
         font-size: clamp(20.55px, 1.98vw, 31.95px);
@@ -1137,16 +1137,19 @@
         position: relative;
       }
 
+      
       .lower-right .vtext::before {
-        content: '';
+        content: "";
         position: absolute;
-        left: -6px;
+        left: 0;
         right: auto;
         top: 0;
         bottom: 0;
         width: 2px;
         background: #333;
       }
+
+
 
       .lower-right .big-num {
         font-size: clamp(70.4px, 6.8vw, 109.6px);
@@ -1232,6 +1235,8 @@
         }
       }
 
+}
+
 @media (max-width: 991px) {
         .standard-sizing-row {
           width: 100%;
@@ -1287,6 +1292,12 @@
       .spec-media-caption span,
       .spec-media-note span {
         display: block;
+      }
+
+      .spec-media-caption .spec-media-type {
+        font-size: clamp(11px, 0.95vw, 14px);
+        font-weight: 400 !important;
+        color: #555;
       }
 
       .spec-media-caption span {
@@ -1361,13 +1372,9 @@
           padding-left: 0;
           padding-top: 24px;
         }
-
-        .upper-section {
-          min-height: 230px;
-        }
-
+        .upper-section,
         .lower-section {
-          min-height: 170px;
+          min-height: 200px;
         }
 
         .upper-left .big-num,
@@ -1382,53 +1389,19 @@
           letter-spacing: 2px;
         }
 
-        .upper-right .list-items,
-        .lower-left .list-items {
-          font-size: clamp(12px, 1.5vw, 17px);
-          gap: 5px;
-        }
-
-        .thickness-content {
-          margin-left: 30px;
-        }
-
-        .thickness-icon {
-          height: 5.8em;
-        }
-
-        .thickness-tile-list li a {
-          width: 270px;
-          height: 145px;
-        }
+        
+      .lower-right .vtext::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: auto;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #333;
       }
 
-      @media (max-width: 768px) {
-        .hamburger-menu-panel {
-          width: 320px;
-        }
 
-        .product-title {
-          font-size: clamp(1.44rem, 2.22vw, 2.24rem);
-        }
-
-        .breadcrumb-section {
-          margin-top: 70px;
-        }
-
-        .specifications-container {
-          margin-top: 2rem;
-          gap: 28px;
-        }
-
-        .upper-section {
-          min-height: 150px;
-        }
-
-        .lower-section {
-          min-height: 145px;
-        }
-
-        .upper-left .big-num,
         .lower-right .big-num {
           font-size: clamp(38px, 9.2vw, 62px);
           -webkit-text-stroke: 1.6px #333;
@@ -1454,58 +1427,19 @@
           font-size: clamp(10px, 1vw, 14px);
         }
 
-        .thickness-layout {
-          gap: 12px;
-        }
-
-        .thickness-content {
-          margin-left: 10px;
-        }
-
-        .thickness-label {
-          font-size: clamp(13px, 1.8vw, 18px);
-          letter-spacing: 2px;
-        }
-
-        .thickness-icon {
-          height: 4.8em;
-        }
-
-        .thickness-mm-label {
-          font-size: clamp(0.72rem, 1.11vw, 1.12rem);
-        }
-
-        .thickness-tile-container {
-          min-height: 250px;
-          padding: 0.75rem;
-        }
-
-        .thickness-tile-list li a {
-          width: 360px;
-          height: 125px;
-        }
-
-        .thickness-tile-list li a img {
-          width: 34.722%;
-          height: 288%;
-        }
-
-        .thickness-title {
-          font-size: clamp(0.864rem, 1.33vw, 1.344rem);
-        }
+        
+      .lower-right .vtext::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: auto;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #333;
       }
 
-      @media (max-width: 575px) {
-        .specifications-container {
-          gap: 24px;
-        }
 
-        .upper-section,
-        .lower-section {
-          min-height: 145px;
-        }
-
-        .upper-left .big-num,
         .lower-right .big-num {
           font-size: clamp(32px, 11.5vw, 52px);
           -webkit-text-stroke: 1.3px #333;
@@ -2116,26 +2050,19 @@
                     Natural Stones
                     <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                   </a>
-                  <ul class="submenu">
-                    <li class="submenu-item">
+                  <ul class="submenu"><li class="submenu-item">
                       <a href="../../../../stones-category.html#sandstone" class="submenu-link">Sandstone</a>
-                    </li>
-                    <li class="submenu-item">
+                    </li><li class="submenu-item">
                       <a href="../../../../stones-category.html#limestone" class="submenu-link">Limestone</a>
-                    </li>
-                    <li class="submenu-item">
-                      <a href="../../../../product_details/Natural-Stones/Circles/circles.html" class="submenu-link">Circles</a>
-                    </li>
-                    <li class="submenu-item">
-                      <a href="../../../../product_details/Natural-Stones/Cladding/cladding.html" class="submenu-link">Cladding</a>
-                    </li>
-                    <li class="submenu-item">
-                      <a href="../../../../product_details/Natural-Stones/Edgings/edgings.html" class="submenu-link">Edging</a>
-                    </li>
-                    <li class="submenu-item">
+                    </li><li class="submenu-item">
                       <a href="../../../../product_details/Natural-Stones/Setts and cobbles/sets-and-cobbles.html" class="submenu-link">Setts &amp; Cobbles</a>
-                    </li>
-                  </ul>
+                    </li><li class="submenu-item">
+                      <a href="../../../../product_details/Natural-Stones/Circles/circles.html" class="submenu-link">Circles</a>
+                    </li><li class="submenu-item">
+                      <a href="../../../../product_details/Natural-Stones/Cladding/cladding.html" class="submenu-link">Cladding</a>
+                    </li><li class="submenu-item">
+                      <a href="../../../../product_details/Natural-Stones/Edgings/edgings.html" class="submenu-link">Edging</a>
+                    </li></ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
                   <a href="#!" class="menu-link menu-dropdown-toggle">
@@ -2248,7 +2175,7 @@
               </div>
               <div class="col-lg-6">
                 <div class="stone-preview-img">
-                  <img src="../../Natural-Stones/Setts and cobbles/image 7.jpg" alt="Setts and Cobbles" class="img-fluid">
+                  <img src="../../Natural-Stones/Setts and cobbles/cobble2.png" alt="Setts and Cobbles" class="img-fluid">
                 </div>
               </div>
             </div>
@@ -2266,13 +2193,15 @@
                   <figure class="spec-media-item">
                     <img src="image 7.jpg" alt="Setts and Cobbles reference image 7" loading="lazy">
                     <figcaption class="spec-media-caption">
-                      <span>200 x 100 x 10 mm</span>
+                      <span class="spec-media-type">Handcut | Rough</span>
+                      <span>200 x 100 x 20 mm</span>
                     </figcaption>
                   </figure>
 
                   <figure class="spec-media-item">
                     <img src="image 8.jpg" alt="Setts and Cobbles reference image 8" loading="lazy">
                     <figcaption class="spec-media-caption">
+                      <span class="spec-media-type">Machine Cut | Sawn</span>
                       <span>200 x 100 x 10 mm</span>
                       <span>100 x 100 x 10 mm</span>
                     </figcaption>
@@ -2281,6 +2210,7 @@
                   <figure class="spec-media-item">
                     <img src="image 9.jpg" alt="Setts and Cobbles reference image 9" loading="lazy">
                     <figcaption class="spec-media-caption">
+                      <span class="spec-media-type">Handcut | Rough</span>
                       <span>100 x 100 x 20 mm</span>
                     </figcaption>
                   </figure>
@@ -2288,6 +2218,7 @@
                   <figure class="spec-media-item">
                     <img src="image 10.jpeg" alt="Setts and Cobbles reference image 10" loading="lazy">
                     <figcaption class="spec-media-caption">
+                      <span class="spec-media-type">Machine Cut | Sawn</span>
                       <span>100 x 100 x 10 mm</span>
                     </figcaption>
                   </figure>
@@ -2301,7 +2232,7 @@
             <div class="row specs-fullbleed-row">
 
               <!-- Left Half - Edge Profiles & Surface Finishes -->
-              <div class="col-lg-8">
+              <div class="col-lg-6">
 
                 <div class="specifications-container" data-aos="fade-up" data-aos-delay="300">
                   <!-- Central vertical line -->
@@ -2348,7 +2279,7 @@
               </div>
 
               <!-- Right Half - Packaging -->
-              <div class="col-lg-4 mt-4 mt-lg-0">
+              <div class="col-lg-6 mt-4 mt-lg-0">
                 <div class="packaging-section" data-aos="fade-up" data-aos-delay="350">
                   <h3 class="packaging-title">PACKAGING</h3>
                   <div class="packaging-grid">
@@ -2411,7 +2342,7 @@
                     <div class="d-flex gap-2 align-items-start text-white footer-contact-link" style="text-decoration: none;">
                       <i class="bi bi-telephone" style="color: #fff; flex-shrink: 0; font-size: 1.2rem;"></i>
                       <span style="font-size: 1.125rem; ">
-                        <a href="tel:+918209851679" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 82098 51679</a>,
+                        <a href="tel:+918209851679" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 82098 51679</a> |
                         <a href="tel:+917300122901" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 73001 22901</a>
                       </span>
                     </div>

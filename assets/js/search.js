@@ -111,6 +111,40 @@
     resultsEl.setAttribute('aria-live', 'polite');
     searchContainer.insertBefore(resultsEl, suggestionsEl);
 
+    // Ensure key stone names are always visible as quick suggestions.
+    function ensurePopularSuggestions() {
+      if (!suggestionsEl) return;
+      var tagsWrap = suggestionsEl.querySelector('.search-tags');
+      if (!tagsWrap) return;
+
+      var requestedTags = [
+        'Kandla grey',
+        'Raj Green',
+        'Modak',
+        'Kota Blue',
+        'Kota Brown'
+      ];
+
+      var existing = {};
+      var currentTags = tagsWrap.querySelectorAll('.search-tag');
+      currentTags.forEach(function (tag) {
+        var label = normalise(tag.textContent || '');
+        if (label) existing[label] = true;
+      });
+
+      requestedTags.forEach(function (label) {
+        if (existing[normalise(label)]) return;
+        var a = document.createElement('a');
+        a.href = '#!';
+        a.className = 'search-tag';
+        a.innerHTML = '<img src="' + _rootUrl + 'assets/img/svg/stone.svg" class="search-tag-icon" alt="">' +
+          escapeHtml(label);
+        tagsWrap.appendChild(a);
+      });
+    }
+
+    ensurePopularSuggestions();
+
     // ── Open ──────────────────────────────────────────────────────────────
     if (searchBtn) {
       searchBtn.addEventListener('click', function () {

@@ -45,6 +45,33 @@
         font-weight: 600 !important;
         transition: color 0.3s ease;
       }
+      .pkg-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pkg-table th {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 600;
+}
+
+.pkg-table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.pkg-table .highlight-val {
+    font-weight: 600;
+}
+
+.pkg-table .size-badge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 70px;
+}
+
       #cosmicBrand .fw-bold:hover { color: #FFA15C; }
       #mainNavbar .text-1000,
       #mainNavbar .cs-nav-icon-link {
@@ -361,26 +388,19 @@
                     Natural Stones
                     <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                   </a>
-                  <ul class="submenu">
-                    <li class="submenu-item">
+                  <ul class="submenu"><li class="submenu-item">
                       <a href="stones-category.html#sandstone" class="submenu-link">Sandstone</a>
-                    </li>
-                    <li class="submenu-item">
+                    </li><li class="submenu-item">
                       <a href="stones-category.html#limestone" class="submenu-link">Limestone</a>
-                    </li>
-                    <li class="submenu-item">
-                      <a href="product_details/Natural-Stones/Circles/circles.html" class="submenu-link">Circles</a>
-                    </li>
-                    <li class="submenu-item">
-                      <a href="product_details/Natural-Stones/Cladding/cladding.html" class="submenu-link">Cladding</a>
-                    </li>
-                    <li class="submenu-item">
-                      <a href="product_details/Natural-Stones/Edgings/edgings.html" class="submenu-link">Edging</a>
-                    </li>
-                    <li class="submenu-item">
+                    </li><li class="submenu-item">
                       <a href="product_details/Natural-Stones/Setts and cobbles/sets-and-cobbles.html" class="submenu-link">Setts &amp; Cobbles</a>
-                    </li>
-                  </ul>
+                    </li><li class="submenu-item">
+                      <a href="product_details/Natural-Stones/Circles/circles.html" class="submenu-link">Circles</a>
+                    </li><li class="submenu-item">
+                      <a href="product_details/Natural-Stones/Cladding/cladding.html" class="submenu-link">Cladding</a>
+                    </li><li class="submenu-item">
+                      <a href="product_details/Natural-Stones/Edgings/edgings.html" class="submenu-link">Edging</a>
+                    </li></ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
                   <a href="#!" class="menu-link menu-dropdown-toggle">
@@ -557,37 +577,202 @@
                 </div>
 
                 <div class="pallet-table-panel active" data-panel-group="stones-pallet" id="stones-eu">
-                  <div class="pkg-table-wrapper">
-                    <table class="pkg-table">
-                      <thead><tr><th>Size (cm)</th><th>Thickness (cm)</th><th>EU Area / Pallet (sq.m.)</th><th>Pallets / Container</th><th>EU Sq.M. / Container</th><th>Approx. Weight / Pallet (kg)</th></tr></thead>
-                      <tbody>
-                        <tr><td><span class="size-badge">60×120</span></td><td>2.2</td><td>15.84</td><td>12</td><td class="highlight-val">190.08</td><td>1700</td></tr>
-                        <tr><td><span class="size-badge">60×90</span></td><td>2.2</td><td>18.36</td><td>12</td><td class="highlight-val">220.32</td><td>1700</td></tr>
-                        <tr><td><span class="size-badge">60×60</span></td><td>2.2</td><td>19.44</td><td>12</td><td class="highlight-val">233.28</td><td>1700</td></tr>
-                        <tr><td><span class="size-badge">45×60</span></td><td>2.2</td><td>20.25</td><td>12</td><td class="highlight-val">243.00</td><td>1700</td></tr>
-                        <tr><td><span class="size-badge">30×60</span></td><td>2.2</td><td>20.88</td><td>12</td><td class="highlight-val">250.56</td><td>1700</td></tr>
-                        <tr><td><span class="size-badge">30×30</span></td><td>2.2</td><td>21.60</td><td>12</td><td class="highlight-val">259.20</td><td>1700</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+  <div class="pkg-table-wrapper">
+    <table class="pkg-table">
+      <thead>
+        <tr>
+          <th>Size (cm)</th>
+          <th>Thickness (cm)</th>
+          <th>Coverage / Pallet Box (sq.m.)</th>
+          <th>Pallet Boxes / 20ft Container</th>
+          <th>Approx. Coverage / Container (sq.m.)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="size-badge">60×120</span></td>
+          <td>2.2</td>
+          <td>15.84</td>
+          <td>27</td>
+          <td class="highlight-val">427.68</td>
+        </tr>
+
+        <tr>
+          <td><span class="size-badge">60×90</span></td>
+          <td>2.2</td>
+          <td>18.36</td>
+          <td>27</td>
+          <td class="highlight-val">495.72</td>
+        </tr>
+
+        <tr>
+          <td><span class="size-badge">60×60</span></td>
+          <td>2.2</td>
+          <td>19.44</td>
+          <td>27</td>
+          <td class="highlight-val">524.88</td>
+        </tr>
+
+        <tr>
+          <td><span class="size-badge">45×60</span></td>
+          <td>2.2</td>
+          <td>20.25</td>
+          <td>27</td>
+          <td class="highlight-val">546.75</td>
+        </tr>
+
+        <tr>
+          <td><span class="size-badge">30×60</span></td>
+          <td>2.2</td>
+          <td>20.88</td>
+          <td>27</td>
+          <td class="highlight-val">563.76</td>
+        </tr>
+
+        <tr>
+          <td><span class="size-badge">30×30</span></td>
+          <td>2.2</td>
+          <td>21.60</td>
+          <td>27</td>
+          <td class="highlight-val">583.20</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
 
                 <div class="pallet-table-panel" data-panel-group="stones-pallet" id="stones-standard">
-                  <div class="pkg-table-wrapper">
-                    <table class="pkg-table">
-                      <thead><tr><th>Size (cm)</th><th>Thickness (cm)</th><th>Standard Area / Pallet (sq.m.)</th><th>Pallets / Container</th><th>Standard Sq.M. / Container</th><th>Approx. Weight / Pallet (kg)</th></tr></thead>
-                      <tbody>
-                        <tr><td><span class="size-badge">60×120</span></td><td>2.2</td><td>18.00</td><td>12</td><td class="highlight-val">216.00</td><td>1700</td></tr>
-                        <tr><td><span class="size-badge">60×90</span></td><td>2.2</td><td>20.70</td><td>12</td><td class="highlight-val">248.40</td><td>1700</td></tr>
-                        <tr><td><span class="size-badge">60×60</span></td><td>2.2</td><td>21.60</td><td>12</td><td class="highlight-val">259.20</td><td>1700</td></tr>
-                        <tr><td><span class="size-badge">45×60</span></td><td>2.2</td><td>22.50</td><td>12</td><td class="highlight-val">270.00</td><td>1700</td></tr>
-                        <tr><td><span class="size-badge">30×60</span></td><td>2.2</td><td>23.40</td><td>12</td><td class="highlight-val">280.80</td><td>1700</td></tr>
-                        <tr><td><span class="size-badge">30×30</span></td><td>2.2</td><td>24.30</td><td>12</td><td class="highlight-val">291.60</td><td>1700</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
+  <div class="pkg-table-wrapper">
+    <table class="pkg-table">
+      <thead>
+        <tr>
+          <th>Size (cm)</th>
+          <th>Thickness (cm)</th>
+          <th>Coverage / Pallet Box (sq.m.)</th>
+          <th>Pallet Boxes / 20ft Container</th>
+          <th>Approx. Coverage / Container (sq.m.)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="size-badge">60×120</span></td>
+          <td>2.2</td>
+          <td>18.00</td>
+          <td>27</td>
+          <td class="highlight-val">486.00</td>
+        </tr>
+
+        <tr>
+          <td><span class="size-badge">60×90</span></td>
+          <td>2.2</td>
+          <td>20.70</td>
+          <td>27</td>
+          <td class="highlight-val">558.90</td>
+        </tr>
+
+        <tr>
+          <td><span class="size-badge">60×60</span></td>
+          <td>2.2</td>
+          <td>21.60</td>
+          <td>27</td>
+          <td class="highlight-val">583.20</td>
+        </tr>
+
+        <tr>
+          <td><span class="size-badge">45×60</span></td>
+          <td>2.2</td>
+          <td>22.50</td>
+          <td>27</td>
+          <td class="highlight-val">607.50</td>
+        </tr>
+
+        <tr>
+          <td><span class="size-badge">30×60</span></td>
+          <td>2.2</td>
+          <td>23.40</td>
+          <td>27</td>
+          <td class="highlight-val">631.80</td>
+        </tr>
+
+        <tr>
+          <td><span class="size-badge">30×30</span></td>
+          <td>2.2</td>
+          <td>24.30</td>
+          <td>27</td>
+          <td class="highlight-val">656.10</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+
+              <div class="packaging-block" data-aos="fade-up" data-aos-delay="150">
+                <h3 class="pkg-subtitle">Stone Cladding Packaging</h3>
+                <p class="packaging-intro">Cladding packs are organized by fixed and mixed formats. Compare EU and Standard pallet counts to estimate facade coverage per container.</p>
+                <div class="pkg-table-wrapper">
+                  <table class="pkg-table">
+                    <thead><tr><th>Type</th><th>Size (cm)</th><th>EU Pcs / Pallet</th><th>Standard Pcs / Pallet</th><th>Pallets / Container</th><th>EU Sq.M. / Container</th><th>Standard Sq.M. / Container</th></tr></thead>
+                    <tbody>
+                      <tr><td>Stone Cladding</td><td><span class="size-badge">24×7.5×1.7-2.5</span></td><td>768 pcs</td><td>960 pcs</td><td>20</td><td class="highlight-val">345</td><td class="highlight-val">430</td></tr>
+                      <tr><td>Stone Cladding</td><td><span class="size-badge">Mixed Pack</span></td><td>384 pcs</td><td>480 pcs</td><td>20</td><td class="highlight-val">330</td><td class="highlight-val">410</td></tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
+
+              <div class="packaging-block" data-aos="fade-up" data-aos-delay="170">
+                <h3 class="pkg-subtitle">Stone Edging Packaging</h3>
+                <p class="packaging-intro">Edging data is shared in linear metre terms to simplify border-length planning and shipment balancing for landscape and hardscape projects.</p>
+                <div class="pkg-table-wrapper">
+                  <table class="pkg-table">
+                    <thead><tr><th>Type</th><th>Size (cm)</th><th>EU Pcs / Pallet</th><th>Standard Pcs / Pallet</th><th>EU LM / Pallet</th><th>Standard LM / Pallet</th><th>Pallets / Container</th></tr></thead>
+                    <tbody>
+                      <tr><td>Stone Edging</td><td><span class="size-badge">60×15×4</span></td><td>150</td><td>180</td><td>90 LM</td><td>108 LM</td><td>18</td></tr>
+                      <tr><td>Stone Edging</td><td><span class="size-badge">Mixed Pack</span></td><td>300</td><td>360</td><td>180 LM</td><td>216 LM</td><td>18</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="packaging-block" data-aos="fade-up" data-aos-delay="190">
+                <h3 class="pkg-subtitle">Setts &amp; Cobbles Packaging</h3>
+                <p class="packaging-intro">Setts and cobbles are listed with EU and Standard packing intensities so driveway and pathway orders can be translated directly into container-ready pallet counts.</p>
+                <div class="pkg-table-wrapper">
+                  <table class="pkg-table">
+                    <thead><tr><th>Type</th><th>Size (cm)</th><th>EU Pcs / Pallet</th><th>Standard Pcs / Pallet</th><th>EU Area / Pallet (sq.m.)</th><th>Standard Area / Pallet (sq.m.)</th><th>Pallets / Container</th></tr></thead>
+                    <tbody>
+                      <tr><td>Setts</td><td><span class="size-badge">20×10×1</span></td><td>1000</td><td>1200</td><td>20.0</td><td>24.0</td><td>12</td></tr>
+                      <tr><td>Setts</td><td><span class="size-badge">10×10×2</span></td><td>500</td><td>600</td><td>5.0</td><td>6.0</td><td>12</td></tr>
+                      <tr><td>Cobbles</td><td><span class="size-badge">10×10×1</span></td><td>500</td><td>600</td><td>5.0</td><td>6.0</td><td>12</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="packaging-block" data-aos="fade-up" data-aos-delay="210">
+                <h3 class="pkg-subtitle">Stone Circle Kit Packaging</h3>
+                <p class="packaging-intro">Circle kit bundles are pre-packed by diameter and piece count for easier stock control and project-by-project loading forecasts.</p>
+                <div class="pkg-table-wrapper">
+                  <table class="pkg-table">
+                    <thead><tr><th>Circle Kit</th><th>Diameter (cm)</th><th>Pieces</th><th>Packs / Pallet</th><th>Pallets / Container</th></tr></thead>
+                    <tbody>
+                      <tr><td>Circle Kit</td><td><span class="size-badge">150</span></td><td>9 pcs</td><td>30</td><td>12</td></tr>
+                      <tr><td>Circle Kit</td><td><span class="size-badge">240</span></td><td>25 pcs</td><td>18</td><td>12</td></tr>
+                      <tr><td>Circle Kit</td><td><span class="size-badge">330</span></td><td>41 pcs</td><td>10</td><td>12</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              
+<br>
+<br>
+<br>
+
+
 
               <div class="packaging-block" data-aos="fade-up" data-aos-delay="120">
                 <h3 class="pkg-subtitle">Ceramic &amp; Porcelain Packaging</h3>
@@ -891,7 +1076,7 @@
                     <div class="d-flex gap-2 align-items-start text-white footer-contact-link" style="text-decoration: none;">
                       <i class="bi bi-telephone" style="color: #fff; flex-shrink: 0; font-size: 1.2rem;"></i>
                       <span style="font-size: 1.125rem; ">
-                        <a href="tel:+918209851679" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 82098 51679</a>,
+                        <a href="tel:+918209851679" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 82098 51679</a> |
                         <a href="tel:+917300122901" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 73001 22901</a>
                       </span>
                     </div>

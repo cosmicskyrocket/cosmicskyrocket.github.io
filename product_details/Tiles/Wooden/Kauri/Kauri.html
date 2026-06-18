@@ -614,6 +614,8 @@
         }
       }
 
+}
+
 @media (max-width: 991px) {
         .tile-preview-img {
           position: static;
@@ -1123,7 +1125,7 @@
       .lower-right .vtext {
         writing-mode: vertical-rl;
         text-orientation: mixed;
-        transform: rotate(180deg);
+        transform: none;
         font-weight: 500;
         letter-spacing: 3px;
         font-size: clamp(20.55px, 1.98vw, 31.95px);
@@ -1131,16 +1133,19 @@
         position: relative;
       }
 
+      
       .lower-right .vtext::before {
-        content: '';
+        content: "";
         position: absolute;
-        left: -6px;
+        left: 0;
         right: auto;
         top: 0;
         bottom: 0;
         width: 2px;
         background: #333;
       }
+
+
 
       .lower-right .big-num {
         font-size: clamp(70.4px, 6.8vw, 109.6px);
@@ -1532,26 +1537,19 @@
                     Natural Stones
                     <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                   </a>
-                  <ul class="submenu">
-                    <li class="submenu-item">
+                  <ul class="submenu"><li class="submenu-item">
                       <a href="../../../../stones-category.html#sandstone" class="submenu-link">Sandstone</a>
-                    </li>
-                    <li class="submenu-item">
+                    </li><li class="submenu-item">
                       <a href="../../../../stones-category.html#limestone" class="submenu-link">Limestone</a>
-                    </li>
-                    <li class="submenu-item">
-                      <a href="../../../../product_details/Natural-Stones/Circles/circles.html" class="submenu-link">Circles</a>
-                    </li>
-                    <li class="submenu-item">
-                      <a href="../../../../product_details/Natural-Stones/Cladding/cladding.html" class="submenu-link">Cladding</a>
-                    </li>
-                    <li class="submenu-item">
-                      <a href="../../../../product_details/Natural-Stones/Edgings/edgings.html" class="submenu-link">Edging</a>
-                    </li>
-                    <li class="submenu-item">
+                    </li><li class="submenu-item">
                       <a href="../../../../product_details/Natural-Stones/Setts and cobbles/sets-and-cobbles.html" class="submenu-link">Setts &amp; Cobbles</a>
-                    </li>
-                  </ul>
+                    </li><li class="submenu-item">
+                      <a href="../../../../product_details/Natural-Stones/Circles/circles.html" class="submenu-link">Circles</a>
+                    </li><li class="submenu-item">
+                      <a href="../../../../product_details/Natural-Stones/Cladding/cladding.html" class="submenu-link">Cladding</a>
+                    </li><li class="submenu-item">
+                      <a href="../../../../product_details/Natural-Stones/Edgings/edgings.html" class="submenu-link">Edging</a>
+                    </li></ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
                   <a href="#!" class="menu-link menu-dropdown-toggle">
@@ -1846,7 +1844,7 @@
                           <div style="font-size: clamp(1.45rem, 1.9vw, 1.85rem); font-weight: 600; color: #333; line-height: 1;">9 mm</div>
                         </div>
                         <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end;">
-                          <div style="writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); font-weight: 700; letter-spacing: 3px; font-size: clamp(8px, 0.9vw, 13px); color: #333; margin-bottom: 8px;">SIZES</div>
+                          <div style="writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); font-weight: 700; letter-spacing: 3px; font-size: clamp(11px, 1.35vw, 18px); color: #333; margin-bottom: 8px;">SIZES</div>
                           <div style="width: 2px; height: 220px; background-color: #333;"></div>
                         </div>
                       </div>
@@ -1866,7 +1864,7 @@
                           <div class="tile-rectangle" style="width: 60px; height: 120px; background-color: #ffffff; border: 2px solid #888; border-radius: 2px;"></div>
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
-                          <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">60 x 120 cm</strong>
+                          <strong style="font-size: clamp(0.66rem, 1.02vw, 1.02rem); color: #333;">60 x 120 cm</strong>
                           <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">23.6 x 47.2 in</p>
                         </div>
                       </div>
@@ -1876,7 +1874,7 @@
                           <div class="tile-rectangle" style="width: 30px; height: 120px; background-color: #ffffff; border: 2px solid #888; border-radius: 2px;"></div>
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
-                          <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">30 x 120 cm</strong>
+                          <strong style="font-size: clamp(0.66rem, 1.02vw, 1.02rem); color: #333;">30 x 120 cm</strong>
                           <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">11.8 x 47.2 in</p>
                         </div>
                       </div>
@@ -1886,7 +1884,7 @@
                           <div class="tile-rectangle" style="width: 20px; height: 120px; background-color: #ffffff; border: 2px solid #888; border-radius: 2px;"></div>
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
-                          <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">20 x 120 cm</strong>
+                          <strong style="font-size: clamp(0.66rem, 1.02vw, 1.02rem); color: #333;">20 x 120 cm</strong>
                           <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">7.9 x 47.2 in</p>
                         </div>
                       </div>
@@ -1896,7 +1894,7 @@
                           <div class="tile-rectangle" style="width: 30px; height: 60px; background-color: #ffffff; border: 2px solid #888; border-radius: 2px;"></div>
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
-                          <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">30 x 60 cm</strong>
+                          <strong style="font-size: clamp(0.66rem, 1.02vw, 1.02rem); color: #333;">30 x 60 cm</strong>
                           <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">11.8 x 23.6 in</p>
                         </div>
                       </div>
@@ -1911,7 +1909,7 @@
                           <div style="font-size: clamp(1.45rem, 1.9vw, 1.85rem); font-weight: 600; color: #333; line-height: 1;">20 mm</div>
                         </div>
                         <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end;">
-                          <div style="writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); font-weight: 700; letter-spacing: 3px; font-size: clamp(8px, 0.9vw, 13px); color: #333; margin-bottom: 8px;">SIZES</div>
+                          <div style="writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); font-weight: 700; letter-spacing: 3px; font-size: clamp(11px, 1.35vw, 18px); color: #333; margin-bottom: 8px;">SIZES</div>
                           <div style="width: 2px; height: 220px; background-color: #333;"></div>
                         </div>
                       </div>
@@ -1931,7 +1929,7 @@
                           <div class="tile-rectangle" style="width: 60px; height: 120px; background-color: #ffffff; border: 2px solid #888; border-radius: 2px;"></div>
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
-                          <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">60 x 120 cm</strong>
+                          <strong style="font-size: clamp(0.66rem, 1.02vw, 1.02rem); color: #333;">60 x 120 cm</strong>
                           <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">23.6 x 47.2 in</p>
                         </div>
                       </div>
@@ -1941,7 +1939,7 @@
                           <div class="tile-rectangle" style="width: 30px; height: 120px; background-color: #ffffff; border: 2px solid #888; border-radius: 2px;"></div>
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
-                          <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">30 x 120 cm</strong>
+                          <strong style="font-size: clamp(0.66rem, 1.02vw, 1.02rem); color: #333;">30 x 120 cm</strong>
                           <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">11.8 x 47.2 in</p>
                         </div>
                       </div>
@@ -1951,7 +1949,7 @@
                           <div class="tile-rectangle" style="width: 20px; height: 120px; background-color: #ffffff; border: 2px solid #888; border-radius: 2px;"></div>
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
-                          <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">20 x 120 cm</strong>
+                          <strong style="font-size: clamp(0.66rem, 1.02vw, 1.02rem); color: #333;">20 x 120 cm</strong>
                           <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">7.9 x 47.2 in</p>
                         </div>
                       </div>
@@ -1961,7 +1959,7 @@
                           <div class="tile-rectangle" style="width: 30px; height: 60px; background-color: #ffffff; border: 2px solid #888; border-radius: 2px;"></div>
                         </div>
                         <div class="size-label" style="margin-top: 10px; text-align: center;">
-                          <strong style="font-size: clamp(0.792rem, 1.22vw, 1.232rem); color: #333;">30 x 60 cm</strong>
+                          <strong style="font-size: clamp(0.66rem, 1.02vw, 1.02rem); color: #333;">30 x 60 cm</strong>
                           <p style="font-size: clamp(0.612rem, 0.94vw, 0.952rem); color: #666; margin: 0;">11.8 x 23.6 in</p>
                         </div>
                       </div>
@@ -2010,7 +2008,7 @@
                     <div class="d-flex gap-2 align-items-start text-white footer-contact-link" style="text-decoration: none;">
                       <i class="bi bi-telephone" style="color: #fff; flex-shrink: 0; font-size: 1.2rem;"></i>
                       <span style="font-size: 1.125rem; ">
-                        <a href="tel:+918209851679" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 82098 51679</a>,
+                        <a href="tel:+918209851679" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 82098 51679</a> |
                         <a href="tel:+917300122901" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 73001 22901</a>
                       </span>
                     </div>

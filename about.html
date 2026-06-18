@@ -200,16 +200,50 @@
 
       /* ── Hero ── */
       .about-hero {
-        background: url('assets/img/CSR%20Images/about_us_bg1.png') center/cover no-repeat;
         min-height: 100vh; position: relative; overflow: hidden;
         display: flex; align-items: center;
         padding-top: 90px; padding-bottom: 80px;
+        background-color: #0f0f0f;
       }
-      .about-hero > .container { width: 100%; }
+
+      .about-hero-slides {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+
+      .about-hero-slides span {
+        position: absolute;
+        inset: 0;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0;
+        animation: aboutHeroCarousel 42s linear infinite;
+      }
+
+      .about-hero-slides span:nth-child(1) { background-image: url('assets/img/CSR%20Images/about_us_bg1.png'); animation-delay: 0s; }
+      .about-hero-slides span:nth-child(2) { background-image: url('assets/img/Mfg%20Images/Natural%20Stone%20Quarry/mining%201.jpg'); animation-delay: 6s; }
+      .about-hero-slides span:nth-child(3) { background-image: url('assets/img/Mfg%20Images/Natural%20Stone%20Quarry/mining%205.jpeg'); animation-delay: 12s; }
+      .about-hero-slides span:nth-child(4) { background-image: url('assets/img/Mfg%20Images/Natural%20Stone%20Quarry/mining%2018.jpg'); animation-delay: 18s; }
+      .about-hero-slides span:nth-child(5) { background-image: url('assets/img/Mfg%20Images/Tile%20mfg/tile%2011.jpg'); animation-delay: 24s; }
+      .about-hero-slides span:nth-child(6) { background-image: url('assets/img/Mfg%20Images/Tile%20mfg/tile3.jpeg'); animation-delay: 30s; }
+      .about-hero-slides span:nth-child(7) { background-image: url('assets/img/Mfg%20Images/Tile%20mfg/tile13.jpg'); animation-delay: 36s; }
+
+      @keyframes aboutHeroCarousel {
+        0% { opacity: 0; transform: scale(1); }
+        5% { opacity: 1; }
+        13% { opacity: 1; transform: scale(1.03); }
+        18% { opacity: 0; transform: scale(1.05); }
+        100% { opacity: 0; transform: scale(1.05); }
+      }
+
+      .about-hero > .container { width: 100%; position: relative; z-index: 2; }
       .about-hero::before {
         content: '';
         position: absolute; top: 0; left: 0; right: 0; bottom: 0;
         background: linear-gradient(135deg, rgba(15,15,15,0.78) 0%, rgba(30,20,10,0.68) 60%, rgba(15,15,15,0.82) 100%);
+        z-index: 1;
       }
       .about-hero .hero-label {
         font-size: clamp(0.576rem, 0.89vw, 0.896rem); font-weight: 700; letter-spacing: 4px;
@@ -234,6 +268,17 @@
         font-weight: 500; background: rgba(255,255,255,0.06);
       }
       .hero-badge-pill i { color: #FFA15C; font-size: clamp(0.648rem, 1vw, 1.008rem); }
+
+      @media (prefers-reduced-motion: reduce) {
+        .about-hero-slides span {
+          animation: none;
+          opacity: 0;
+        }
+
+        .about-hero-slides span:first-child {
+          opacity: 1;
+        }
+      }
 
       /* ── Identity strip ── */
       .identity-strip {
@@ -560,26 +605,19 @@
                     Natural Stones
                     <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                   </a>
-                  <ul class="submenu">
-                    <li class="submenu-item">
+                  <ul class="submenu"><li class="submenu-item">
                       <a href="stones-category.html#sandstone" class="submenu-link">Sandstone</a>
-                    </li>
-                    <li class="submenu-item">
+                    </li><li class="submenu-item">
                       <a href="stones-category.html#limestone" class="submenu-link">Limestone</a>
-                    </li>
-                    <li class="submenu-item">
-                      <a href="product_details/Natural-Stones/Circles/circles.html" class="submenu-link">Circles</a>
-                    </li>
-                    <li class="submenu-item">
-                      <a href="product_details/Natural-Stones/Cladding/cladding.html" class="submenu-link">Cladding</a>
-                    </li>
-                    <li class="submenu-item">
-                      <a href="product_details/Natural-Stones/Edgings/edgings.html" class="submenu-link">Edging</a>
-                    </li>
-                    <li class="submenu-item">
+                    </li><li class="submenu-item">
                       <a href="product_details/Natural-Stones/Setts and cobbles/sets-and-cobbles.html" class="submenu-link">Setts &amp; Cobbles</a>
-                    </li>
-                  </ul>
+                    </li><li class="submenu-item">
+                      <a href="product_details/Natural-Stones/Circles/circles.html" class="submenu-link">Circles</a>
+                    </li><li class="submenu-item">
+                      <a href="product_details/Natural-Stones/Cladding/cladding.html" class="submenu-link">Cladding</a>
+                    </li><li class="submenu-item">
+                      <a href="product_details/Natural-Stones/Edgings/edgings.html" class="submenu-link">Edging</a>
+                    </li></ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
                   <a href="#!" class="menu-link menu-dropdown-toggle">
@@ -647,6 +685,15 @@
 
         <!-- ── HERO ── -->
         <section class="about-hero">
+          <div class="about-hero-slides" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
           <div class="container">
             <div class="row align-items-center g-5">
               <div class="col-lg-7" data-aos="fade-up">
@@ -669,7 +716,7 @@
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 380px;">
                   <div style="background: rgba(255,161,92,0.12); border: 1px solid rgba(255,161,92,0.3); border-radius: 14px; padding: 1.5rem; text-align: center;">
                     <div style="font-size: clamp(1.584rem, 2.44vw, 2.464rem); font-weight: 700; color: #FFA15C; font-family: 'Crimson Text', serif; line-height: 1;"><span class="hero-count-num" data-target="26">0</span>k<span style="font-size: clamp(0.72rem, 1.11vw, 1.12rem);">+</span></div>
-                    <div style="font-size: clamp(0.5184rem, 0.8vw, 0.8064rem); color: rgba(255,255,255,0.5);  letter-spacing: 1.2px; margin-top: 0.3rem;">boxes / day</div>
+                    <div style="font-size: clamp(0.5184rem, 0.8vw, 0.8064rem); color: rgba(255,255,255,0.5);  letter-spacing: 1.2px; margin-top: 0.3rem;">tile boxes / day</div>
                   </div>
                   <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 1.5rem; text-align: center;">
                     <div style="font-size: clamp(1.584rem, 2.44vw, 2.464rem); font-weight: 700; color: #fff; font-family: 'Crimson Text', serif; line-height: 1;"><span class="hero-count-num" data-target="47">0</span><span style="font-size: clamp(0.72rem, 1.11vw, 1.12rem);">+ ha</span></div>
@@ -1022,7 +1069,7 @@
                     <div class="d-flex gap-2 align-items-start text-white footer-contact-link" style="text-decoration: none;">
                       <i class="bi bi-telephone" style="color: #fff; flex-shrink: 0; font-size: 1.2rem;"></i>
                       <span style="font-size: 1.125rem; ">
-                        <a href="tel:+918209851679" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 82098 51679</a>,
+                        <a href="tel:+918209851679" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 82098 51679</a> |
                         <a href="tel:+917300122901" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 73001 22901</a>
                       </span>
                     </div>
