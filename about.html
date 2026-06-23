@@ -453,6 +453,17 @@
         padding: 80px 0;
         background: #0A0D12;
       }
+      .global-section .global-wrap {
+        width: min(1760px, calc(100vw - 40px));
+        margin: 0 auto;
+        padding-left: 14px;
+      }
+      .global-map-image {
+        width: 100%;
+        border-radius: 12px;
+        opacity: 1;
+        display: block;
+      }
       .global-section .section-badge { background: rgba(255,161,92,0.2); }
       .global-section .section-title { color: #fff; }
       .region-pill {
@@ -530,6 +541,7 @@
         .identity-item:last-child { border-bottom: none; }
         .stat-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1.5rem; margin-bottom: 0.5rem; }
         .stat-card:last-child { border-bottom: none; }
+        .global-section .global-wrap { width: calc(100vw - 24px); padding-left: 10px; }
       }
       @media (max-width: 767px) {
         .about-hero h1 { font-size: clamp(1.728rem, 2.66vw, 2.688rem); }
@@ -966,9 +978,9 @@
 
         <!-- ── GLOBAL PRESENCE ── -->
         <section class="global-section">
-          <div class="container">
+          <div class="global-wrap">
             <div class="row g-5 align-items-start">
-              <div class="col-lg-5" data-aos="fade-right">
+              <div class="col-lg-4" data-aos="fade-right">
                 <span class="section-badge">Our Reach</span>
                 <h2 class="section-title">A Global Footprint<br>from India</h2>
                 <div class="section-line"></div>
@@ -993,7 +1005,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-7" data-aos="fade-left" data-aos-delay="100">
+              <div class="col-lg-8" data-aos="fade-left" data-aos-delay="100">
                 <p style="font-size: clamp(0.5616rem, 0.87vw, 0.8736rem); color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.25rem;">Export Regions</p>
                 <div>
                   <span class="region-pill">Schengen Zone</span>
@@ -1010,7 +1022,7 @@
                   <span class="region-pill">Oceania</span>
                 </div>
                 <div style="margin-top: 3rem;">
-                  <img src="assets/img/CSR Images/map.jpg" alt="Cosmic Skyrocket Global Distribution Map" style="width: 120%; border-radius: 12px; opacity: 1; display: block;">
+                  <img src="assets/img/CSR Images/map.jpg" alt="Cosmic Skyrocket Global Distribution Map" class="global-map-image">
                 </div>
               </div>
             </div>
