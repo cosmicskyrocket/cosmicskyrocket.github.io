@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>My World by amCharts</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes, minimal-ui">
+    <style>
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: 12px;
+	padding: 0;
+	margin: 0;
+}
+
+#chartdiv {
+	width: 100vw;
+	height: 100vh;
+}
+    </style>
+  </head>
+  <body>
+
+
+<script src="https://cdn.amcharts.com/lib/editor/map/5/viewer.js"></script>
+<div id="chartdiv"></div>
+<script>
+
+/**
+ * -----------------------------------------------
+ * This map was created using amCharts Map Editor.
+ *
+ * To create your own map visit:
+ * https://pixelmap.amcharts.com/
+ *
+ * For more information on amCharts visit:
+ * https://www.amcharts.com/
+ * -----------------------------------------------
+ */
+
+am5viewer.create("chartdiv", {
+  "settings": {
+    "editor": {
+      "theme": "light",
+      "userData": {
+        "projection": "geoMercator",
+        "geodata": "worldLow"
+      },
+      "themeTags": [
+        "light"
+      ],
+      "backgroundFill": {
+        "type": "Color",
+        "value": "#ffffff"
+      },
+      "polygonFill": {
+        "type": "Color",
+        "value": "#ffffff"
+      },
+      "polygonFillOpacity": 1,
+      "polygonStroke": {
+        "type": "Color",
+        "value": "#757575"
+      },
+      "polygonStrokeHover": {
+        "type": "Color",
+        "value": "#f99701"
+      },
+      "lineStrokeDashLength": 5,
+      "linePointFill": {
+        "type": "Color",
+        "value": "#fa6767"
+      },
+      "pointFill": {
+        "type": "Color",
+        "value": "#765341"
+      },
+      "pointFillOpacity": 1,
+      "labelColor": {
+        "type": "Color",
+        "value": "#fa1313"
+      },
+      "fillColor": {
+        "type": "Color",
+        "value": "#ede8d0"
+      },
+      "backgroundNoise": false,
+      "linePointScale": 0.5,
+      "linePointTypeKey": "Place",
+      "pointScale": 0.7,
+      "pointTypeKey": "Circle",
+      "labelText": "Horizontal scroll enabled",
+      "clipBackground": false,
+      "__parse": true,
+      "polygonFillHover": {
+        "type": "Color",
+        "value": "#fee5cd"
+      }
+    },
+    "editor.map": {
+      "minZoomLevel": 0.8,
+      "projection": "geoNaturalEarth1",
+      "panX": "none",
+      "zoomControl": {
+        "type": "ZoomControl",
+        "settings": {
+          "visible": true,
+          "position": "absolute",
+          "layout": {
+            "type": "VerticalLayout"
+          },
+          "themeTags": [
+            "zoomtools"
+          ],
+          "layer": 30
+        }
+      },
+      "background": {
+        "type": "Rectangle",
+        "settings": {
+          "fill": {
+            "type": "Color",
+            "value": "#ffffff"
+          },
+          "fillOpacity": 1,
+          "width": 1467,
+          "height": 753,
+          "x": 0,
+          "y": 0,
+          "isMeasured": false
+        }
+      },
+      "themeTags": [
+        "map"
+      ],
+      "translateX": 729.3850646770416,
+      "translateY": 431.7444801173867,
+      "panY": "none",
+      "rotationX": 0,
+      "rotationY": 0,
+      "wheelY": "none",
+      "wheelX": "rotateX",
+      "homeZoomLevel": 1,
+      "homeGeoPoint": {
+        "longitude": 1.0027424604098676,
+        "latitude": 11.558323088431848
+      },
+      "homeRotationX": 0,
+      "homeRotationY": 0
+    },
+    "editor.pointTemplate": {
+      "toggleKey": "active",
+      "centerX": {
+        "type": "Percent",
+        "value": 50
+      },
+      "centerY": {
+        "type": "Percent",
+        "value": 50
+      },
+      "tooltipText": "{name}"
+    },
+    "editor.bubbleTemplate": {
+      "toggleKey": "active",
+      "tooltipText": "{name}: {value}"
+    },
+    "editor.pixelTemplate": {
+      "tooltipText": "{name}",
+      "toggleKey": "active"
+    },
+    "editor.linePointTemplate": {
+      "toggleKey": "active",
+      "centerX": {
+        "type": "Percent",
+        "value": 50
+      },
+      "centerY": {
+        "type": "Percent",
+        "value": 50
+      },
+      "tooltipText": "{name}"
+    },
+    "editor.labelTemplate": {
+      "toggleKey": "active",
+      "tooltipText": "{name}"
+    },
+    "editor.polygonSeries": {
+      "valueField": "value",
+      "calculateAggregates": true,
+      "id": "polygonseries",
+      "exclude": [
+        "AQ"
+      ],
+      "geometryField": "geometry",
+      "geometryTypeField": "geometryType",
+      "idField": "id"
+    },
+    "editor.lineSeries": {
+      "layer": 30,
+      "id": "lineseries",
+      "lineTypeField": "lineType",
+      "geometryField": "geometry",
+      "geometryTypeField": "geometryType",
+      "idField": "id"
+    },
+    "editor.pointSeries": {
+      "fixedField": "fixed",
+      "id": "pointseries",
+      "longitudeField": "longitude",
+      "latitudeField": "latitude",
+      "geometryField": "geometry",
+      "geometryTypeField": "geometryType",
+      "idField": "id"
+    },
+    "editor.labelSeries": {
+      "fixedField": "fixed",
+      "id": "labelseries",
+      "longitudeField": "longitude",
+      "latitudeField": "latitude",
+      "geometryField": "geometry",
+      "geometryTypeField": "geometryType",
+      "idField": "id"
+    },
+    "editor.bubbleSeries": {
+      "calculateAggregates": true,
+      "valueField": "value",
+      "polygonIdField": "id",
+      "id": "bubbleseries",
+      "longitudeField": "longitude",
+      "latitudeField": "latitude",
+      "geometryField": "geometry",
+      "geometryTypeField": "geometryType",
+      "idField": "id"
+    },
+    "editor.gridSeries": {
+      "themeTags": [
+        "grid"
+      ],
+      "affectsBounds": false,
+      "lineTypeField": "lineType",
+      "geometryField": "geometry",
+      "geometryTypeField": "geometryType",
+      "idField": "id",
+      "step": 15,
+      "clipExtent": true
+    },
+    "editor.backgroundSeries": {
+      "visible": true,
+      "themeTags": [
+        "polygon",
+        "background"
+      ],
+      "affectsBounds": false,
+      "geometryField": "geometry",
+      "geometryTypeField": "geometryType",
+      "idField": "id",
+      "exclude": []
+    },
+    "editor.backgroundSeries.mapPolygons.template": {
+      "forceInactive": true,
+      "fill": {
+        "type": "Color",
+        "value": "#f0ffff"
+      },
+      "stroke": {
+        "type": "Color",
+        "value": "#f0ffff"
+      }
+    },
+    "editor.gridSeries.mapLines.template": {
+      "forceInactive": true,
+      "stroke": {
+        "type": "Color",
+        "value": "#ffdbbb"
+      },
+      "strokeOpacity": 1
+    }
+  },
+  "data": {
+    "editor.polygonSeries": [
+      {
+        "id": "ZA",
+        "name": "South Africa",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "US",
+        "name": "United States",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "TR",
+        "name": "Türkiye",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "TH",
+        "name": "Thailand",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "SD",
+        "name": "Sudan",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "SA",
+        "name": "Saudi Arabia",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "RU",
+        "name": "Russia",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "PL",
+        "name": "Poland",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "MY",
+        "name": "Malaysia",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "LK",
+        "name": "Sri Lanka",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "KE",
+        "name": "Kenya",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "IT",
+        "name": "Italy",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "IE",
+        "name": "Ireland",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "IN",
+        "name": "India",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#fbb771"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "ID",
+        "name": "Indonesia",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "GR",
+        "name": "Greece",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "FR",
+        "name": "France",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "ES",
+        "name": "Spain",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "GB",
+        "name": "United Kingdom",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "DE",
+        "name": "Germany",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "CZ",
+        "name": "Czechia",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ffffff"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "CO",
+        "name": "Colombia",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "CH",
+        "name": "Switzerland",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ffffff"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "CA",
+        "name": "Canada",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "BR",
+        "name": "Brazil",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "AT",
+        "name": "Austria",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "AU",
+        "name": "Australia",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      },
+      {
+        "id": "AE",
+        "name": "United Arab Emirates",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#ede8d0"
+            }
+          }
+        },
+        "__parse": true
+      }
+    ],
+    "editor.lineSeries": [
+      {
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "strokeWidth": 1,
+            "strokeDasharray": [
+              5,
+              5
+            ]
+          }
+        },
+        "linePointSeries": {
+          "type": "MapPointSeries",
+          "settings": {
+            "longitudeField": "longitude",
+            "latitudeField": "latitude",
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id",
+            "id": "linepointseries_19"
+          },
+          "properties": {
+            "data": [
+              {
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    74.91451,
+                    25.63479
+                  ],
+                  "__parse": false
+                },
+                "id": "linepoint_1",
+                "name": "Point 1",
+                "settings": {
+                  "type": "Template",
+                  "settings": {
+                    "fillOpacity": 1,
+                    "fill": {
+                      "type": "Color",
+                      "value": "#fa6767"
+                    },
+                    "stroke": {
+                      "type": "Color",
+                      "value": "#000000"
+                    },
+                    "strokeOpacity": 0.5,
+                    "scale": 0.5,
+                    "strokeWidth": 0.5
+                  }
+                },
+                "pointType": "Empty",
+                "__parse": true
+              },
+              {
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -92.64566,
+                    38.10829
+                  ],
+                  "__parse": false
+                },
+                "id": "linepoint_2",
+                "name": "Point 2",
+                "settings": {
+                  "type": "Template",
+                  "settings": {
+                    "fillOpacity": 1,
+                    "fill": {
+                      "type": "Color",
+                      "value": "#fa6767"
+                    },
+                    "stroke": {
+                      "type": "Color",
+                      "value": "#000000"
+                    },
+                    "strokeOpacity": 0.5,
+                    "scale": 0.5,
+                    "strokeWidth": 0.5
+                  }
+                },
+                "pointType": "Place",
+                "__parse": true
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Line",
+          "__parse": false
+        },
+        "id": "line_1",
+        "name": "Line 1",
+        "__parse": true
+      },
+      {
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "strokeWidth": 1,
+            "strokeDasharray": [
+              5,
+              5
+            ]
+          }
+        },
+        "linePointSeries": {
+          "type": "MapPointSeries",
+          "settings": {
+            "longitudeField": "longitude",
+            "latitudeField": "latitude",
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id",
+            "id": "linepointseries_20"
+          },
+          "properties": {
+            "data": [
+              {
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    75.41874,
+                    24.39443
+                  ],
+                  "__parse": false
+                },
+                "id": "linepoint_1",
+                "name": "Point 1",
+                "settings": {
+                  "type": "Template",
+                  "settings": {
+                    "fillOpacity": 1,
+                    "fill": {
+                      "type": "Color",
+                      "value": "#fa6767"
+                    },
+                    "stroke": {
+                      "type": "Color",
+                      "value": "#000000"
+                    },
+                    "strokeOpacity": 0.5,
+                    "scale": 0.5,
+                    "strokeWidth": 0.5
+                  }
+                },
+                "pointType": "Empty",
+                "__parse": true
+              },
+              {
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -47.10158,
+                    -8.0979
+                  ],
+                  "__parse": false
+                },
+                "id": "linepoint_2",
+                "name": "Point 2",
+                "settings": {
+                  "type": "Template",
+                  "settings": {
+                    "fillOpacity": 1,
+                    "fill": {
+                      "type": "Color",
+                      "value": "#fa6767"
+                    },
+                    "stroke": {
+                      "type": "Color",
+                      "value": "#000000"
+                    },
+                    "strokeOpacity": 0.5,
+                    "scale": 0.5,
+                    "strokeWidth": 0.5
+                  }
+                },
+                "pointType": "Place",
+                "__parse": true
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Line",
+          "__parse": false
+        },
+        "id": "line_2",
+        "name": "Line 2",
+        "__parse": true
+      },
+      {
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "strokeWidth": 1,
+            "strokeDasharray": [
+              5,
+              5
+            ]
+          }
+        },
+        "linePointSeries": {
+          "type": "MapPointSeries",
+          "settings": {
+            "longitudeField": "longitude",
+            "latitudeField": "latitude",
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id",
+            "id": "linepointseries_21"
+          },
+          "properties": {
+            "data": [
+              {
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    76.51625,
+                    25.49266
+                  ],
+                  "__parse": false
+                },
+                "id": "linepoint_1",
+                "name": "Point 1",
+                "settings": {
+                  "type": "Template",
+                  "settings": {
+                    "fillOpacity": 1,
+                    "fill": {
+                      "type": "Color",
+                      "value": "#fa6767"
+                    },
+                    "stroke": {
+                      "type": "Color",
+                      "value": "#000000"
+                    },
+                    "strokeOpacity": 0.5,
+                    "scale": 0.5,
+                    "strokeWidth": 0.5
+                  }
+                },
+                "pointType": "Empty",
+                "__parse": true
+              },
+              {
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    116.41761,
+                    60.4958
+                  ],
+                  "__parse": false
+                },
+                "id": "linepoint_2",
+                "name": "Point 2",
+                "settings": {
+                  "type": "Template",
+                  "settings": {
+                    "fillOpacity": 1,
+                    "fill": {
+                      "type": "Color",
+                      "value": "#fa6767"
+                    },
+                    "stroke": {
+                      "type": "Color",
+                      "value": "#000000"
+                    },
+                    "strokeOpacity": 0.5,
+                    "scale": 0.5,
+                    "strokeWidth": 0.5
+                  }
+                },
+                "pointType": "Place",
+                "__parse": true
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Line",
+          "__parse": false
+        },
+        "id": "line_3",
+        "name": "Line 3",
+        "__parse": true
+      },
+      {
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "strokeWidth": 1,
+            "strokeDasharray": [
+              5,
+              5
+            ]
+          }
+        },
+        "linePointSeries": {
+          "type": "MapPointSeries",
+          "settings": {
+            "longitudeField": "longitude",
+            "latitudeField": "latitude",
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id",
+            "id": "linepointseries_22"
+          },
+          "properties": {
+            "data": [
+              {
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    73.01991,
+                    25.67297
+                  ],
+                  "__parse": false
+                },
+                "id": "linepoint_1",
+                "name": "Point 1",
+                "settings": {
+                  "type": "Template",
+                  "settings": {
+                    "fillOpacity": 1,
+                    "fill": {
+                      "type": "Color",
+                      "value": "#fa6767"
+                    },
+                    "stroke": {
+                      "type": "Color",
+                      "value": "#000000"
+                    },
+                    "strokeOpacity": 0.5,
+                    "scale": 0.5,
+                    "strokeWidth": 0.5
+                  }
+                },
+                "pointType": "Empty",
+                "__parse": true
+              },
+              {
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -1.92323,
+                    53.00333
+                  ],
+                  "__parse": false
+                },
+                "id": "linepoint_2",
+                "name": "Point 2",
+                "settings": {
+                  "type": "Template",
+                  "settings": {
+                    "fillOpacity": 1,
+                    "fill": {
+                      "type": "Color",
+                      "value": "#fa6767"
+                    },
+                    "stroke": {
+                      "type": "Color",
+                      "value": "#000000"
+                    },
+                    "strokeOpacity": 0.5,
+                    "scale": 0.5,
+                    "strokeWidth": 0.5
+                  }
+                },
+                "pointType": "Place",
+                "__parse": true
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Line",
+          "__parse": false
+        },
+        "id": "line_4",
+        "name": "Line 4",
+        "__parse": true
+      },
+      {
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "strokeWidth": 1,
+            "strokeDasharray": [
+              5,
+              5
+            ]
+          }
+        },
+        "linePointSeries": {
+          "type": "MapPointSeries",
+          "settings": {
+            "longitudeField": "longitude",
+            "latitudeField": "latitude",
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id",
+            "id": "linepointseries_23"
+          },
+          "properties": {
+            "data": [
+              {
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    75.78658,
+                    26.85043
+                  ],
+                  "__parse": false
+                },
+                "id": "linepoint_1",
+                "name": "Point 1",
+                "settings": {
+                  "type": "Template",
+                  "settings": {
+                    "fillOpacity": 1,
+                    "fill": {
+                      "type": "Color",
+                      "value": "#fa6767"
+                    },
+                    "stroke": {
+                      "type": "Color",
+                      "value": "#000000"
+                    },
+                    "strokeOpacity": 0.5,
+                    "scale": 0.5,
+                    "strokeWidth": 0.5
+                  }
+                },
+                "pointType": "Empty",
+                "__parse": true
+              },
+              {
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    22.81888,
+                    -30.28518
+                  ],
+                  "__parse": false
+                },
+                "id": "linepoint_2",
+                "name": "Point 2",
+                "settings": {
+                  "type": "Template",
+                  "settings": {
+                    "fillOpacity": 1,
+                    "fill": {
+                      "type": "Color",
+                      "value": "#fa6767"
+                    },
+                    "stroke": {
+                      "type": "Color",
+                      "value": "#000000"
+                    },
+                    "strokeOpacity": 0.5,
+                    "scale": 0.5,
+                    "strokeWidth": 0.5
+                  }
+                },
+                "pointType": "Place",
+                "__parse": true
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Line",
+          "__parse": false
+        },
+        "id": "line_5",
+        "name": "Line 5",
+        "__parse": true
+      },
+      {
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "strokeWidth": 1,
+            "strokeDasharray": [
+              5,
+              5
+            ]
+          }
+        },
+        "linePointSeries": {
+          "type": "MapPointSeries",
+          "settings": {
+            "longitudeField": "longitude",
+            "latitudeField": "latitude",
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id",
+            "id": "linepointseries_24"
+          },
+          "properties": {
+            "data": [
+              {
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    76.92549,
+                    24.19457
+                  ],
+                  "__parse": false
+                },
+                "id": "linepoint_1",
+                "name": "Point 1",
+                "settings": {
+                  "type": "Template",
+                  "settings": {
+                    "fillOpacity": 1,
+                    "fill": {
+                      "type": "Color",
+                      "value": "#fa6767"
+                    },
+                    "stroke": {
+                      "type": "Color",
+                      "value": "#000000"
+                    },
+                    "strokeOpacity": 0.5,
+                    "scale": 0.5,
+                    "strokeWidth": 0.5
+                  }
+                },
+                "pointType": "Empty",
+                "__parse": true
+              },
+              {
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    134.29077,
+                    -22.12352
+                  ],
+                  "__parse": false
+                },
+                "id": "linepoint_2",
+                "name": "Point 2",
+                "settings": {
+                  "type": "Template",
+                  "settings": {
+                    "fillOpacity": 1,
+                    "fill": {
+                      "type": "Color",
+                      "value": "#fa6767"
+                    },
+                    "stroke": {
+                      "type": "Color",
+                      "value": "#000000"
+                    },
+                    "strokeOpacity": 0.5,
+                    "scale": 0.5,
+                    "strokeWidth": 0.5
+                  }
+                },
+                "pointType": "Place",
+                "__parse": true
+              }
+            ]
+          }
+        },
+        "geometry": {
+          "type": "Line",
+          "__parse": false
+        },
+        "id": "line_6",
+        "name": "Line 6",
+        "__parse": true
+      }
+    ],
+    "editor.pointSeries": [
+      {
+        "fixed": false,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.26032,
+            25.26605
+          ],
+          "__parse": false
+        },
+        "id": "point_1",
+        "name": "Point 1",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fillOpacity": 1,
+            "fill": {
+              "type": "Color",
+              "value": "#765341"
+            },
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "scale": 0.7,
+            "strokeWidth": 0.5,
+            "x": {
+              "type": "Percent",
+              "value": 78.08212977164281
+            },
+            "y": {
+              "type": "Percent",
+              "value": 35.02759794156706
+            }
+          }
+        },
+        "pointType": "Circle",
+        "__parse": true
+      }
+    ],
+    "editor.labelSeries": [],
+    "editor.bubbleSeries": [],
+    "editor.gridSeries": []
+  }
+});
+
+</script>
+
+  </body>
+</html>

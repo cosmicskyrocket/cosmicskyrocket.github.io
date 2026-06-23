@@ -1929,13 +1929,13 @@
                     <!-- Head Office Address -->
                     <div class="d-flex gap-2 align-items-start text-white footer-contact-link" style="text-decoration: none;">
                       <i class="bi bi-geo-alt" style="color: #fff; flex-shrink: 0; font-size: 1.2rem;"></i>
-                      <span style="font-size: 1.125rem;"><b style="font-size: 1.4rem;">Head Office</b> <br> <span class="footer-hover-value">Yardena - I, 1st floor, GH 23, Dadabari, <br> Kota, Rajasthan, 324009</span></span>
+                      <span style="font-size: 1.125rem;"><b style="font-size: 1.4rem;">Head Office</b> <br> <span class="footer-hover-value">Yardena - I, 1st floor, GH 23, Dadabari, <br> Kota, Rajasthan, INDIA, 324009</span></span>
                     </div>
                     <br>
                     <!-- Factory Address -->
                     <div class="d-flex gap-2 align-items-start text-white footer-contact-link" style="text-decoration: none;">
                       <i class="bi bi-geo-alt" style="color: #fff; flex-shrink: 0; font-size: 1.2rem;"></i>
-                      <span style="font-size: 1.125rem;"><b style="font-size: 1.4rem;">Factory Address</b> <br> <span class="footer-hover-value">B-93-D, Road No. 4, IPIA, <br> Kota, Rajasthan, 324005</span></span>
+                      <span style="font-size: 1.125rem;"><b style="font-size: 1.4rem;">Factory Address</b> <br> <span class="footer-hover-value">B-93-D, Road No. 4, IPIA, <br> Kota, Rajasthan, INDIA, 324005</span></span>
                     </div>
                     <br>
                     <!-- Phone (WhatsApp) -->
@@ -2008,7 +2008,7 @@
           <!-- Brand watermark and copyright -->
           <div style="margin-top: 2.5rem; padding-top: 1.5rem; text-align: center;">
             <p class="mb-0 text-white" style="font-family: 'Cinzel', serif; font-size: clamp(0.75rem, 8.7vw, 14rem); font-weight: 600; letter-spacing: 1px; line-height: 1.1; white-space: nowrap;">COSMIC SKYROCKET</p>
-            <p class="mb-0 text-white" style="color: rgba(255,255,255,0.7) !important; font-size: 1.05rem; margin-top: -0.2rem;">© 2024 cosmic Skyrocket. All Rights Reserved.</p>
+            <p class="mb-0 text-white" style="color: rgba(255,255,255,0.7) !important; font-size: 1.05rem; margin-top: -0.2rem;">© 2024 COSMIC SKYROCKET. All Rights Reserved.</p>
           </div>
         </footer>
 

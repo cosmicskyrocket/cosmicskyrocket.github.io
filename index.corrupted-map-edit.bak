@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Document Title -->
+    <title>Cosmic Skyrocket | Quarry Owner & Manufacturer of Natural Stones and Tiles</title>
+    <meta name="description" content="Cosmic Skyrocket is a quarry owner and manufacturer of premium natural stones and tiles for B2B buyers, importers, architects, and project contractors.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://www.cosmicskyrocket.com/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cosmic Skyrocket | Quarry Owner & Manufacturer of Natural Stones and Tiles">
+    <meta property="og:description" content="B2B Natural Stones and tile manufacturing from owned quarries, with export-ready packaging and project-scale supply.">
+    <meta property="og:url" content="https://www.cosmicskyrocket.com/">
+    <meta property="og:site_name" content="Cosmic Skyrocket">
+    <meta property="og:image" content="https://www.cosmicskyrocket.com/assets/img/favicon_io/android-chrome-512x512.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cosmic Skyrocket | Quarry Owner & Manufacturer of Natural Stones and Tiles">
+    <meta name="twitter:description" content="B2B Natural Stones and tile manufacturing from owned quarries, with export-ready packaging and project-scale supply.">
+    <meta name="twitter:image" content="https://www.cosmicskyrocket.com/assets/img/favicon_io/android-chrome-512x512.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.cosmicskyrocket.com/#organization",
+            "name": "Cosmic Skyrocket",
+            "url": "https://www.cosmicskyrocket.com/",
+            "description": "Quarry owner and manufacturer of natural stones and tiles for B2B projects and exports.",
+            "logo": "https://www.cosmicskyrocket.com/assets/img/favicon_io/android-chrome-512x512.png"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.cosmicskyrocket.com/#website",
+            "url": "https://www.cosmicskyrocket.com/",
+            "name": "Cosmic Skyrocket",
+            "publisher": {
+              <!-- amCharts Map Script -->
+              <script src="https://cdn.amcharts.com/lib/editor/map/5/viewer.js"></script>
+              <script src="assets/js/world-map-config.js"></script>
+              <script>
+                (function () {
+                  function hideMapCornerControls() {
+                    const chartDiv = document.getElementById("chartdiv");
+                    if (!chartDiv) return;
+
+                    const styleId = "map-ui-hide-style";
+                    if (!document.getElementById(styleId)) {
+                      const style = document.createElement("style");
+                      style.id = styleId;
+                      style.textContent = [
+                        "#chartdiv a[href*='amcharts.com'] { display: none !important; }",
+                        "#chartdiv [title*='amCharts'], #chartdiv [aria-label*='amCharts'] { display: none !important; }",
+                        "#chartdiv [title*='Download'], #chartdiv [aria-label*='Download'] { display: none !important; }",
+                        "#chartdiv [title*='More'], #chartdiv [aria-label*='More'] { display: none !important; }",
+                        "#chartdiv [title*='Zoom'], #chartdiv [aria-label*='Zoom'] { display: none !important; }",
+                        "#chartdiv .am5exporting-menu, #chartdiv .am5zoomcontrol { display: none !important; }"
+                      ].join("\n");
+                      document.head.appendChild(style);
+                    }
+
+                    const hideDynamicNodes = function () {
+                      const nodes = chartDiv.querySelectorAll("a, button, div, span");
+                      nodes.forEach(function (node) {
+                        const marker = (
+                          (node.getAttribute("title") || "") + " " +
+                          (node.getAttribute("aria-label") || "") + " " +
+                          (node.textContent || "")
+                        ).toLowerCase();
+
+                        if (/amcharts|download|zoom|more/.test(marker)) {
+                          node.style.display = "none";
+                          node.style.visibility = "hidden";
+                          node.style.pointerEvents = "none";
+                        }
+                      });
+                    };
+
+                    hideDynamicNodes();
+                    const observer = new MutationObserver(hideDynamicNodes);
+                    observer.observe(chartDiv, { childList: true, subtree: true });
+                  }
+
+                  const mapConfig = window.WORLD_MAP_CONFIG
+                    ? JSON.parse(JSON.stringify(window.WORLD_MAP_CONFIG))
+                    : null;
+
+                  if (!mapConfig) return;
+
+                  const editorMap = mapConfig.settings && mapConfig.settings["editor.map"];
+                  if (editorMap) {
+                    editorMap.panX = "none";
+                    editorMap.panY = "none";
+                    editorMap.wheelX = "none";
+                    editorMap.wheelY = "none";
+                    editorMap.pinchZoom = false;
+                    editorMap.wheelable = false;
+
+                    if (editorMap.zoomControl && editorMap.zoomControl.settings) {
+                      editorMap.zoomControl.settings.visible = false;
+                    }
+                  }
+
+                  am5viewer.create("chartdiv", mapConfig);
+                  hideMapCornerControls();
+                })();
+              </script>
+                  "value": "#323232"
+                }
+              }
+            }
+          },
+          "editor.lineSeries": {
+            "layer": 30,
+            "id": "lineseries",
+            "lineTypeField": "lineType",
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id"
+          },
+          "editor.pointSeries": {
+            "fixedField": "fixed",
+            "id": "pointseries",
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id"
+          },
+          "editor.labelSeries": {
+            "fixedField": "fixed",
+            "id": "labelseries",
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id"
+          },
+          "editor.bubbleSeries": {
+            "calculateAggregates": true,
+            "valueField": "value",
+            "polygonIdField": "id",
+            "id": "bubbleseries",
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id"
+          },
+          "editor.gridSeries": {
+            "visible": false,
+            "themeTags": [
+              "grid"
+            ],
+            "affectsBounds": false,
+            "lineTypeField": "lineType",
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id",
+            "clipExtent": true
+          },
+          "editor.backgroundSeries": {
+            "visible": false,
+            "themeTags": [
+              "polygon",
+              "background"
+            ],
+            "affectsBounds": false,
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id"
+          },
+          "editor.backgroundSeries.mapPolygons.template": {
+            "forceInactive": true
+          },
+          "editor.gridSeries.mapLines.template": {
+            "forceInactive": true,
+            "visible": false,
+            "strokeOpacity": 0
+          }
+        },
+        "data": {
+          "editor.polygonSeries": [
+            {
+              "id": "ZA",
+              "name": "South Africa",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "US",
+              "name": "United States",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  },
+                  "stroke": {
+                    "type": "Color",
+                    "value": "#7e7e7e"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "TH",
+              "name": "Thailand",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "SA",
+              "name": "Saudi Arabia",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "RU",
+              "name": "Russia",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "RO",
+              "name": "Romania",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "PT",
+              "name": "Portugal",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "PL",
+              "name": "Poland",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "NG",
+              "name": "Nigeria",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "NA",
+              "name": "Namibia",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "MX",
+              "name": "Mexico",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "LY",
+              "name": "Libya",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "IT",
+              "name": "Italy",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "IN",
+              "name": "India",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#FFA25C"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "ID",
+              "name": "Indonesia",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "HU",
+              "name": "Hungary",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "GR",
+              "name": "Greece",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "FR",
+              "name": "France",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "ET",
+              "name": "Ethiopia",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "ES",
+              "name": "Spain",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "GB",
+              "name": "United Kingdom",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "EG",
+              "name": "Egypt",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "DZ",
+              "name": "Algeria",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "DE",
+              "name": "Germany",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "CZ",
+              "name": "Czechia",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "CO",
+              "name": "Colombia",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "CH",
+              "name": "Switzerland",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "CA",
+              "name": "Canada",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  },
+                  "stroke": {
+                    "type": "Color",
+                    "value": "#7e7e7e"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "BR",
+              "name": "Brazil",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "AU",
+              "name": "Australia",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "AO",
+              "name": "Angola",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#A8A8A8"
+                  }
+                }
+              },
+              "__parse": true
+            }
+          ],
+          "editor.lineSeries": [
+            {
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "stroke": {
+                    "type": "Color",
+                    "value": "#ffffff"
+                  },
+                  "strokeOpacity": 0.5,
+                  "strokeWidth": 1,
+                  "strokeDasharray": [
+                    8,
+                    8
+                  ]
+                }
+              },
+              "linePointSeries": {
+                "type": "MapPointSeries",
+                "settings": {
+                  "geometryField": "geometry",
+                  "geometryTypeField": "geometryType",
+                  "idField": "id",
+                  "id": "linepointseries_9"
+                },
+                "properties": {
+                  "data": [
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          -81.89225,
+                          38.88164
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_1",
+                      "name": "Point 1",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.03,
+                          "strokeWidth": 0.5,
+                          "rotation": 292
+                        }
+                      },
+                      "pointType": "custom",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    },
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          74.60872,
+                          23.26153
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_2",
+                      "name": "Point 2",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.7,
+                          "strokeWidth": 0.5
+                        }
+                      },
+                      "pointType": "Target",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    }
+                  ]
+                }
+              },
+              "geometry": {
+                "type": "Line",
+                "__parse": false
+              },
+              "id": "line_1",
+              "name": "Line 1",
+              "__parse": true
+            },
+            {
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "stroke": {
+                    "type": "Color",
+                    "value": "#ffffff"
+                  },
+                  "strokeOpacity": 0.5,
+                  "strokeWidth": 1,
+                  "strokeDasharray": [
+                    8,
+                    8
+                  ]
+                }
+              },
+              "linePointSeries": {
+                "type": "MapPointSeries",
+                "settings": {
+                  "geometryField": "geometry",
+                  "geometryTypeField": "geometryType",
+                  "idField": "id",
+                  "id": "linepointseries_10"
+                },
+                "properties": {
+                  "data": [
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          -44.51805,
+                          -6.89666
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_1",
+                      "name": "Point 1",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.03,
+                          "strokeWidth": 0.5,
+                          "rotation": 328
+                        }
+                      },
+                      "pointType": "custom",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    },
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          74.50703,
+                          23.19787
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_2",
+                      "name": "Point 2",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.72,
+                          "strokeWidth": 0.5
+                        }
+                      },
+                      "pointType": "Target",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    }
+                  ]
+                }
+              },
+              "geometry": {
+                "type": "Line",
+                "__parse": false
+              },
+              "id": "line_2",
+              "name": "Line 2",
+              "__parse": true
+            },
+            {
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "stroke": {
+                    "type": "Color",
+                    "value": "#ffffff"
+                  },
+                  "strokeOpacity": 0.5,
+                  "strokeWidth": 1,
+                  "strokeDasharray": [
+                    8,
+                    8
+                  ]
+                }
+              },
+              "linePointSeries": {
+                "type": "MapPointSeries",
+                "settings": {
+                  "geometryField": "geometry",
+                  "geometryTypeField": "geometryType",
+                  "idField": "id",
+                  "id": "linepointseries_11"
+                },
+                "properties": {
+                  "data": [
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          106.88288,
+                          60.85089
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_1",
+                      "name": "Point 1",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.03,
+                          "strokeWidth": 0.5,
+                          "rotation": 130
+                        }
+                      },
+                      "pointType": "custom",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    },
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          74.45116,
+                          23.09923
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_2",
+                      "name": "Point 2",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.7,
+                          "strokeWidth": 0.5
+                        }
+                      },
+                      "pointType": "Target",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    }
+                  ]
+                }
+              },
+              "geometry": {
+                "type": "Line",
+                "__parse": false
+              },
+              "id": "line_3",
+              "name": "Line 3",
+              "__parse": true
+            },
+            {
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "stroke": {
+                    "type": "Color",
+                    "value": "#ffffff"
+                  },
+                  "strokeOpacity": 0.5,
+                  "strokeWidth": 1,
+                  "strokeDasharray": [
+                    8,
+                    8
+                  ]
+                }
+              },
+              "linePointSeries": {
+                "type": "MapPointSeries",
+                "settings": {
+                  "geometryField": "geometry",
+                  "geometryTypeField": "geometryType",
+                  "idField": "id",
+                  "id": "linepointseries_12"
+                },
+                "properties": {
+                  "data": [
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          1.73875,
+                          53.21537
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_1",
+                      "name": "Point 1",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.03,
+                          "strokeWidth": 0.5
+                        }
+                      },
+                      "pointType": "custom",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    },
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          74.3193,
+                          23.08586
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_2",
+                      "name": "Point 2",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.7,
+                          "strokeWidth": 0.5
+                        }
+                      },
+                      "pointType": "Target",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    }
+                  ]
+                }
+              },
+              "geometry": {
+                "type": "Line",
+                "__parse": false
+              },
+              "id": "line_4",
+              "name": "Line 4",
+              "__parse": true
+            },
+            {
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "stroke": {
+                    "type": "Color",
+                    "value": "#ffffff"
+                  },
+                  "strokeOpacity": 0.5,
+                  "strokeWidth": 1,
+                  "strokeDasharray": [
+                    8,
+                    8
+                  ]
+                }
+              },
+              "linePointSeries": {
+                "type": "MapPointSeries",
+                "settings": {
+                  "geometryField": "geometry",
+                  "geometryTypeField": "geometryType",
+                  "idField": "id",
+                  "id": "linepointseries_13"
+                },
+                "properties": {
+                  "data": [
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          122.99873,
+                          -22.63022
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_1",
+                      "name": "Point 1",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.03,
+                          "strokeWidth": 0.5,
+                          "rotation": 223
+                        }
+                      },
+                      "pointType": "custom",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    },
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          74.45563,
+                          22.86055
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_2",
+                      "name": "Point 2",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.7,
+                          "strokeWidth": 0.5
+                        }
+                      },
+                      "pointType": "Target",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    }
+                  ]
+                }
+              },
+              "geometry": {
+                "type": "Line",
+                "__parse": false
+              },
+              "id": "line_5",
+              "name": "Line 5",
+              "__parse": true
+            }
+          ],
+          "editor.pointSeries": [],
+          "editor.labelSeries": [],
+          "editor.bubbleSeries": [],
+          "editor.gridSeries": []
+        }
+      });
+    </script>
+
+    <!-- Initialize AOS and PureCounter -->
+    <script>
+      AOS.init({
+        duration: 600,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false,
+        offset: -200
+      });
+      new PureCounter();
+    </script>
+
+    <!-- Scripts -->
+    <script src="assets/js/preloader.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/search-data.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/faq.js"></script>
+    <script src="assets/js/circular-nav.js"></script>
+
+    <!-- Navbar Scroll Animation -->
+    <script>
+      let hasScrolled = false;
+      const mobileMediaQuery = window.matchMedia('(max-width: 767px)');
+      let iconsOriginalParent = null;
+      let iconsOriginalNextSibling = null;
+
+      function forceDesktopTopTransparent(navbar) {
+        if (!navbar || mobileMediaQuery.matches) return;
+        if (window.scrollY > 10) return;
+
+        navbar.style.setProperty('background-color', 'transparent', 'important');
+        navbar.style.setProperty('background-image', 'none', 'important');
+        navbar.style.setProperty('backdrop-filter', 'none', 'important');
+        navbar.style.setProperty('-webkit-backdrop-filter', 'none', 'important');
+        navbar.style.setProperty('box-shadow', 'none', 'important');
+        navbar.classList.remove('backdrop');
+        navbar.classList.remove('shadow-transition');
+      }
+
+      function applyMobileNavbar() {
+        const navbar = document.getElementById('mainNavbar');
+        const brand = document.getElementById('cosmicBrand');
+        const brandText = brand ? brand.querySelector('.fw-bold') : null;
+        const tagline = document.getElementById('tagline');
+        const navContainer = navbar ? navbar.querySelector('.container') : null;
+        const iconsBar = document.querySelector('.navbar-icons-bar');
+        const iconButtons = iconsBar ? iconsBar.querySelectorAll('a, button') : [];
+        const isSmallMobile = window.innerWidth <= 575;
+
+        hasScrolled = false;
+        if (!navbar || !brand || !tagline || !brandText) return;
+
+        // Mobile: static compact navbar, no scroll animation states.
+        navbar.style.paddingTop = '0.75rem';
+        navbar.style.paddingBottom = '0.75rem';
+        brand.style.fontSize = 'clamp(0.7rem, 3vw, 0.9rem)';
+        brand.style.letterSpacing = '0.07em';
+        brand.style.whiteSpace = 'nowrap';
+        brand.style.maxWidth = isSmallMobile ? 'calc(100vw - 165px)' : 'calc(100vw - 180px)';
+        brand.style.overflow = 'hidden';
+        brand.style.textOverflow = 'ellipsis';
+        brand.style.flex = '0 1 auto';
+        brandText.style.color = '#000';
+        brandText.style.textShadow = 'none';
+        tagline.style.display = 'none';
+        navbar.style.setProperty('background-color', 'rgba(255, 255, 255, 0.12)', 'important');
+        navbar.style.setProperty('background-image', 'none', 'important');
+        navbar.style.setProperty('backdrop-filter', 'blur(22px) saturate(180%)', 'important');
+        navbar.style.setProperty('-webkit-backdrop-filter', 'blur(22px) saturate(180%)', 'important');
+        navbar.style.setProperty('box-shadow', '0 2px 16px rgba(0, 0, 0, 0.06)', 'important');
+        navbar.classList.remove('backdrop');
+        navbar.classList.remove('shadow-transition');
+
+        if (navContainer) {
+          navContainer.style.setProperty('display', 'flex', 'important');
+          navContainer.style.setProperty('flex-direction', 'row', 'important');
+          navContainer.style.setProperty('justify-content', 'space-between', 'important');
+          navContainer.style.setProperty('align-items', 'center', 'important');
+          navContainer.style.setProperty('padding-left', isSmallMobile ? '0.75rem' : '1rem', 'important');
+          navContainer.style.setProperty('padding-right', isSmallMobile ? '0.75rem' : '1rem', 'important');
+          navContainer.style.minHeight = '56px';
+        }
+
+        if (iconsBar) {
+          if (!iconsOriginalParent) {
+            iconsOriginalParent = iconsBar.parentElement;
+            iconsOriginalNextSibling = iconsBar.nextElementSibling;
+          }
+
+          if (navContainer && iconsBar.parentElement !== navContainer) {
+            navContainer.appendChild(iconsBar);
+          }
+
+          iconsBar.style.setProperty('position', 'static', 'important');
+          iconsBar.style.setProperty('top', '0.75rem', 'important');
+          iconsBar.style.setProperty('right', 'auto', 'important');
+          iconsBar.style.setProperty('left', 'auto', 'important');
+          iconsBar.style.setProperty('gap', isSmallMobile ? '0.35rem' : '0.5rem', 'important');
+          iconsBar.style.setProperty('margin-left', '0', 'important');
+          iconsBar.style.setProperty('display', 'flex', 'important');
+          iconsBar.style.setProperty('flex-wrap', 'nowrap', 'important');
+          iconsBar.style.setProperty('flex-shrink', '0', 'important');
+          iconsBar.style.setProperty('align-items', 'center', 'important');
+          iconsBar.style.setProperty('justify-content', 'flex-end', 'important');
+          iconsBar.style.setProperty('min-width', isSmallMobile ? '72px' : '80px', 'important');
+          iconsBar.style.setProperty('z-index', '10000', 'important');
+          iconsBar.style.removeProperty('max-width');
+        }
+
+        iconButtons.forEach(function(el) {
+          el.style.width = isSmallMobile ? '20px' : '22px';
+          el.style.height = isSmallMobile ? '20px' : '22px';
+          el.style.padding = '0';
+          el.style.margin = '0';
+          el.style.display = 'inline-flex';
+          el.style.alignItems = 'center';
+          el.style.justifyContent = 'center';
+          el.style.flex = '0 0 auto';
+          el.style.lineHeight = '1';
+
+          const iconSvg = el.querySelector('svg');
+          if (iconSvg) {
+            iconSvg.style.width = isSmallMobile ? '18px' : '20px';
+            iconSvg.style.height = isSmallMobile ? '18px' : '20px';
+          }
+        });
+      }
+
+      function handleDesktopNavbarScroll() {
+        const navbar = document.getElementById('mainNavbar');
+        const brand = document.getElementById('cosmicBrand');
+        const brandText = brand ? brand.querySelector('.fw-bold') : null;
+        const tagline = document.getElementById('tagline');
+        const cardsSection = document.getElementById('header');
+        const navContainer = navbar ? navbar.querySelector('.container') : null;
+        const iconsBar = document.querySelector('.navbar-icons-bar');
+        const iconButtons = iconsBar ? iconsBar.querySelectorAll('a, button') : [];
+
+        if (!navbar || !brand || !tagline || !brandText) return;
+
+        if (mobileMediaQuery.matches) {
+          applyMobileNavbar();
+          return;
+        }
+
+        if (navContainer) {
+          navContainer.style.removeProperty('display');
+          navContainer.style.removeProperty('flex-direction');
+          navContainer.style.removeProperty('justify-content');
+          navContainer.style.removeProperty('align-items');
+          navContainer.style.removeProperty('padding-left');
+          navContainer.style.removeProperty('padding-right');
+          navContainer.style.removeProperty('min-height');
+        }
+
+        brand.style.removeProperty('letter-spacing');
+        brand.style.removeProperty('white-space');
+        brand.style.removeProperty('max-width');
+        brand.style.removeProperty('overflow');
+        brand.style.removeProperty('text-overflow');
+        brand.style.removeProperty('flex');
+
+        if (iconsBar) {
+          if (iconsOriginalParent && iconsBar.parentElement !== iconsOriginalParent) {
+            if (iconsOriginalNextSibling && iconsOriginalNextSibling.parentElement === iconsOriginalParent) {
+              iconsOriginalParent.insertBefore(iconsBar, iconsOriginalNextSibling);
+            } else {
+              iconsOriginalParent.appendChild(iconsBar);
+            }
+          }
+
+          iconsBar.style.setProperty('position', 'fixed', 'important');
+          iconsBar.style.setProperty('top', '1.5rem', 'important');
+          iconsBar.style.setProperty('right', '2rem', 'important');
+          iconsBar.style.setProperty('left', 'auto', 'important');
+          iconsBar.style.setProperty('gap', '1.5rem', 'important');
+          iconsBar.style.removeProperty('margin-left');
+          iconsBar.style.removeProperty('display');
+          iconsBar.style.removeProperty('flex-wrap');
+          iconsBar.style.removeProperty('flex-shrink');
+          iconsBar.style.removeProperty('align-items');
+          iconsBar.style.removeProperty('justify-content');
+          iconsBar.style.removeProperty('min-width');
+          iconsBar.style.removeProperty('max-width');
+        }
+
+        iconButtons.forEach(function(el) {
+          el.style.removeProperty('width');
+          el.style.removeProperty('height');
+          el.style.removeProperty('padding');
+          el.style.removeProperty('margin');
+          el.style.removeProperty('display');
+          el.style.removeProperty('align-items');
+          el.style.removeProperty('justify-content');
+          el.style.removeProperty('flex');
+          el.style.removeProperty('line-height');
+
+          const iconSvg = el.querySelector('svg');
+          if (iconSvg) {
+            iconSvg.style.removeProperty('width');
+            iconSvg.style.removeProperty('height');
+          }
+        });
+        
+        if (window.scrollY > 10 && !hasScrolled) {
+          hasScrolled = true;
+          // Shrink to normal size
+          navbar.style.paddingTop = '1rem';
+          navbar.style.paddingBottom = '1rem';
+          brand.style.fontSize = '1.5rem';
+          navbar.style.setProperty('background-color', 'rgba(255, 255, 255, 0.12)', 'important');
+          navbar.style.setProperty('background-image', 'none', 'important');
+          navbar.style.setProperty('backdrop-filter', 'blur(22px) saturate(180%)', 'important');
+          navbar.style.setProperty('-webkit-backdrop-filter', 'blur(22px) saturate(180%)', 'important');
+          navbar.style.setProperty('box-shadow', '0 2px 16px rgba(0, 0, 0, 0.06)', 'important');
+          navbar.classList.add('backdrop');
+          navbar.classList.add('shadow-transition');
+          // Change text color to black and remove 3D effect
+          brandText.style.color = '#000';
+          brandText.style.textShadow = 'none';
+          // Hide tagline completely (remove from layout)
+          tagline.style.display = 'none';
+          // Move cards section up to fill the space
+          if (cardsSection) {
+            cardsSection.style.marginTop = '-23rem';
+          }
+        } else if (window.scrollY <= 10 && hasScrolled) {
+          hasScrolled = false;
+          // Return to large size
+          navbar.style.paddingTop = '16rem';
+          navbar.style.paddingBottom = '3rem';
+          brand.style.fontSize = '7rem';
+          forceDesktopTopTransparent(navbar);
+          // Change text color to white and remove shadow
+          brandText.style.color = '#fff';
+          brandText.style.textShadow = 'none';
+          // Show tagline
+          tagline.style.display = 'block';
+          // Return cards section to original position
+          if (cardsSection) {
+            cardsSection.style.marginTop = '-5rem';
+          }
+        }
+        
+        // Always force transparent background when at top
+        if (window.scrollY <= 10) {
+          forceDesktopTopTransparent(navbar);
+
+          // Re-apply at end-of-frame so index-specific top state wins over shared handlers.
+          requestAnimationFrame(function() {
+            forceDesktopTopTransparent(navbar);
+          });
+        }
+      }
+
+      window.addEventListener('scroll', handleDesktopNavbarScroll);
+
+      window.addEventListener('resize', function() {
+        if (mobileMediaQuery.matches) {
+          applyMobileNavbar();
+        } else {
+          handleDesktopNavbarScroll();
+        }
+      });
+
+      if (mobileMediaQuery.matches) {
+        applyMobileNavbar();
+      } else {
+        handleDesktopNavbarScroll();
+      }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+
+    <!-- Auto-Rotating Carousel Script -->
+    <script>
+      function initAutoCarousel(carouselId, interval = 3000) {
+        const carousel = document.getElementById(carouselId);
+        if (!carousel) return;
+
+        const images = carousel.querySelectorAll('.carousel-image');
+        if (images.length === 0) return;
+
+        let currentIndex = 0;
+
+        function showImage(index) {
+          images.forEach((img, i) => {
+            img.style.opacity = i === index ? '1' : '0';
+          });
+        }
+
+        function nextImage() {
+          currentIndex = (currentIndex + 1) % images.length;
+          showImage(currentIndex);
+        }
+
+        // Start auto-rotation
+        setInterval(nextImage, interval);
+      }
+
+      // Initialize both carousels
+      document.addEventListener('DOMContentLoaded', function() {
+        initAutoCarousel('natural-stone-carousel', 3000);
+        initAutoCarousel('tiles-carousel', 3000);
+      });
+    </script>
+  </body>
+
+</html>

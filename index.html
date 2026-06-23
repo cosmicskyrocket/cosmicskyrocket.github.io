@@ -90,7 +90,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     
     <!-- Inline Styles -->
-    <link href="assets/css/inline-styles.css" rel="stylesheet" />
+    <link href="assets/css/inline-styles.css?v=20260623-mapfix" rel="stylesheet" />
     
     <style>
       /* All styles have been extracted to assets/css/inline-styles.css */
@@ -688,6 +688,7 @@
             <!-- amCharts Map Container -->
             <div class="map-crop-frame">
               <div id="chartdiv"></div>
+              <div class="map-logo-mask" aria-hidden="true"></div>
             </div>
           </div>
         </section>
@@ -1071,1169 +1072,139 @@
 
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
     <!-- amCharts Map Script -->
     <script src="https://cdn.amcharts.com/lib/editor/map/5/viewer.js"></script>
+    <script src="assets/js/world-map-config.js"></script>
     <script>
-      /**
-       * amCharts Map Configuration
-       */
-      am5viewer.create("chartdiv", {
-        "settings": {
-          "editor": {
-            "themeTags": [
-              "dark"
-            ],
-            "userData": {
-              "projection": "geoMercator",
-              "geodata": "worldLow"
-            },
-            "polygonStroke": {
-              "type": "Color",
-              "value": "#7e7e7e"
-            },
-            "lineStrokeDashLength": 8,
-            "linePointScale": 0.03,
-            "linePointTypeKey": "custom",
-            "pointScale": 5,
-            "pointTypeKey": "custom",
-            "pointPinned": false,
-            "pointSvgPath": "M520-200 80-480l440-280-137 240h497v80H383l137 240Z",
-            "linePointSvgPath": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z"
-          },
-          "editor.map": {
-            "minZoomLevel": 1,
-            "maxZoomLevel": 1,
-            "projection": "geoMercator",
-            "panX": "none",
-            "panY": "none",
-            "wheelX": "none",
-            "wheelY": "none",
-            "pinchZoom": false,
-            "wheelable": false,
-            "zoomControl": {
-              "type": "ZoomControl",
-              "settings": {
-                "visible": false,
-                "position": "absolute",
-                "layout": {
-                  "type": "VerticalLayout"
-                },
-                "themeTags": [
-                  "zoomtools"
-                ],
-                "layer": 30
-              }
-            },
-            "background": {
-              "type": "Rectangle",
-              "settings": {
-                "fill": {
-                  "type": "Color",
-                  "value": "#0B0B0B"
-                },
-                "fillOpacity": 1,
-                "width": 1440,
-                "height": 812,
-                "x": 0,
-                "y": 0,
-                "isMeasured": false
-              }
-            },
-            "themeTags": [
-              "map"
-            ],
-            "translateX": 720,
-            "translateY": 556.3955242786215,
-            "rotationX": -1.0235832804926572
-          },
-          "editor.pointTemplate": {
-            "toggleKey": "active",
-            "centerX": {
-              "type": "Percent",
-              "value": 50
-            },
-            "centerY": {
-              "type": "Percent",
-              "value": 50
-            },
-            "tooltipText": "{name}"
-          },
-          "editor.bubbleTemplate": {
-            "toggleKey": "active",
-            "tooltipText": "{name}: {value}"
-          },
-          "editor.pixelTemplate": {
-            "tooltipText": "{name}",
-            "toggleKey": "active"
-          },
-          "editor.linePointTemplate": {
-            "toggleKey": "active",
-            "centerX": {
-              "type": "Percent",
-              "value": 50
-            },
-            "centerY": {
-              "type": "Percent",
-              "value": 50
-            },
-            "tooltipText": "{name}"
-          },
-          "editor.labelTemplate": {
-            "toggleKey": "active",
-            "tooltipText": "{name}"
-          },
-          "editor.polygonSeries": {
-            "valueField": "value",
-            "calculateAggregates": true,
-            "id": "polygonseries",
-            "exclude": [
-              "AQ"
-            ],
-            "geometryField": "geometry",
-            "geometryTypeField": "geometryType",
-            "idField": "id"
-          },
-          "editor.polygonSeries.mapPolygons.template": {
-            "fill": {
-              "type": "Color",
-              "value": "#0B0B0B"
-            },
-            "states": {
-              "hover": {
-                "fill": {
-                  "type": "Color",
-                  "value": "#323232"
-                }
-              }
-            }
-          },
-          "editor.lineSeries": {
-            "layer": 30,
-            "id": "lineseries",
-            "lineTypeField": "lineType",
-            "geometryField": "geometry",
-            "geometryTypeField": "geometryType",
-            "idField": "id"
-          },
-          "editor.pointSeries": {
-            "fixedField": "fixed",
-            "id": "pointseries",
-            "geometryField": "geometry",
-            "geometryTypeField": "geometryType",
-            "idField": "id"
-          },
-          "editor.labelSeries": {
-            "fixedField": "fixed",
-            "id": "labelseries",
-            "geometryField": "geometry",
-            "geometryTypeField": "geometryType",
-            "idField": "id"
-          },
-          "editor.bubbleSeries": {
-            "calculateAggregates": true,
-            "valueField": "value",
-            "polygonIdField": "id",
-            "id": "bubbleseries",
-            "geometryField": "geometry",
-            "geometryTypeField": "geometryType",
-            "idField": "id"
-          },
-          "editor.gridSeries": {
-            "visible": false,
-            "themeTags": [
-              "grid"
-            ],
-            "affectsBounds": false,
-            "lineTypeField": "lineType",
-            "geometryField": "geometry",
-            "geometryTypeField": "geometryType",
-            "idField": "id",
-            "clipExtent": true
-          },
-          "editor.backgroundSeries": {
-            "visible": false,
-            "themeTags": [
-              "polygon",
-              "background"
-            ],
-            "affectsBounds": false,
-            "geometryField": "geometry",
-            "geometryTypeField": "geometryType",
-            "idField": "id"
-          },
-          "editor.backgroundSeries.mapPolygons.template": {
-            "forceInactive": true
-          },
-          "editor.gridSeries.mapLines.template": {
-            "forceInactive": true,
-            "visible": false,
-            "strokeOpacity": 0
+      (function () {
+        function hideMapCornerControls() {
+          const chartDiv = document.getElementById("chartdiv");
+          const mapSection = document.getElementById("global-presence");
+          if (!chartDiv) return;
+
+          const styleId = "map-ui-hide-style";
+          if (!document.getElementById(styleId)) {
+            const style = document.createElement("style");
+            style.id = styleId;
+            style.textContent = [
+              "#global-presence [title*='Created using amCharts'] { display: none !important; }",
+              "#global-presence [aria-label*='Created using'] { display: none !important; }",
+              "#global-presence a[href*='amcharts.com'] { display: none !important; }",
+              "#global-presence [aria-label*='amCharts'], #global-presence [title*='amCharts'] { display: none !important; }",
+              "#global-presence .am5exporting, #global-presence .am5exporting-menu, #global-presence .am5zoomcontrol { display: none !important; }",
+              "#chartdiv a[href*='amcharts.com'] { display: none !important; }",
+              "#chartdiv [title*='amCharts'], #chartdiv [aria-label*='amCharts'] { display: none !important; }",
+              "#chartdiv [title*='Download'], #chartdiv [aria-label*='Download'] { display: none !important; }",
+              "#chartdiv [title*='More'], #chartdiv [aria-label*='More'] { display: none !important; }",
+              "#chartdiv [title*='Zoom'], #chartdiv [aria-label*='Zoom'] { display: none !important; }",
+              "#chartdiv .am5exporting, #chartdiv .am5exporting-menu, #chartdiv .am5zoomcontrol { display: none !important; }"
+            ].join("\n");
+            document.head.appendChild(style);
           }
-        },
-        "data": {
-          "editor.polygonSeries": [
-            {
-              "id": "ZA",
-              "name": "South Africa",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "US",
-              "name": "United States",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  },
-                  "stroke": {
-                    "type": "Color",
-                    "value": "#7e7e7e"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "TH",
-              "name": "Thailand",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "SA",
-              "name": "Saudi Arabia",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "RU",
-              "name": "Russia",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "RO",
-              "name": "Romania",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "PT",
-              "name": "Portugal",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "PL",
-              "name": "Poland",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "NG",
-              "name": "Nigeria",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "NA",
-              "name": "Namibia",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "MX",
-              "name": "Mexico",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "LY",
-              "name": "Libya",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "IT",
-              "name": "Italy",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "IN",
-              "name": "India",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#FFA25C"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "ID",
-              "name": "Indonesia",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "HU",
-              "name": "Hungary",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "GR",
-              "name": "Greece",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "FR",
-              "name": "France",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "ET",
-              "name": "Ethiopia",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "ES",
-              "name": "Spain",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "GB",
-              "name": "United Kingdom",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "EG",
-              "name": "Egypt",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "DZ",
-              "name": "Algeria",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "DE",
-              "name": "Germany",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "CZ",
-              "name": "Czechia",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "CO",
-              "name": "Colombia",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "CH",
-              "name": "Switzerland",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "CA",
-              "name": "Canada",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  },
-                  "stroke": {
-                    "type": "Color",
-                    "value": "#7e7e7e"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "BR",
-              "name": "Brazil",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "AU",
-              "name": "Australia",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            },
-            {
-              "id": "AO",
-              "name": "Angola",
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "fill": {
-                    "type": "Color",
-                    "value": "#A8A8A8"
-                  }
-                }
-              },
-              "__parse": true
-            }
-          ],
-          "editor.lineSeries": [
-            {
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "stroke": {
-                    "type": "Color",
-                    "value": "#ffffff"
-                  },
-                  "strokeOpacity": 0.5,
-                  "strokeWidth": 1,
-                  "strokeDasharray": [
-                    8,
-                    8
-                  ]
-                }
-              },
-              "linePointSeries": {
-                "type": "MapPointSeries",
-                "settings": {
-                  "geometryField": "geometry",
-                  "geometryTypeField": "geometryType",
-                  "idField": "id",
-                  "id": "linepointseries_9"
-                },
-                "properties": {
-                  "data": [
-                    {
-                      "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                          -81.89225,
-                          38.88164
-                        ],
-                        "__parse": false
-                      },
-                      "id": "linepoint_1",
-                      "name": "Point 1",
-                      "settings": {
-                        "type": "Template",
-                        "settings": {
-                          "fillOpacity": 1,
-                          "fill": {
-                            "type": "Color",
-                            "value": "#fbad26"
-                          },
-                          "stroke": {
-                            "type": "Color",
-                            "value": "#000000"
-                          },
-                          "strokeOpacity": 0.5,
-                          "scale": 0.03,
-                          "strokeWidth": 0.5,
-                          "rotation": 292
-                        }
-                      },
-                      "pointType": "custom",
-                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
-                      "__parse": true
-                    },
-                    {
-                      "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                          74.60872,
-                          23.26153
-                        ],
-                        "__parse": false
-                      },
-                      "id": "linepoint_2",
-                      "name": "Point 2",
-                      "settings": {
-                        "type": "Template",
-                        "settings": {
-                          "fillOpacity": 1,
-                          "fill": {
-                            "type": "Color",
-                            "value": "#fbad26"
-                          },
-                          "stroke": {
-                            "type": "Color",
-                            "value": "#000000"
-                          },
-                          "strokeOpacity": 0.5,
-                          "scale": 0.7,
-                          "strokeWidth": 0.5
-                        }
-                      },
-                      "pointType": "Target",
-                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
-                      "__parse": true
-                    }
-                  ]
-                }
-              },
-              "geometry": {
-                "type": "Line",
-                "__parse": false
-              },
-              "id": "line_1",
-              "name": "Line 1",
-              "__parse": true
-            },
-            {
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "stroke": {
-                    "type": "Color",
-                    "value": "#ffffff"
-                  },
-                  "strokeOpacity": 0.5,
-                  "strokeWidth": 1,
-                  "strokeDasharray": [
-                    8,
-                    8
-                  ]
-                }
-              },
-              "linePointSeries": {
-                "type": "MapPointSeries",
-                "settings": {
-                  "geometryField": "geometry",
-                  "geometryTypeField": "geometryType",
-                  "idField": "id",
-                  "id": "linepointseries_10"
-                },
-                "properties": {
-                  "data": [
-                    {
-                      "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                          -44.51805,
-                          -6.89666
-                        ],
-                        "__parse": false
-                      },
-                      "id": "linepoint_1",
-                      "name": "Point 1",
-                      "settings": {
-                        "type": "Template",
-                        "settings": {
-                          "fillOpacity": 1,
-                          "fill": {
-                            "type": "Color",
-                            "value": "#fbad26"
-                          },
-                          "stroke": {
-                            "type": "Color",
-                            "value": "#000000"
-                          },
-                          "strokeOpacity": 0.5,
-                          "scale": 0.03,
-                          "strokeWidth": 0.5,
-                          "rotation": 328
-                        }
-                      },
-                      "pointType": "custom",
-                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
-                      "__parse": true
-                    },
-                    {
-                      "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                          74.50703,
-                          23.19787
-                        ],
-                        "__parse": false
-                      },
-                      "id": "linepoint_2",
-                      "name": "Point 2",
-                      "settings": {
-                        "type": "Template",
-                        "settings": {
-                          "fillOpacity": 1,
-                          "fill": {
-                            "type": "Color",
-                            "value": "#fbad26"
-                          },
-                          "stroke": {
-                            "type": "Color",
-                            "value": "#000000"
-                          },
-                          "strokeOpacity": 0.5,
-                          "scale": 0.72,
-                          "strokeWidth": 0.5
-                        }
-                      },
-                      "pointType": "Target",
-                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
-                      "__parse": true
-                    }
-                  ]
-                }
-              },
-              "geometry": {
-                "type": "Line",
-                "__parse": false
-              },
-              "id": "line_2",
-              "name": "Line 2",
-              "__parse": true
-            },
-            {
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "stroke": {
-                    "type": "Color",
-                    "value": "#ffffff"
-                  },
-                  "strokeOpacity": 0.5,
-                  "strokeWidth": 1,
-                  "strokeDasharray": [
-                    8,
-                    8
-                  ]
-                }
-              },
-              "linePointSeries": {
-                "type": "MapPointSeries",
-                "settings": {
-                  "geometryField": "geometry",
-                  "geometryTypeField": "geometryType",
-                  "idField": "id",
-                  "id": "linepointseries_11"
-                },
-                "properties": {
-                  "data": [
-                    {
-                      "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                          106.88288,
-                          60.85089
-                        ],
-                        "__parse": false
-                      },
-                      "id": "linepoint_1",
-                      "name": "Point 1",
-                      "settings": {
-                        "type": "Template",
-                        "settings": {
-                          "fillOpacity": 1,
-                          "fill": {
-                            "type": "Color",
-                            "value": "#fbad26"
-                          },
-                          "stroke": {
-                            "type": "Color",
-                            "value": "#000000"
-                          },
-                          "strokeOpacity": 0.5,
-                          "scale": 0.03,
-                          "strokeWidth": 0.5,
-                          "rotation": 130
-                        }
-                      },
-                      "pointType": "custom",
-                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
-                      "__parse": true
-                    },
-                    {
-                      "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                          74.45116,
-                          23.09923
-                        ],
-                        "__parse": false
-                      },
-                      "id": "linepoint_2",
-                      "name": "Point 2",
-                      "settings": {
-                        "type": "Template",
-                        "settings": {
-                          "fillOpacity": 1,
-                          "fill": {
-                            "type": "Color",
-                            "value": "#fbad26"
-                          },
-                          "stroke": {
-                            "type": "Color",
-                            "value": "#000000"
-                          },
-                          "strokeOpacity": 0.5,
-                          "scale": 0.7,
-                          "strokeWidth": 0.5
-                        }
-                      },
-                      "pointType": "Target",
-                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
-                      "__parse": true
-                    }
-                  ]
-                }
-              },
-              "geometry": {
-                "type": "Line",
-                "__parse": false
-              },
-              "id": "line_3",
-              "name": "Line 3",
-              "__parse": true
-            },
-            {
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "stroke": {
-                    "type": "Color",
-                    "value": "#ffffff"
-                  },
-                  "strokeOpacity": 0.5,
-                  "strokeWidth": 1,
-                  "strokeDasharray": [
-                    8,
-                    8
-                  ]
-                }
-              },
-              "linePointSeries": {
-                "type": "MapPointSeries",
-                "settings": {
-                  "geometryField": "geometry",
-                  "geometryTypeField": "geometryType",
-                  "idField": "id",
-                  "id": "linepointseries_12"
-                },
-                "properties": {
-                  "data": [
-                    {
-                      "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                          1.73875,
-                          53.21537
-                        ],
-                        "__parse": false
-                      },
-                      "id": "linepoint_1",
-                      "name": "Point 1",
-                      "settings": {
-                        "type": "Template",
-                        "settings": {
-                          "fillOpacity": 1,
-                          "fill": {
-                            "type": "Color",
-                            "value": "#fbad26"
-                          },
-                          "stroke": {
-                            "type": "Color",
-                            "value": "#000000"
-                          },
-                          "strokeOpacity": 0.5,
-                          "scale": 0.03,
-                          "strokeWidth": 0.5
-                        }
-                      },
-                      "pointType": "custom",
-                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
-                      "__parse": true
-                    },
-                    {
-                      "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                          74.3193,
-                          23.08586
-                        ],
-                        "__parse": false
-                      },
-                      "id": "linepoint_2",
-                      "name": "Point 2",
-                      "settings": {
-                        "type": "Template",
-                        "settings": {
-                          "fillOpacity": 1,
-                          "fill": {
-                            "type": "Color",
-                            "value": "#fbad26"
-                          },
-                          "stroke": {
-                            "type": "Color",
-                            "value": "#000000"
-                          },
-                          "strokeOpacity": 0.5,
-                          "scale": 0.7,
-                          "strokeWidth": 0.5
-                        }
-                      },
-                      "pointType": "Target",
-                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
-                      "__parse": true
-                    }
-                  ]
-                }
-              },
-              "geometry": {
-                "type": "Line",
-                "__parse": false
-              },
-              "id": "line_4",
-              "name": "Line 4",
-              "__parse": true
-            },
-            {
-              "settings": {
-                "type": "Template",
-                "settings": {
-                  "stroke": {
-                    "type": "Color",
-                    "value": "#ffffff"
-                  },
-                  "strokeOpacity": 0.5,
-                  "strokeWidth": 1,
-                  "strokeDasharray": [
-                    8,
-                    8
-                  ]
-                }
-              },
-              "linePointSeries": {
-                "type": "MapPointSeries",
-                "settings": {
-                  "geometryField": "geometry",
-                  "geometryTypeField": "geometryType",
-                  "idField": "id",
-                  "id": "linepointseries_13"
-                },
-                "properties": {
-                  "data": [
-                    {
-                      "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                          122.99873,
-                          -22.63022
-                        ],
-                        "__parse": false
-                      },
-                      "id": "linepoint_1",
-                      "name": "Point 1",
-                      "settings": {
-                        "type": "Template",
-                        "settings": {
-                          "fillOpacity": 1,
-                          "fill": {
-                            "type": "Color",
-                            "value": "#fbad26"
-                          },
-                          "stroke": {
-                            "type": "Color",
-                            "value": "#000000"
-                          },
-                          "strokeOpacity": 0.5,
-                          "scale": 0.03,
-                          "strokeWidth": 0.5,
-                          "rotation": 223
-                        }
-                      },
-                      "pointType": "custom",
-                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
-                      "__parse": true
-                    },
-                    {
-                      "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                          74.45563,
-                          22.86055
-                        ],
-                        "__parse": false
-                      },
-                      "id": "linepoint_2",
-                      "name": "Point 2",
-                      "settings": {
-                        "type": "Template",
-                        "settings": {
-                          "fillOpacity": 1,
-                          "fill": {
-                            "type": "Color",
-                            "value": "#fbad26"
-                          },
-                          "stroke": {
-                            "type": "Color",
-                            "value": "#000000"
-                          },
-                          "strokeOpacity": 0.5,
-                          "scale": 0.7,
-                          "strokeWidth": 0.5
-                        }
-                      },
-                      "pointType": "Target",
-                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
-                      "__parse": true
-                    }
-                  ]
-                }
-              },
-              "geometry": {
-                "type": "Line",
-                "__parse": false
-              },
-              "id": "line_5",
-              "name": "Line 5",
-              "__parse": true
-            }
-          ],
-          "editor.pointSeries": [],
-          "editor.labelSeries": [],
-          "editor.bubbleSeries": [],
-          "editor.gridSeries": []
+
+          const hideDynamicNodes = function () {
+            const selectors = [
+              "a[href*='amcharts.com']",
+              "[title*='amCharts']",
+              "[aria-label*='amCharts']",
+              "[title*='Download']",
+              "[aria-label*='Download']",
+              "[title*='More']",
+              "[aria-label*='More']",
+              "[title*='Zoom']",
+              "[aria-label*='Zoom']",
+              ".am5exporting",
+              ".am5exporting-menu",
+              ".am5zoomcontrol"
+            ].join(",");
+
+            const root = mapSection || chartDiv;
+            const nodes = root.querySelectorAll(selectors);
+            nodes.forEach(function (node) {
+              node.style.display = "none";
+              node.style.visibility = "hidden";
+              node.style.pointerEvents = "none";
+            });
+
+            // Hide any remaining text nodes containing amCharts attribution
+            const allNodes = root.querySelectorAll('*');
+            allNodes.forEach((n) => {
+              const text = (n.textContent || '').toLowerCase();
+              if (/created using|amcharts 5/.test(text) && n.children.length === 0) {
+                n.style.display = 'none';
+                n.style.visibility = 'hidden';
+              }
+            });
+          };
+
+          hideDynamicNodes();
+          const observer = new MutationObserver(hideDynamicNodes);
+          observer.observe(chartDiv, { childList: true, subtree: true });
         }
-      });
+
+        const mapConfig = window.WORLD_MAP_CONFIG
+          ? JSON.parse(JSON.stringify(window.WORLD_MAP_CONFIG))
+          : null;
+
+        if (!mapConfig) return;
+
+        // Localhost CORS fallback: reroute world geodata request to local file.
+        (function installLocalGeodataFallback() {
+          const localGeodataPath = "assets/data/worldLow.json";
+          const geodataUrlPattern = /cdn\.amcharts\.com\/lib\/5\/geodata\/json\/worldLow\.json/i;
+
+          const originalFetch = window.fetch;
+          if (typeof originalFetch === "function") {
+            window.fetch = function (resource, init) {
+              const url = typeof resource === "string" ? resource : (resource && resource.url ? resource.url : "");
+              if (geodataUrlPattern.test(url)) {
+                return originalFetch.call(this, localGeodataPath, init);
+              }
+              return originalFetch.call(this, resource, init);
+            };
+          }
+
+          const originalXHROpen = XMLHttpRequest.prototype.open;
+          XMLHttpRequest.prototype.open = function (method, url) {
+            const nextUrl = typeof url === "string" && geodataUrlPattern.test(url) ? localGeodataPath : url;
+            return originalXHROpen.apply(this, [method, nextUrl, ...Array.prototype.slice.call(arguments, 2)]);
+          };
+        })();
+
+        const editorMap = mapConfig.settings && mapConfig.settings["editor.map"];
+        if (editorMap) {
+          const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+          editorMap.panX = "none";
+          editorMap.panY = "none";
+          editorMap.wheelX = "none";
+          editorMap.wheelY = "none";
+          editorMap.pinchZoom = false;
+          editorMap.wheelable = false;
+
+          if (editorMap.zoomControl && editorMap.zoomControl.settings) {
+            editorMap.zoomControl.settings.visible = false;
+          }
+        }
+
+        am5viewer.create("chartdiv", mapConfig);
+        const chartDiv = document.getElementById("chartdiv");
+        if (chartDiv) {
+          const cropFrame = chartDiv.closest(".map-crop-frame");
+          if (cropFrame) {
+            cropFrame.style.setProperty("--map-crop-x", "0px");
+            cropFrame.style.setProperty("--map-crop-y", "0px");
+          }
+          chartDiv.style.position = "absolute";
+          chartDiv.style.top = "0";
+          chartDiv.style.left = "0";
+          chartDiv.style.width = "100%";
+          chartDiv.style.height = "100%";
+          chartDiv.style.touchAction = "auto";
+        }
+        hideMapCornerControls();
+      })();
     </script>
+
 
     <!-- Initialize AOS and PureCounter -->
     <script>
