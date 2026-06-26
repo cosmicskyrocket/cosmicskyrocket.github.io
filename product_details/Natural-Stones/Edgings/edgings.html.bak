@@ -2280,7 +2280,7 @@
           <div style="text-align: center; padding-top: 3rem; padding-bottom: 3rem;">
             <img src="../../../../assets/img/CSR Logos Transparent/CSR_White_logo.PNG" alt="Cosmic Skyrocket Logo" style="max-height: 100px; width: auto;">
           </div>
-          <div style="width: 100%; margin: 0 0 3rem 0; border-top: 1px solid rgba(255,255,255,0.2);"></div>
+          <!-- <div style="width: 100%; margin: 0 0 3rem 0; border-top: 1px solid rgba(255,255,255,0.2);"></div> -->
           <div class="container-fluid" style="margin-top: 0; padding-left: clamp(12px, 2.2vw, 28px); padding-right: clamp(12px, 2.2vw, 28px);">
             <div class="row gx-0">
               <!-- Column 1: Contact Info -->
@@ -2309,7 +2309,7 @@
                     </div>
                     <!-- Email -->
                     <a href="mailto:info@cosmicskyrocket.com" class="link-hover d-flex gap-2 align-items-start text-white footer-contact-link" style="text-decoration: none;">
-                      <i class="bi bi-envelope" style="color: #fff; flex-shrink: 0; font-size: 1.2rem;"></i>
+                      <!-- <i class="bi bi-envelope" style="color: #fff; flex-shrink: 0; font-size: 1.3rem;"></i> -->
                       <span style="font-size: 1.125rem;"><span class="footer-hover-value">info@cosmicskyrocket.com</span></span>
                     </a>
 </div>
@@ -2369,7 +2369,7 @@
           <!-- Brand watermark and copyright -->
           <div style="margin-top: 2.5rem; padding-top: 1.5rem; text-align: center;">
             <p class="mb-0 text-white" style="font-family: 'Cinzel', serif; font-size: clamp(0.75rem, 8.7vw, 14rem); font-weight: 600; letter-spacing: 1px; line-height: 1.1; white-space: nowrap;">COSMIC SKYROCKET</p>
-            <p class="mb-0 text-white" style="color: rgba(255,255,255,0.7) !important; font-size: 1.05rem; margin-top: -0.2rem;">© 2024 COSMIC SKYROCKET. All Rights Reserved.</p>
+            <p class="mb-0 text-white" style="color: rgba(255,255,255,0.7) !important; font-size: 1.05rem; margin-top: -0.2rem;">© Cosmic Skyrocket INDIA. All Rights Reserved.</p>
           </div>
         </footer>
 

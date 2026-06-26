@@ -251,8 +251,8 @@
       .section-title { font-size: clamp(1.728rem, 2.66vw, 2.688rem); font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; line-height: 1.2; }
       .section-line { width: 60px; height: 3px; background: linear-gradient(90deg, #FFA15C, transparent); margin: 1rem 0 2.5rem; border-radius: 2px; }
 
-      .packaging-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-      .packaging-block { background: #fff; border-radius: 14px; padding: 1.1rem; box-shadow: 0 2px 14px rgba(0,0,0,0.06); margin-bottom: 1.6rem; }
+      .packaging-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+      .packaging-block { background: #fff; border-radius: 14px; padding: 1.1rem; box-shadow: 0 2px 14px rgba(0,0,0,0.06); margin-bottom: 0; min-width: 0; }
       .pkg-subtitle {
         font-size: clamp(1.296rem, 2vw, 2.016rem);
         font-weight: 700;
@@ -274,6 +274,19 @@
         background: linear-gradient(90deg, #FFA15C, rgba(255, 161, 92, 0.15));
       }
       .packaging-intro { font-size: clamp(0.648rem, 1vw, 1.008rem); color: #666; line-height: 1.7; margin: 0 0 0.95rem; }
+      .packaging-meta {
+        background: #fff8f2;
+        border: 1px solid rgba(255, 161, 92, 0.28);
+        border-radius: 10px;
+        padding: 0.75rem 0.9rem;
+        margin: 0 0 1rem;
+      }
+      .packaging-meta p {
+        margin: 0;
+        color: #444;
+        font-size: clamp(0.6rem, 0.93vw, 0.95rem);
+        line-height: 1.55;
+      }
       .pallet-toggle-group { display: flex; gap: 0.65rem; flex-wrap: wrap; margin-bottom: 1rem; }
       .pallet-toggle-btn {
         border: 1px solid #d8d8d8;
@@ -291,7 +304,7 @@
         border-color: #1a1a1a;
         color: #fff;
       }
-      .pallet-table-panel { display: none; }
+      .pallet-table-panel { display: block; }
       .pallet-table-panel.active { display: block; }
       .pkg-section-heading {
         margin: 1.6rem 0 0.9rem;
@@ -300,13 +313,52 @@
         font-weight: 700;
       }
 
-      .pkg-table-wrapper { overflow-x: auto; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
-      .pkg-table { width: 100%; border-collapse: collapse; min-width: 900px; background: #fff; }
+      .pkg-table-wrapper {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+        margin-top: 0.75rem;
+      }
+      .pkg-table { width: 100%; border-collapse: collapse; min-width: 640px; background: #fff; table-layout: fixed; }
       .pkg-table thead tr { background: #1a1a1a; color: #fff; }
-      .pkg-table thead th { padding: 16px 14px; font-size: clamp(0.5616rem, 0.87vw, 0.8736rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; border: none; }
+      .pkg-table thead th { padding: 10px 8px; font-size: clamp(0.54rem, 0.82vw, 0.82rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; white-space: normal; line-height: 1.25; word-break: break-word; border: none; }
       .pkg-table tbody tr { border-bottom: 1px solid #f2f2f2; transition: background 0.2s; }
       .pkg-table tbody tr:hover { background: #fdf7f2; }
-      .pkg-table tbody td { padding: 14px 14px; font-size: clamp(0.6336rem, 0.98vw, 0.9856rem); color: #444; vertical-align: middle; }
+      .pkg-table tbody td { padding: 8px 8px; font-size: clamp(0.6rem, 0.9vw, 0.92rem); color: #444; vertical-align: middle; line-height: 1.35; word-break: break-word; }
+      .pkg-table thead th:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 3;
+        background: #1a1a1a;
+      }
+      .pkg-table tbody td:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 2;
+        background: #fff;
+      }
+      .pkg-table tbody tr:hover td:first-child {
+        background: #fdf7f2;
+      }
+      .pkg-table thead th:first-child::after,
+      .pkg-table tbody td:first-child::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -1px;
+        width: 1px;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.12);
+      }
+      .ceramic-table th:first-child,
+      .ceramic-table td:first-child {
+        min-width: 110px;
+        width: 110px;
+      }
       .size-badge { display: inline-block; padding: 3px 10px; background: rgba(255,161,92,0.12); border-radius: 20px; font-size: clamp(0.576rem, 0.89vw, 0.896rem); font-weight: 700; color: #c8650d; }
       .highlight-val { font-weight: 700; color: #1a1a1a; }
 
@@ -330,10 +382,33 @@
       @media (max-width: 991px) {
         .packaging-hero { height: auto; min-height: 85vh; padding: 140px 0 90px; }
       }
-      @media (max-width: 768px) {
+      @media (max-width: 991px) {
         .hamburger-menu-panel { width: 320px; }
         .search-container { right: 1rem; left: 1rem; width: auto; }
         .hero-stat-item { min-width: 140px; }
+        .pkg-table-wrapper {
+          display: block;
+          overflow-x: auto !important;
+          overflow-y: hidden;
+          -webkit-overflow-scrolling: touch;
+          touch-action: pan-x pan-y;
+        }
+        .pkg-table {
+          width: max-content;
+          min-width: 960px;
+          table-layout: auto;
+        }
+        .pkg-table tbody td {
+          white-space: nowrap;
+          word-break: normal;
+        }
+        .pkg-table thead th,
+        .pkg-table tbody td { padding: 7px 6px; }
+        .ceramic-table th:first-child,
+        .ceramic-table td:first-child {
+          min-width: 125px;
+          width: 125px;
+        }
       }
     </style>
 
@@ -487,16 +562,16 @@
                 <p>At Cosmic Skyrocket, every tile and natural stone shipment is packed with export-grade materials designed to protect surface finishes, minimise breakage, and optimise container utilisation for international transportation.</p>
                 <div class="hero-stats">
                   <div class="hero-stat-item">
-                    <div class="stat-num">EU &amp; STD</div>
-                    <div class="stat-label">Pallet Types</div>
+                    <div class="stat-num">FOB &amp; CIF</div>
+                    <div class="stat-label">INCOTERMS</div>
                   </div>
                   <div class="hero-stat-item">
-                    <div class="stat-num">Export-Grade</div>
-                    <div class="stat-label">Protective Packaging</div>
+                    <div class="stat-num">ISPM-15</div>
+                    <div class="stat-label">Export Packaging</div>
                   </div>
                   <div class="hero-stat-item">
-                    <div class="stat-num">Container</div>
-                    <div class="stat-label">Optimized Loading</div>
+                    <div class="stat-num">Lashing, Choking &amp; Fumigated</div>
+                    <div class="stat-label">Container Stuffing</div>
                   </div>
                 </div>
               </div>
@@ -574,206 +649,192 @@
               <h2 class="section-title">Pallet Configuration &amp; <br>Container Data</h2>
               <div class="section-line"></div>
               <p style="color: #666; font-size: clamp(0.684rem, 1.05vw, 1.064rem); margin-bottom: 2rem; max-width: 720px;">
-                We offer both EU Pallet and Standard Pallet configurations. Select your preferred format below to view detailed packaging specifications for Natural Stones (Sandstone &amp; Limestone) and Ceramic &amp; Porcelain Tiles.
+                Review detailed packaging specifications for Natural Stones (Sandstone &amp; Limestone) and Ceramic &amp; Porcelain Tiles, including pallet loading and container output metrics.
               </p>
             </div>
 
             <div class="packaging-grid">
               <div class="packaging-block" data-aos="fade-up" data-aos-delay="100">
                 <h3 class="pkg-subtitle">Sandstone &amp; Limestone Packaging</h3>
-                <p class="packaging-intro">Use the pallet selector to compare natural paving coverage and container loading output for Sandstone and Limestone in 2.2 cm thickness.</p>
-                <div class="pallet-toggle-group" role="tablist" aria-label="Natural stones pallet type selector">
-                  <button class="pallet-toggle-btn active" type="button" data-toggle-group="stones-pallet" data-target="stones-eu">EU Pallet</button>
-                  <button class="pallet-toggle-btn" type="button" data-toggle-group="stones-pallet" data-target="stones-standard">Standard Pallet</button>
+                <p class="packaging-intro">Reference packaging metrics for Sandstone and Limestone at 22 mm thickness, including stuffed pallet weight, pallet count, and container output values.</p>
+                <div class="packaging-meta">
+                  <p>
+                    <strong>Box size:</strong> 34&quot; x 37&quot; x 24&quot;<br>
+                    <strong>Thickness:</strong> 22 mm<br>
+                    <strong>Internal usable pallet dimension:</strong> 825 x 927 x 500 mm<br>
+                    <strong>Empty pallet box weight:</strong> 50 kg
+                  </p>
                 </div>
-
-                <div class="pallet-table-panel active" data-panel-group="stones-pallet" id="stones-eu">
+                <div>
   <div class="pkg-table-wrapper">
     <table class="pkg-table">
       <thead>
         <tr>
-          <th>Size (cm)</th>
-          <th>Thickness (cm)</th>
+          <th>Size (mm)</th>
+          <th>Thickness (mm)</th>
           <th>Coverage / Pallet Box (sq.m.)</th>
+          <th>Stuffed Pallet Box Weight (kg)</th>
           <th>Pallet Boxes / 20ft Container</th>
           <th>Approx. Coverage / Container (sq.m.)</th>
+          <th>Approx. Container Weight (MT)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><span class="size-badge">60×120</span></td>
-          <td>2.2</td>
+          <td><span class="size-badge">600×1200</span></td>
+          <td>22</td>
           <td>15.84</td>
+          <td>973.47</td>
           <td>27</td>
           <td class="highlight-val">427.68</td>
+          <td>26.29</td>
         </tr>
-
         <tr>
-          <td><span class="size-badge">60×90</span></td>
-          <td>2.2</td>
+          <td><span class="size-badge">600×900</span></td>
+          <td>22</td>
           <td>18.36</td>
-          <td>27</td>
-          <td class="highlight-val">495.72</td>
+          <td>1120.39</td>
+          <td>25</td>
+          <td class="highlight-val">459.00</td>
+          <td>26.76</td>
         </tr>
-
         <tr>
-          <td><span class="size-badge">60×60</span></td>
-          <td>2.2</td>
+          <td><span class="size-badge">600×600</span></td>
+          <td>22</td>
           <td>19.44</td>
-          <td>27</td>
-          <td class="highlight-val">524.88</td>
+          <td>1183.35</td>
+          <td>22</td>
+          <td class="highlight-val">427.68</td>
+          <td>26.03</td>
         </tr>
-
         <tr>
-          <td><span class="size-badge">45×60</span></td>
-          <td>2.2</td>
+          <td><span class="size-badge">450×600</span></td>
+          <td>22</td>
           <td>20.25</td>
-          <td>27</td>
-          <td class="highlight-val">546.75</td>
+          <td>1230.58</td>
+          <td>21</td>
+          <td class="highlight-val">425.25</td>
+          <td>25.84</td>
         </tr>
-
         <tr>
-          <td><span class="size-badge">30×60</span></td>
-          <td>2.2</td>
+          <td><span class="size-badge">300×600</span></td>
+          <td>22</td>
           <td>20.88</td>
-          <td>27</td>
-          <td class="highlight-val">563.76</td>
+          <td>1267.30</td>
+          <td>21</td>
+          <td class="highlight-val">438.48</td>
+          <td>26.61</td>
         </tr>
-
         <tr>
-          <td><span class="size-badge">30×30</span></td>
-          <td>2.2</td>
+          <td><span class="size-badge">300×300</span></td>
+          <td>22</td>
           <td>21.60</td>
-          <td>27</td>
-          <td class="highlight-val">583.20</td>
+          <td>1309.28</td>
+          <td>20</td>
+          <td class="highlight-val">432.00</td>
+          <td>26.19</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-
-
-                <div class="pallet-table-panel" data-panel-group="stones-pallet" id="stones-standard">
-  <div class="pkg-table-wrapper">
-    <table class="pkg-table">
-      <thead>
-        <tr>
-          <th>Size (cm)</th>
-          <th>Thickness (cm)</th>
-          <th>Coverage / Pallet Box (sq.m.)</th>
-          <th>Pallet Boxes / 20ft Container</th>
-          <th>Approx. Coverage / Container (sq.m.)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="size-badge">60×120</span></td>
-          <td>2.2</td>
-          <td>18.00</td>
-          <td>27</td>
-          <td class="highlight-val">486.00</td>
-        </tr>
-
-        <tr>
-          <td><span class="size-badge">60×90</span></td>
-          <td>2.2</td>
-          <td>20.70</td>
-          <td>27</td>
-          <td class="highlight-val">558.90</td>
-        </tr>
-
-        <tr>
-          <td><span class="size-badge">60×60</span></td>
-          <td>2.2</td>
-          <td>21.60</td>
-          <td>27</td>
-          <td class="highlight-val">583.20</td>
-        </tr>
-
-        <tr>
-          <td><span class="size-badge">45×60</span></td>
-          <td>2.2</td>
-          <td>22.50</td>
-          <td>27</td>
-          <td class="highlight-val">607.50</td>
-        </tr>
-
-        <tr>
-          <td><span class="size-badge">30×60</span></td>
-          <td>2.2</td>
-          <td>23.40</td>
-          <td>27</td>
-          <td class="highlight-val">631.80</td>
-        </tr>
-
-        <tr>
-          <td><span class="size-badge">30×30</span></td>
-          <td>2.2</td>
-          <td>24.30</td>
-          <td>27</td>
-          <td class="highlight-val">656.10</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-</div>
+              </div>
 
 
               <div class="packaging-block" data-aos="fade-up" data-aos-delay="150">
-                <h3 class="pkg-subtitle">Stone Cladding Packaging</h3>
-                <p class="packaging-intro">Cladding packs are organized by fixed and mixed formats. Compare EU and Standard pallet counts to estimate facade coverage per container.</p>
+                <h3 class="pkg-subtitle">Setts &amp; Cobbles Packaging</h3>
+                <p class="packaging-intro">Setts and cobbles are listed by piece count and pallet-box area so project coverage can be calculated directly at container scale.</p>
+                <div class="packaging-meta">
+                  <p>
+                    <strong>Box size:</strong> 34&quot; x 37&quot; x 24&quot;<br>
+                    <strong>Internal usable pallet dimension:</strong> 825 x 927 x 500 mm<br>
+                    <strong>Empty pallet box weight:</strong> 50 kg<br>
+                    <strong>Stuffed pallet box weight:</strong> 1,194.80 kg<br>
+                    <strong>Pallet boxes / 20ft container:</strong> 22<br>
+                    <strong>Approx. container weight:</strong> 26.29 MT
+                  </p>
+                </div>
                 <div class="pkg-table-wrapper">
                   <table class="pkg-table">
-                    <thead><tr><th>Type</th><th>Size (cm)</th><th>EU Pcs / Pallet</th><th>Standard Pcs / Pallet</th><th>Pallets / Container</th><th>EU Sq.M. / Container</th><th>Standard Sq.M. / Container</th></tr></thead>
+                    <thead><tr><th>Size (cm)</th><th>Thickness (cm)</th><th>Total Pieces / Box</th><th>Coverage / Pallet Box (sq.m.)</th><th>Approx. Coverage / Container (sq.m.)</th></tr></thead>
                     <tbody>
-                      <tr><td>Stone Cladding</td><td><span class="size-badge">24×7.5×1.7-2.5</span></td><td>768 pcs</td><td>960 pcs</td><td>20</td><td class="highlight-val">345</td><td class="highlight-val">430</td></tr>
-                      <tr><td>Stone Cladding</td><td><span class="size-badge">Mixed Pack</span></td><td>384 pcs</td><td>480 pcs</td><td>20</td><td class="highlight-val">330</td><td class="highlight-val">410</td></tr>
+                      <tr><td><span class="size-badge">20×10</span></td><td>1</td><td>2160</td><td>43.20</td><td class="highlight-val">950.40</td></tr>
+                      <tr><td><span class="size-badge">20×10</span></td><td>2</td><td>1080</td><td>21.60</td><td class="highlight-val">475.20</td></tr>
+                      <tr><td><span class="size-badge">10×10</span></td><td>1</td><td>4320</td><td>43.20</td><td class="highlight-val">950.40</td></tr>
+                      <tr><td><span class="size-badge">10×10</span></td><td>2</td><td>2160</td><td>21.60</td><td class="highlight-val">475.20</td></tr>
                     </tbody>
                   </table>
                 </div>
               </div>
 
               <div class="packaging-block" data-aos="fade-up" data-aos-delay="170">
-                <h3 class="pkg-subtitle">Stone Edging Packaging</h3>
-                <p class="packaging-intro">Edging data is shared in linear metre terms to simplify border-length planning and shipment balancing for landscape and hardscape projects.</p>
+                <h3 class="pkg-subtitle">Stone Circle Kit Packaging</h3>
+                <p class="packaging-intro">Circle kit packaging includes per-kit area, kits per pallet box, and container-level area output for each circle diameter.</p>
+                <div class="packaging-meta">
+                  <p>
+                    <strong>Box size:</strong> 34&quot; x 37&quot; x 24&quot;<br>
+                    <strong>Thickness:</strong> 22 mm<br>
+                    <strong>Internal usable pallet dimension:</strong> 825 x 927 x 500 mm<br>
+                    <strong>Empty pallet box weight:</strong> 50 kg<br>
+                    <strong>Stuffed pallet box weight:</strong> 1,063.34 kg<br>
+                    <strong>Pallet boxes / 20ft container:</strong> 25<br>
+                    <strong>Approx. container weight:</strong> 26.58 MT
+                  </p>
+                </div>
                 <div class="pkg-table-wrapper">
                   <table class="pkg-table">
-                    <thead><tr><th>Type</th><th>Size (cm)</th><th>EU Pcs / Pallet</th><th>Standard Pcs / Pallet</th><th>EU LM / Pallet</th><th>Standard LM / Pallet</th><th>Pallets / Container</th></tr></thead>
+                    <thead><tr><th>Circle Kit Size</th><th>Pieces / Kit</th><th>Coverage / Kit (sq.m.)</th><th>Kits / Pallet Box</th><th>Coverage / Pallet Box (sq.m.)</th><th>Approx. Coverage / Container (sq.m.)</th></tr></thead>
                     <tbody>
-                      <tr><td>Stone Edging</td><td><span class="size-badge">60×15×4</span></td><td>150</td><td>180</td><td>90 LM</td><td>108 LM</td><td>18</td></tr>
-                      <tr><td>Stone Edging</td><td><span class="size-badge">Mixed Pack</span></td><td>300</td><td>360</td><td>180 LM</td><td>216 LM</td><td>18</td></tr>
+                      <tr><td><span class="size-badge">1.5 Metre Circle Kit</span></td><td>9</td><td>1.77</td><td>20</td><td>35.34</td><td class="highlight-val">883.50</td></tr>
+                      <tr><td><span class="size-badge">2.4 Metre Circle Kit</span></td><td>25</td><td>4.52</td><td>8</td><td>36.19</td><td class="highlight-val">904.75</td></tr>
+                      <tr><td><span class="size-badge">3.3 Metre Circle Kit</span></td><td>41</td><td>8.55</td><td>4</td><td>34.21</td><td class="highlight-val">855.25</td></tr>
                     </tbody>
                   </table>
                 </div>
               </div>
 
               <div class="packaging-block" data-aos="fade-up" data-aos-delay="190">
-                <h3 class="pkg-subtitle">Setts &amp; Cobbles Packaging</h3>
-                <p class="packaging-intro">Setts and cobbles are listed with EU and Standard packing intensities so driveway and pathway orders can be translated directly into container-ready pallet counts.</p>
+                <h3 class="pkg-subtitle">Stone Cladding Packaging</h3>
+                <p class="packaging-intro">Cladding packaging includes piece count, pallet dimensions, stuffed pack weight, and container-level coverage values for each pack type.</p>
+                <div class="packaging-meta">
+                  <p>
+                    <strong>Piece size:</strong> 240 x 75 x 17-25 mm
+                  </p>
+                </div>
                 <div class="pkg-table-wrapper">
                   <table class="pkg-table">
-                    <thead><tr><th>Type</th><th>Size (cm)</th><th>EU Pcs / Pallet</th><th>Standard Pcs / Pallet</th><th>EU Area / Pallet (sq.m.)</th><th>Standard Area / Pallet (sq.m.)</th><th>Pallets / Container</th></tr></thead>
+                    <thead><tr><th>Cladding Pack Type</th><th>Pieces / Pack</th><th>Coverage / Pack (sq.m.)</th><th>Recommended Pallet Size (mm)</th><th>Box Weight (kg)</th><th>Pallet Boxes / 20ft Container</th><th>Stuffed Pack Weight (kg)</th><th>Approx. Container Weight (MT)</th><th>Approx. Coverage / Container (sq.m.)</th></tr></thead>
                     <tbody>
-                      <tr><td>Setts</td><td><span class="size-badge">20×10×1</span></td><td>1000</td><td>1200</td><td>20.0</td><td>24.0</td><td>12</td></tr>
-                      <tr><td>Setts</td><td><span class="size-badge">10×10×2</span></td><td>500</td><td>600</td><td>5.0</td><td>6.0</td><td>12</td></tr>
-                      <tr><td>Cobbles</td><td><span class="size-badge">10×10×1</span></td><td>500</td><td>600</td><td>5.0</td><td>6.0</td><td>12</td></tr>
+                      <tr><td>Jumbo Size Pack</td><td>768</td><td>13.82</td><td><span class="size-badge">1200×1000×350</span></td><td>50</td><td>32</td><td>819</td><td>26.21</td><td class="highlight-val">442.24</td></tr>
+                      <tr><td>Double Size Pack</td><td>384</td><td>6.91</td><td><span class="size-badge">1200×800×250</span></td><td>35</td><td>62</td><td>420</td><td>26.04</td><td class="highlight-val">428.42</td></tr>
+                      <tr><td>Single Size Pack</td><td>192</td><td>3.46</td><td><span class="size-badge">800×600×250</span></td><td>20</td><td>120</td><td>217</td><td>26.04</td><td class="highlight-val">414.72</td></tr>
                     </tbody>
                   </table>
                 </div>
               </div>
 
               <div class="packaging-block" data-aos="fade-up" data-aos-delay="210">
-                <h3 class="pkg-subtitle">Stone Circle Kit Packaging</h3>
-                <p class="packaging-intro">Circle kit bundles are pre-packed by diameter and piece count for easier stock control and project-by-project loading forecasts.</p>
+                <h3 class="pkg-subtitle">Stone Edging Packaging</h3>
+                <p class="packaging-intro">Edging packaging is measured in linear metres, with pack options designed for balanced loading in 20 ft containers.</p>
+                <div class="packaging-meta">
+                  <p>
+                    <strong>Box size:</strong> 47&quot; x 39&quot; x 20&quot;<br>
+                    <strong>Thickness:</strong> 10-40 mm<br>
+                    <strong>Internal usable pallet dimension:</strong> 1150 x 980 x 400 mm<br>
+                    <strong>Empty pallet box weight:</strong> 65 kg<br>
+                    <strong>Stuffed pallet box weight:</strong> 944 kg<br>
+                    <strong>Pallet boxes / 20ft container:</strong> 28<br>
+                    <strong>Approx. container weight:</strong> 26.43 MT
+                  </p>
+                </div>
                 <div class="pkg-table-wrapper">
                   <table class="pkg-table">
-                    <thead><tr><th>Circle Kit</th><th>Diameter (cm)</th><th>Pieces</th><th>Packs / Pallet</th><th>Pallets / Container</th></tr></thead>
+                    <thead><tr><th>Edging Pack Type</th><th>Pieces / Pack</th><th>Coverage / Pack (LM)</th><th>Pallet Boxes Required</th><th>Approx. Coverage / Container (LM)</th></tr></thead>
                     <tbody>
-                      <tr><td>Circle Kit</td><td><span class="size-badge">150</span></td><td>9 pcs</td><td>30</td><td>12</td></tr>
-                      <tr><td>Circle Kit</td><td><span class="size-badge">240</span></td><td>25 pcs</td><td>18</td><td>12</td></tr>
-                      <tr><td>Circle Kit</td><td><span class="size-badge">330</span></td><td>41 pcs</td><td>10</td><td>12</td></tr>
+                      <tr><td>Single Size Pack</td><td>150</td><td>90</td><td>1</td><td class="highlight-val">2520</td></tr>
+                      <tr><td>Double Size Pack</td><td>300</td><td>180</td><td>2</td><td class="highlight-val">2520</td></tr>
+                      <tr><td>Jumbo Size Pack</td><td>450</td><td>270</td><td>3</td><td class="highlight-val">2520</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -787,47 +848,37 @@
 
               <div class="packaging-block" data-aos="fade-up" data-aos-delay="120">
                 <h3 class="pkg-subtitle">Ceramic &amp; Porcelain Packaging</h3>
-                <p class="packaging-intro">Switch between EU and Standard pallet formats to review tile packaging metrics for ceramic and porcelain categories used in export shipments.</p>
-                <div class="pallet-toggle-group" role="tablist" aria-label="Tiles pallet type selector">
-                  <button class="pallet-toggle-btn active" type="button" data-toggle-group="tiles-pallet" data-target="tiles-eu">EU Pallet</button>
-                  <button class="pallet-toggle-btn" type="button" data-toggle-group="tiles-pallet" data-target="tiles-standard">Standard Pallet</button>
-                </div>
-
-                <div class="pallet-table-panel active" data-panel-group="tiles-pallet" id="tiles-eu">
+                <p class="packaging-intro">20 ft mixed pallet (8 mm) and 40 ft full-iron (20 mm) datasets are shown below for quick comparison.</p>
+                <h4 class="pkg-section-heading">20 FT Container (8 mm)</h4>
+                <div class="mb-4">
                   <div class="pkg-table-wrapper">
-                    <table class="pkg-table">
-                      <thead><tr><th>Type</th><th>Size (cm)</th><th>Area / Box (sq.m.)</th><th>Pcs / Box</th><th>Boxes / Pallet</th><th>Pallets / Container</th><th>Boxes / Container</th><th>Sq.M. / TEU</th><th>Weight / Box (kg)</th></tr></thead>
+                    <table class="pkg-table ceramic-table">
+                      <thead><tr><th>Size (cm)</th><th>Pallet Type</th><th>Pcs / Box</th><th>SQM / Box</th><th>Approx Box Weight (kg)</th><th>Pallet Dimension (Big)</th><th>Pallet Dimension (Small)</th><th>Pallets / Container (Big)</th><th>Pallets / Container (Small)</th><th>Boxes / Pallet (Big)</th><th>Boxes / Pallet (Small)</th><th>Total Boxes</th><th>Pallet Weight (Big)</th><th>Pallet Weight (Small)</th><th>Total Pallet Weight (kg)</th><th>Net Weight (MT)</th><th>Total SQM</th><th>Gross Weight (MT)</th></tr></thead>
                       <tbody>
-                        <tr><td>Floor - Glazed Porcelain Tiles</td><td><span class="size-badge">60×60</span></td><td>1.44</td><td>4</td><td>40</td><td>24</td><td class="highlight-val">960</td><td class="highlight-val">1382.4</td><td>28.5</td></tr>
-                        <tr><td>Floor - Glazed Porcelain Tiles</td><td><span class="size-badge">60×60</span></td><td>1.44</td><td>2</td><td>32</td><td>29</td><td class="highlight-val">928</td><td class="highlight-val">1340</td><td>29.5</td></tr>
-                        <tr><td>Floor - Glazed Porcelain Tiles</td><td><span class="size-badge">80×80</span></td><td>1.28</td><td>2</td><td>50</td><td>21</td><td class="highlight-val">1050</td><td class="highlight-val">1344</td><td>26.3</td></tr>
-                        <tr><td>Floor - Glazed Porcelain Tiles</td><td><span class="size-badge">30×60</span></td><td>0.90</td><td>5</td><td>64</td><td>24</td><td class="highlight-val">1536</td><td class="highlight-val">1380</td><td>17.8</td></tr>
-                        <tr><td>Floor - Glazed Porcelain Tiles</td><td><span class="size-badge">120×120</span></td><td>2.80</td><td>2</td><td>28+20</td><td>13+4</td><td class="highlight-val">444</td><td class="highlight-val">1280</td><td>59</td></tr>
-                        <tr><td>Floor - Glazed Porcelain Tiles</td><td><span class="size-badge">30×60</span></td><td>1.44</td><td>4</td><td>36</td><td>24</td><td class="highlight-val">864</td><td class="highlight-val">1250</td><td>30.8</td></tr>
-                        <tr><td>Floor - Wooden Strip Tiles</td><td><span class="size-badge">20×120</span></td><td>1.20</td><td>5</td><td>42</td><td>26</td><td class="highlight-val">1092</td><td class="highlight-val">1310</td><td>24.7</td></tr>
-                        <tr><td>Wall - Ceramic Wall Tiles</td><td><span class="size-badge">30×60</span></td><td>1.44</td><td>8</td><td>40</td><td>29</td><td class="highlight-val">1160</td><td class="highlight-val">1670</td><td>23</td></tr>
-                        <tr><td>Floor - Soluble Salt Tiles</td><td><span class="size-badge">60×60</span></td><td>1.44</td><td>4</td><td>42</td><td>26</td><td class="highlight-val">1092</td><td class="highlight-val">1570</td><td>24.5</td></tr>
-                        <tr><td>Floor - Double Charge Tiles</td><td><span class="size-badge">60×60</span></td><td>1.44</td><td>4</td><td>40</td><td>26</td><td class="highlight-val">1040</td><td class="highlight-val">1480</td><td>26.5</td></tr>
-                        <tr><td>Floor - 20MM Glazed Porcelain Tiles</td><td><span class="size-badge">60×120</span></td><td>0.72</td><td>1</td><td>32</td><td>26</td><td class="highlight-val">832</td><td class="highlight-val">600</td><td>32.5</td></tr>
+                        <tr><td><span class="size-badge">60×60</span></td><td>Wooden</td><td>4</td><td>1.44</td><td>27.25</td><td>37&quot; × 44&quot;</td><td>-</td><td>24</td><td>0</td><td>42</td><td>0</td><td>1008</td><td>20</td><td>0</td><td>480</td><td>27.46</td><td class="highlight-val">1451.52</td><td>27.94</td></tr>
+                        <tr><td><span class="size-badge">60×120</span></td><td>Wooden</td><td>2</td><td>1.44</td><td>27.50</td><td>37&quot; × 44&quot;</td><td>49&quot; × 30&quot;</td><td>12</td><td>6</td><td>68</td><td>30</td><td>996</td><td>20</td><td>25</td><td>390</td><td>27.39</td><td class="highlight-val">1434.24</td><td>27.78</td></tr>
+                        <tr><td><span class="size-badge">80×80</span></td><td>Wooden</td><td>3</td><td>1.92</td><td>37.00</td><td>45&quot; × 45&quot;</td><td>-</td><td>20</td><td>0</td><td>36</td><td>0</td><td>720</td><td>35</td><td>0</td><td>700</td><td>26.64</td><td class="highlight-val">1382.40</td><td>27.34</td></tr>
+                        <tr><td><span class="size-badge">80×160</span></td><td>Wooden</td><td>2</td><td>2.56</td><td>52.50</td><td>45&quot; × 45&quot;</td><td>64&quot; × 32&quot;</td><td>10</td><td>4</td><td>48</td><td>10</td><td>520</td><td>35</td><td>30</td><td>470</td><td>27.30</td><td class="highlight-val">1331.20</td><td>27.77</td></tr>
+                        <tr><td><span class="size-badge">80×160</span></td><td>Wooden + Iron</td><td>2</td><td>2.56</td><td>52.50</td><td>64&quot; × 30&quot;</td><td>-</td><td>18</td><td>0</td><td>28</td><td>0</td><td>504</td><td>45</td><td>0</td><td>810</td><td>26.46</td><td class="highlight-val">1290.24</td><td>27.27</td></tr>
+                        <tr><td><span class="size-badge">80×160</span></td><td>Full Iron</td><td>2</td><td>2.56</td><td>52.50</td><td>64&quot; × 30&quot; × 42&quot;</td><td>-</td><td>20</td><td>0</td><td>25</td><td>0</td><td>500</td><td>55</td><td>0</td><td>1100</td><td>26.25</td><td class="highlight-val">1280.00</td><td>27.35</td></tr>
+                        <tr><td><span class="size-badge">100×100</span></td><td>Wooden + Iron</td><td>2</td><td>2.00</td><td>41.00</td><td>40&quot; × 30&quot;</td><td>-</td><td>22</td><td>0</td><td>30</td><td>0</td><td>660</td><td>30</td><td>0</td><td>660</td><td>27.06</td><td class="highlight-val">1320.00</td><td>27.72</td></tr>
+                        <tr><td><span class="size-badge">120×120</span></td><td>Wooden + Iron</td><td>2</td><td>2.88</td><td>59.00</td><td>48&quot; × 30&quot;</td><td>48&quot; × 48&quot;</td><td>13</td><td>4</td><td>30</td><td>18</td><td>462</td><td>35</td><td>25</td><td>555</td><td>27.25</td><td class="highlight-val">1330.56</td><td>27.81</td></tr>
+                        <tr><td><span class="size-badge">120×120</span></td><td>Full Iron</td><td>2</td><td>2.88</td><td>59.00</td><td>48&quot; × 30&quot; × 58&quot;</td><td>48&quot; × 48&quot;</td><td>13</td><td>4</td><td>27</td><td>20</td><td>431</td><td>45</td><td>25</td><td>685</td><td>25.42</td><td class="highlight-val">1241.28</td><td>26.11</td></tr>
+                        <tr><td><span class="size-badge">120×180</span></td><td>Wooden + Iron</td><td>2</td><td>4.32</td><td>87.00</td><td>72&quot; × 30&quot;</td><td>72&quot; × 48&quot;</td><td>9</td><td>3</td><td>28</td><td>16</td><td>300</td><td>70</td><td>65</td><td>825</td><td>26.10</td><td class="highlight-val">1296.00</td><td>26.92</td></tr>
+                        <tr><td><span class="size-badge">120×180</span></td><td>Full Iron</td><td>2</td><td>4.32</td><td>87.00</td><td>48&quot; × 30&quot; × 78&quot;</td><td>-</td><td>12</td><td>0</td><td>25</td><td>0</td><td>300</td><td>75</td><td>0</td><td>900</td><td>26.10</td><td class="highlight-val">1296.00</td><td>27.00</td></tr>
                       </tbody>
                     </table>
                   </div>
                 </div>
 
-                <div class="pallet-table-panel" data-panel-group="tiles-pallet" id="tiles-standard">
+                <h4 class="pkg-section-heading">40 FT Container (20 mm)</h4>
+                <div>
                   <div class="pkg-table-wrapper">
-                    <table class="pkg-table">
-                      <thead><tr><th>Type</th><th>Size (cm)</th><th>Area / Box (sq.m.)</th><th>Pcs / Box</th><th>Boxes / Pallet</th><th>Pallets / Container</th><th>Boxes / Container</th><th>Sq.M. / TEU</th><th>Weight / Box (kg)</th></tr></thead>
+                    <table class="pkg-table ceramic-table">
+                      <thead><tr><th>Pallet Type</th><th>Size (cm)</th><th>Pcs / Box</th><th>SQM / Box</th><th>Approx Box Weight (kg)</th><th>Pallet Dimension</th><th>Pallets / Container</th><th>Boxes / Pallet</th><th>Total Boxes</th><th>Pallet Weight (kg)</th><th>Total Pallet Weight (kg)</th><th>Net Weight (MT)</th><th>Total SQM</th><th>Gross Weight (MT)</th></tr></thead>
                       <tbody>
-                        <tr><td>Floor - Glazed Porcelain Tiles</td><td><span class="size-badge">60×60</span></td><td>1.44</td><td>4</td><td>40</td><td>24</td><td class="highlight-val">960</td><td class="highlight-val">1380</td><td>28.5</td></tr>
-                        <tr><td>Floor - Glazed Porcelain Tiles</td><td><span class="size-badge">60×120</span></td><td>1.44</td><td>2</td><td>64+30</td><td>12+6</td><td class="highlight-val">948</td><td class="highlight-val">1365</td><td>29.3</td></tr>
-                        <tr><td>Floor - Glazed Porcelain Tiles</td><td><span class="size-badge">80×80</span></td><td>1.92</td><td>3</td><td>36</td><td>20</td><td class="highlight-val">720</td><td class="highlight-val">1380</td><td>39.2</td></tr>
-                        <tr><td>Floor - Glazed Porcelain Tiles</td><td><span class="size-badge">120×120</span></td><td>2.80</td><td>2</td><td>28+20</td><td>13+4</td><td class="highlight-val">444</td><td class="highlight-val">1280</td><td>59</td></tr>
-                        <tr><td>Floor - Glazed Porcelain Tiles</td><td><span class="size-badge">30×60</span></td><td>1.24</td><td>5</td><td>72</td><td>21</td><td class="highlight-val">1512</td><td class="highlight-val">1875</td><td>17.6</td></tr>
-                        <tr><td>Floor - Wooden Strip Tiles</td><td><span class="size-badge">20×120</span></td><td>1.20</td><td>5</td><td>42</td><td>26</td><td class="highlight-val">1092</td><td class="highlight-val">1310</td><td>24.7</td></tr>
-                        <tr><td>Wall - Ceramic Wall Tiles</td><td><span class="size-badge">30×60</span></td><td>0.90</td><td>5</td><td>96</td><td>20</td><td class="highlight-val">1920</td><td class="highlight-val">1728</td><td>14.3</td></tr>
-                        <tr><td>Floor - Soluble Salt Tiles</td><td><span class="size-badge">60×60</span></td><td>1.44</td><td>4</td><td>44</td><td>26</td><td class="highlight-val">1144</td><td class="highlight-val">1645</td><td>23.3</td></tr>
-                        <tr><td>Floor - Double Charge Tiles</td><td><span class="size-badge">60×60</span></td><td>1.44</td><td>4</td><td>44</td><td>24</td><td class="highlight-val">1056</td><td class="highlight-val">1520</td><td>26</td></tr>
+                        <tr><td>Full Iron A-Frame</td><td><span class="size-badge">120×240</span></td><td>1</td><td>2.88</td><td>153</td><td>100&quot; × 30&quot; × 54&quot;</td><td>12</td><td>14</td><td>168</td><td>95</td><td>1140</td><td>25.64</td><td class="highlight-val">483.84</td><td>26.78</td></tr>
+                        <tr><td>Full Iron</td><td><span class="size-badge">160×320</span></td><td>1</td><td>5.12</td><td>271</td><td>132&quot; × 40&quot; × 54&quot;</td><td>10</td><td>9</td><td>90</td><td>95</td><td>950</td><td>24.42</td><td class="highlight-val">460.80</td><td>25.37</td></tr>
                       </tbody>
                     </table>
                   </div>
@@ -835,63 +886,7 @@
               </div>
 
 
-              <div class="packaging-block" data-aos="fade-up" data-aos-delay="150">
-                <h3 class="pkg-subtitle">Stone Cladding Packaging</h3>
-                <p class="packaging-intro">Cladding packs are organized by fixed and mixed formats. Compare EU and Standard pallet counts to estimate facade coverage per container.</p>
-                <div class="pkg-table-wrapper">
-                  <table class="pkg-table">
-                    <thead><tr><th>Type</th><th>Size (cm)</th><th>EU Pcs / Pallet</th><th>Standard Pcs / Pallet</th><th>Pallets / Container</th><th>EU Sq.M. / Container</th><th>Standard Sq.M. / Container</th></tr></thead>
-                    <tbody>
-                      <tr><td>Stone Cladding</td><td><span class="size-badge">24×7.5×1.7-2.5</span></td><td>768 pcs</td><td>960 pcs</td><td>20</td><td class="highlight-val">345</td><td class="highlight-val">430</td></tr>
-                      <tr><td>Stone Cladding</td><td><span class="size-badge">Mixed Pack</span></td><td>384 pcs</td><td>480 pcs</td><td>20</td><td class="highlight-val">330</td><td class="highlight-val">410</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <div class="packaging-block" data-aos="fade-up" data-aos-delay="170">
-                <h3 class="pkg-subtitle">Stone Edging Packaging</h3>
-                <p class="packaging-intro">Edging data is shared in linear metre terms to simplify border-length planning and shipment balancing for landscape and hardscape projects.</p>
-                <div class="pkg-table-wrapper">
-                  <table class="pkg-table">
-                    <thead><tr><th>Type</th><th>Size (cm)</th><th>EU Pcs / Pallet</th><th>Standard Pcs / Pallet</th><th>EU LM / Pallet</th><th>Standard LM / Pallet</th><th>Pallets / Container</th></tr></thead>
-                    <tbody>
-                      <tr><td>Stone Edging</td><td><span class="size-badge">60×15×4</span></td><td>150</td><td>180</td><td>90 LM</td><td>108 LM</td><td>18</td></tr>
-                      <tr><td>Stone Edging</td><td><span class="size-badge">Mixed Pack</span></td><td>300</td><td>360</td><td>180 LM</td><td>216 LM</td><td>18</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <div class="packaging-block" data-aos="fade-up" data-aos-delay="190">
-                <h3 class="pkg-subtitle">Setts &amp; Cobbles Packaging</h3>
-                <p class="packaging-intro">Setts and cobbles are listed with EU and Standard packing intensities so driveway and pathway orders can be translated directly into container-ready pallet counts.</p>
-                <div class="pkg-table-wrapper">
-                  <table class="pkg-table">
-                    <thead><tr><th>Type</th><th>Size (cm)</th><th>EU Pcs / Pallet</th><th>Standard Pcs / Pallet</th><th>EU Area / Pallet (sq.m.)</th><th>Standard Area / Pallet (sq.m.)</th><th>Pallets / Container</th></tr></thead>
-                    <tbody>
-                      <tr><td>Setts</td><td><span class="size-badge">20×10×1</span></td><td>1000</td><td>1200</td><td>20.0</td><td>24.0</td><td>12</td></tr>
-                      <tr><td>Setts</td><td><span class="size-badge">10×10×2</span></td><td>500</td><td>600</td><td>5.0</td><td>6.0</td><td>12</td></tr>
-                      <tr><td>Cobbles</td><td><span class="size-badge">10×10×1</span></td><td>500</td><td>600</td><td>5.0</td><td>6.0</td><td>12</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <div class="packaging-block" data-aos="fade-up" data-aos-delay="210">
-                <h3 class="pkg-subtitle">Stone Circle Kit Packaging</h3>
-                <p class="packaging-intro">Circle kit bundles are pre-packed by diameter and piece count for easier stock control and project-by-project loading forecasts.</p>
-                <div class="pkg-table-wrapper">
-                  <table class="pkg-table">
-                    <thead><tr><th>Circle Kit</th><th>Diameter (cm)</th><th>Pieces</th><th>Packs / Pallet</th><th>Pallets / Container</th></tr></thead>
-                    <tbody>
-                      <tr><td>Circle Kit</td><td><span class="size-badge">150</span></td><td>9 pcs</td><td>30</td><td>12</td></tr>
-                      <tr><td>Circle Kit</td><td><span class="size-badge">240</span></td><td>25 pcs</td><td>18</td><td>12</td></tr>
-                      <tr><td>Circle Kit</td><td><span class="size-badge">330</span></td><td>41 pcs</td><td>10</td><td>12</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+             
 
               <div class="pkg-note-card" data-aos="fade-up" data-aos-delay="230">
                 <h4 style="font-family: 'Crimson Text', serif; margin: 0 0 0.75rem; font-size: clamp(0.936rem, 1.44vw, 1.456rem); color: #1a1a1a;">Natural Stone Export Packaging Standards</h4>
@@ -1058,13 +1053,15 @@
           </div>
         </section>
 
-        <!-- FOOTER -->
-        <footer class="footer py-4 py-lg-6" style="background: linear-gradient(180deg, #d3d3d3 0%, #808080 45%, #333333 100%) !important; padding-top: 0 !important; padding-bottom: 1rem !important; border-top: 1px solid #343434 !important;">
+                <!-- FOOTER -->
+         
+        <footer class="footer py-4 py-lg-6" style="background: linear-gradient(180deg, #d3d3d3 0%, #808080 45%, #333333 100%) !important; padding-top: 0 !important; padding-bottom: 1rem !important; border-top: 0px solid #343434 !important;">
+          
           <!-- Logo -->
           <div style="text-align: center; padding-top: 3rem; padding-bottom: 3rem;">
             <img src="/assets/img/CSR Logos Transparent/CSR.png" alt="Cosmic Skyrocket Logo" style="max-height: 120px; width: auto;">
           </div>
-          <div style="width: 100%; margin: 0 0 3rem 0; border-top: 1px solid rgba(255,255,255,0.2);"></div>
+          <!-- <div style="width: 100%; margin: 0 0 3rem 0; border-top: 1px solid rgba(255,255,255,0.2);"></div> -->
           <div class="container-fluid" style="margin-top: 0; padding-left: clamp(12px, 2.2vw, 28px); padding-right: clamp(12px, 2.2vw, 28px);">
             <div class="row gx-0">
               <!-- Column 1: Contact Info -->
@@ -1085,16 +1082,17 @@
                     <br>
                     <!-- Phone (WhatsApp) -->
                     <div class="d-flex gap-2 align-items-start text-white footer-contact-link" style="text-decoration: none;">
-                      <i class="bi bi-telephone" style="color: #fff; flex-shrink: 0; font-size: 1.2rem;"></i>
-                      <span style="font-size: 1.125rem; ">
-                        <a href="tel:+918209851679" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 82098 51679</a> |
-                        <a href="tel:+917300122901" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit;">+91 73001 22901</a>
+                      <!-- <i class="bi bi-telephone" style="color: #fff; flex-shrink: 0; font-size: 1.2rem;"></i> -->
+                      <span style="font-size: 1.125rem; margin-left: 1.5rem;">
+                        <a href="tel:+918209851679" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit; margin-right: 0.5rem;">+91 82098 51679</a> |
+                        <a href="tel:+917300122901" target="_blank" rel="noopener noreferrer" class="link-hover" style="text-decoration: none; color: inherit; margin-left: 0.5rem;">+91 73001 22901</a>
                       </span>
                     </div>
+                    
                     <!-- Email -->
                     <a href="mailto:info@cosmicskyrocket.com" class="link-hover d-flex gap-2 align-items-start text-white footer-contact-link" style="text-decoration: none;">
-                      <i class="bi bi-envelope" style="color: #fff; flex-shrink: 0; font-size: 1.2rem;"></i>
-                      <span style="font-size: 1.125rem;"><span class="footer-hover-value">info@cosmicskyrocket.com</span></span>
+                      <!-- <i class="bi bi-envelope" style="color: #fff; flex-shrink: 0; font-size: 1.3rem;"></i> -->
+                      <span style="font-size: 1.25rem; margin-left: 1.5rem;"><span class="footer-hover-value">info@cosmicskyrocket.com</span></span>
                     </a>
 </div>
                 </div>
@@ -1157,7 +1155,7 @@
           <!-- Brand watermark and copyright -->
           <div style="margin-top: 1rem; padding-top: 1.5rem; text-align: center;">
             <p class="mb-0 text-white" style="font-family: 'Cinzel', serif; font-size: clamp(0.75rem, 8.7vw, 14rem); font-weight: 600; letter-spacing: 1px; line-height: 1.1; white-space: nowrap;">COSMIC SKYROCKET</p>
-            <p class="mb-0 text-white" style="color: rgba(255,255,255,0.7) !important; font-size: 1.05rem; margin-top: -0.2rem;">© 2024 COSMIC SKYROCKET. All Rights Reserved.</p>
+            <p class="mb-0 text-white" style="color: rgba(255,255,255,0.7) !important; font-size: 1.05rem; margin-top: -0.2rem;">© Cosmic Skyrocket INDIA. All Rights Reserved.</p>
           </div>
         </footer>
 
