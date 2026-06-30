@@ -223,12 +223,11 @@
       }
 
       .about-hero-slides span:nth-child(1) { background-image: url('assets/img/CSR%20Images/about_us_bg1.png'); animation-delay: 0s; }
-      .about-hero-slides span:nth-child(2) { background-image: url('assets/img/Mfg%20Images/Natural%20Stone%20Quarry/mining%201.jpg'); animation-delay: 6s; }
-      .about-hero-slides span:nth-child(3) { background-image: url('assets/img/Mfg%20Images/Natural%20Stone%20Quarry/mining%205.jpeg'); animation-delay: 12s; }
-      .about-hero-slides span:nth-child(4) { background-image: url('assets/img/Mfg%20Images/Natural%20Stone%20Quarry/mining%2018.jpg'); animation-delay: 18s; }
-      .about-hero-slides span:nth-child(5) { background-image: url('assets/img/Mfg%20Images/Tile%20mfg/tile%2011.jpg'); animation-delay: 24s; }
-      .about-hero-slides span:nth-child(6) { background-image: url('assets/img/Mfg%20Images/Tile%20mfg/tile3.jpeg'); animation-delay: 30s; }
-      .about-hero-slides span:nth-child(7) { background-image: url('assets/img/Mfg%20Images/Tile%20mfg/tile13.jpg'); animation-delay: 36s; }
+      .about-hero-slides span:nth-child(3) { background-image: url('assets/img/Mfg%20Images/Natural%20Stone%20Quarry/mining%205.jpeg'); animation-delay: 6s; }
+      .about-hero-slides span:nth-child(4) { background-image: url('assets/img/Mfg%20Images/Natural%20Stone%20Quarry/mining%2018.jpg'); animation-delay: 12s; }
+      .about-hero-slides span:nth-child(5) { background-image: url('assets/img/Mfg%20Images/Tile%20mfg/tile%2011.jpg'); animation-delay: 18s; }
+      .about-hero-slides span:nth-child(6) { background-image: url('assets/img/Mfg%20Images/Tile%20mfg/tile3.jpeg'); animation-delay: 24s; }
+      .about-hero-slides span:nth-child(7) { background-image: url('assets/img/Mfg%20Images/Tile%20mfg/tile13.jpg'); animation-delay: 30s; }
 
       @keyframes aboutHeroCarousel {
         0% { opacity: 0; transform: scale(1); }
@@ -399,22 +398,80 @@
       .mv-card.light:hover .mv-point span { color: #ffffff; }
 
       /* ── Services ── */
-      .services-section { padding: 90px 0; background: #f8f8f8; }
+      /* ── Services parallax ── */
+      .services-section {
+        padding: 90px 0;
+        position: relative;
+        overflow: hidden;
+        background: transparent;
+        isolation: isolate;
+      }
+      @media (min-width: 992px) {
+        .services-section {
+          min-height: 130vh;
+          display: flex;
+          align-items: center;
+        }
+      }
+      .services-parallax-bg {
+        position: absolute;
+        inset: -30% 0;
+        background-image: url('assets/img/about/FullSizeRender.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        will-change: transform;
+        z-index: 0;
+      }
+      .services-parallax-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(10, 10, 10, 0.38);
+        z-index: 1;
+      }
+      .services-section > .container {
+        position: relative;
+        z-index: 2;
+      }
+      /* section-badge / title / line / subtext colour override for dark bg */
+      .services-section .section-badge {
+        background: rgba(255,255,255,0.12);
+        color: rgba(255,255,255,0.75);
+      }
+      .services-section .section-title {
+        color: #fff;
+        font-size: clamp(2.304rem, 3.55vw, 3.584rem);
+      }
+      .services-section .section-line {
+        background: linear-gradient(90deg, rgba(255,255,255,0.5), transparent);
+      }
+      .services-section .container > .row:first-child p {
+        color: rgba(255,255,255,0.65) !important;
+      }
       .service-card {
-        background: #fff; border-radius: 14px;
+        background: rgba(255, 255, 255, 0.14); border-radius: 14px;
+        backdrop-filter: blur(12px) saturate(160%);
+        -webkit-backdrop-filter: blur(12px) saturate(160%);
         padding: 2rem 1.75rem; height: 100%;
-        box-shadow: 0 2px 14px rgba(0,0,0,0.05);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        box-shadow: 0 10px 28px rgba(0,0,0,0.2);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
-      .service-card:hover { transform: translateY(-6px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+      .service-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 44px rgba(0,0,0,0.28);
+        border-color: rgba(255, 255, 255, 0.65);
+        background: rgba(255, 255, 255, 0.2);
+      }
       .svc-icon {
         width: 56px; height: 56px; border-radius: 14px;
-        background: linear-gradient(135deg, #9c9c9c, #6f6f6f);
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.35);
         display: flex; align-items: center; justify-content: center;
         margin-bottom: 1.25rem; font-size: clamp(1.008rem, 1.55vw, 1.568rem); color: #fff;
       }
-      .service-card h5 { font-size: clamp(0.792rem, 1.22vw, 1.232rem); font-weight: 700; color: #000000; margin-bottom: 0.6rem; }
-      .service-card p { font-size: clamp(0.6336rem, 0.98vw, 0.9856rem); color: #000000; line-height: 1.7; margin: 0; }
+      .service-card h5 { font-size: clamp(0.792rem, 1.22vw, 1.232rem); font-weight: 700; color: #ffffff; margin-bottom: 0.6rem; }
+      .service-card p { font-size: clamp(0.6336rem, 0.98vw, 0.9856rem); color: rgba(255, 255, 255, 0.9); line-height: 1.7; margin: 0; }
 
       /* ── Values ── */
       .values-section { padding: 90px 0; background: #fff; }
@@ -435,13 +492,16 @@
 
       /* Gray accent overrides for requested sections */
       .mv-section .section-badge,
-      .services-section .section-badge,
       .values-section .section-badge {
         background: rgba(140,140,140,0.15);
         color: #7f7f7f;
       }
+      .services-section .section-badge {
+        background: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.55);
+      }
       .mv-section .section-line,
-      .services-section .section-line,
       .values-section .section-line {
         background: linear-gradient(90deg, #8a8a8a, transparent);
       }
@@ -522,18 +582,37 @@
       }
       .cta-btn {
         display: inline-block; padding: 0.9rem 3rem;
-        background: #fff; border: 2px solid #1a1a1a; color: #000000; border-radius: 30px;
+        background: rgba(255, 255, 255, 0.16);
+        backdrop-filter: blur(10px) saturate(160%);
+        -webkit-backdrop-filter: blur(10px) saturate(160%);
+        border: 1px solid rgba(255, 255, 255, 0.58);
+        color: #ffffff; border-radius: 30px;
         font-weight: 600; text-decoration: none; font-size: clamp(0.684rem, 1.05vw, 1.064rem);
-        letter-spacing: 0.5px; transition: all 0.3s ease;
+        letter-spacing: 0.5px; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
       }
-      .cta-btn:hover { background: #1a1a1a; color: #fff; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+      .cta-btn:hover {
+        background: rgba(255, 255, 255, 0.26);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.82);
+        transform: translateY(-7px);
+        box-shadow: 0 14px 30px rgba(0,0,0,0.32);
+      }
       .cta-btn-outline {
         display: inline-block; padding: 0.9rem 3rem;
-        background: #fff; border: 2px solid #1a1a1a; color: #000000; border-radius: 30px;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(10px) saturate(160%);
+        -webkit-backdrop-filter: blur(10px) saturate(160%);
+        border: 1px solid rgba(255, 255, 255, 0.58); color: #ffffff; border-radius: 30px;
         font-weight: 600; text-decoration: none; font-size: clamp(0.684rem, 1.05vw, 1.064rem);
-        letter-spacing: 0.5px; transition: all 0.3s ease;
+        letter-spacing: 0.5px; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
       }
-      .cta-btn-outline:hover { background: #1a1a1a; color: #fff; }
+      .cta-btn-outline:hover {
+        background: rgba(255, 255, 255, 0.22);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.82);
+        transform: translateY(-7px);
+        box-shadow: 0 14px 30px rgba(0,0,0,0.32);
+      }
 
       /* ── Responsive ── */
       @media (max-width: 991px) {
@@ -789,35 +868,35 @@
         </section>
 
         <!-- ── STATS ── -->
-        <section class="stats-section">
+        <section class="stats-section" style="background-image: url('./assets/img/about/ext3.jpeg'); background-color: rgba(0, 0, 0, 0.4); background-blend-mode: overlay; background-size: cover; background-position: center; border-radius: 15px; padding: 20px; color: #fff; min-height: 300px; display: flex; align-items: center; justify-content: center;">
           <div class="container">
             <div class="row" data-aos="fade-up">
               <div class="col-6 col-lg-3">
                 <div class="stat-card">
                   <div class="stat-num"><span class="count-num" data-target="128">0</span><span class="stat-suffix">+</span></div>
-                  <div class="stat-label">Projects Completed</div>
-                  <div class="stat-desc">Trusted across residential, commercial, and landscape projects.</div>
+                  <div class="stat-label" style="color: #ffffff;">Projects Completed</div>
+                  <div class="stat-desc" style="color: #ffffff;">Trusted across residential, commercial, and landscape projects.</div>
                 </div>
               </div>
               <div class="col-6 col-lg-3">
                 <div class="stat-card">
                   <div class="stat-num"><span class="count-num" data-target="14">0</span>K<span class="stat-suffix">+</span></div>
-                  <div class="stat-label">Containers Exported</div>
-                  <div class="stat-desc">Safely shipped across global destinations worldwide.</div>
+                  <div class="stat-label" style="color: #ffffff;">Containers Exported</div>
+                  <div class="stat-desc" style="color: #ffffff;">Safely shipped across global destinations worldwide.</div>
                 </div>
               </div>
               <div class="col-6 col-lg-3">
                 <div class="stat-card">
                   <div class="stat-num"><span class="count-num" data-target="234">0</span><span class="stat-suffix">+</span></div>
-                  <div class="stat-label">Natural Stones & Tile Collections</div>
-                  <div class="stat-desc">Premium surfaces crafted for timeless spaces.</div>
+                  <div class="stat-label" style="color: #ffffff;">Natural Stones & Tile Collections</div>
+                  <div class="stat-desc" style="color: #ffffff;">Premium surfaces crafted for timeless spaces.</div>
                 </div>
               </div>
               <div class="col-6 col-lg-3">
                 <div class="stat-card">
                   <div class="stat-num"><span class="count-num" data-target="31">0</span><span class="stat-suffix">+</span></div>
-                  <div class="stat-label">Business Partners</div>
-                  <div class="stat-desc">Creating value through trusted business alliances.</div>
+                  <div class="stat-label" style="color: #ffffff;">Business Partners</div>
+                  <div class="stat-desc" style="color: #ffffff;">Creating value through trusted business alliances.</div>
                 </div>
               </div>
             </div>
@@ -860,7 +939,9 @@
         </section>
 
         <!-- ── SERVICES ── -->
-        <section class="services-section">
+        <section class="services-section" id="services-parallax-section">
+          <div class="services-parallax-bg" id="servicesBg" aria-hidden="true"></div>
+          <div class="services-parallax-overlay" aria-hidden="true"></div>
           <div class="container">
             <div class="row justify-content-center mb-5" data-aos="fade-up">
               <div class="col-lg-7 text-center">
@@ -1040,10 +1121,10 @@
         </section>
 
         <!-- ── CTA ── -->
-        <section class="cta-section">
+        <section class="cta-section" style="background-image: url('./assets/img/about/ready-to-work-with-us.jpg'); background-color: rgba(168, 167, 167, 0.1); background-blend-mode: overlay; background-size: cover; background-position: center; padding: 20px; color: #fff; min-height: 500px; display: flex; align-items: center; justify-content: center;">
           <div class="container" data-aos="fade-up">
-            <h2>Ready to Work With Us?</h2>
-            <p>Reach out to our team to explore products, request samples, or get a custom export quote.</p>
+            <h2 style="color: #ffffff; font-size: clamp(4.5rem, 3vw, 5.5rem);">Ready to Work With Us?</h2>
+            <p style="color: #ffffff; font-size: clamp(0.9rem, 3vw, 1.3rem);">Reach out to our team to explore products, request samples, or get a custom export quote.</p>
             <div class="cta-buttons">
               <a href="stones-category.html" class="cta-btn-outline">Browse Natural Stones</a>
               <a href="contact.html" class="cta-btn">Get in Touch</a>
@@ -1370,5 +1451,38 @@
   
     <script src="assets/js/search-data.js"></script>
     <script src="assets/js/search.js"></script>
+
+    <!-- Services parallax scroll driver -->
+    <script>
+      (function () {
+        var section = document.getElementById('services-parallax-section');
+        var bg = document.getElementById('servicesBg');
+        if (!section || !bg) return;
+
+        // Speed factor: 0 = locked to viewport (max parallax), 1 = scrolls with page (none)
+        var SPEED = 0.35;
+
+        function updateParallax() {
+          var rect = section.getBoundingClientRect();
+          var sectionH = section.offsetHeight;
+          var viewH = window.innerHeight;
+
+          // Progress: how far the section has travelled through the viewport
+          // 0 when section top is at viewport bottom, 1 when section bottom is at viewport top
+          var progress = 1 - (rect.bottom / (sectionH + viewH));
+
+          // Total travel range of bg relative to section
+          var range = sectionH * 0.6; // matches the 30% inset top+bottom = 60% extra height
+          var offset = (progress - 0.5) * range * (1 - SPEED);
+
+          bg.style.transform = 'translateY(' + offset.toFixed(2) + 'px)';
+        }
+
+        // Passive scroll listener for performance
+        window.addEventListener('scroll', updateParallax, { passive: true });
+        window.addEventListener('resize', updateParallax, { passive: true });
+        updateParallax();
+      })();
+    </script>
 </body>
 </html>

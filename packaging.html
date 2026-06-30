@@ -325,7 +325,7 @@
       }
       .pkg-table { width: 100%; border-collapse: collapse; min-width: 640px; background: #fff; table-layout: fixed; }
       .pkg-table thead tr { background: #1a1a1a; color: #fff; }
-      .pkg-table thead th { padding: 10px 8px; font-size: clamp(0.54rem, 0.82vw, 0.82rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; white-space: normal; line-height: 1.25; word-break: break-word; border: none; }
+      .pkg-table thead th { padding: 10px 8px; font-size: clamp(0.54rem, 0.82vw, 0.82rem); font-weight: 700; text-transform: none; letter-spacing: 0.4px; white-space: normal; line-height: 1.25; word-break: break-word; border: none; }
       .pkg-table tbody tr { border-bottom: 1px solid #f2f2f2; transition: background 0.2s; }
       .pkg-table tbody tr:hover { background: #fdf7f2; }
       .pkg-table tbody td { padding: 8px 8px; font-size: clamp(0.6rem, 0.9vw, 0.92rem); color: #444; vertical-align: middle; line-height: 1.35; word-break: break-word; }
@@ -378,6 +378,18 @@
       .cta-btn, .cta-btn-outline { display: inline-block; border-radius: 30px; text-decoration: none; font-size: clamp(0.684rem, 1.05vw, 1.064rem); font-weight: 600; transition: all 0.3s ease; }
       .cta-btn { padding: 0.9rem 3rem; background: #fff; border: 2px solid #1a1a1a; color: #000; }
       .cta-btn-outline { padding: 0.9rem 2.2rem; border: 2px solid #1a1a1a; color: #1a1a1a; background: #fff; }
+      .cta-btn:hover,
+      .cta-btn-outline:hover {
+        background: #1a1a1a;
+        color: #fff;
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+      }
+      .cta-btn:focus-visible,
+      .cta-btn-outline:focus-visible {
+        outline: 2px solid rgba(255, 161, 92, 0.7);
+        outline-offset: 2px;
+      }
 
       @media (max-width: 991px) {
         .packaging-hero { height: auto; min-height: 85vh; padding: 140px 0 90px; }
@@ -674,9 +686,9 @@
           <th>Thickness (mm)</th>
           <th>Coverage / Pallet Box (sq.m.)</th>
           <th>Stuffed Pallet Box Weight (kg)</th>
-          <th>Pallet Boxes / 20ft Container</th>
+          <th>Pallet Boxes / 20 ft Container</th>
           <th>Approx. Coverage / Container (sq.m.)</th>
-          <th>Approx. Container Weight (MT)</th>
+          <th>Approx. Container Weight (mt)</th>
         </tr>
       </thead>
       <tbody>
@@ -751,8 +763,8 @@
                     <strong>Internal usable pallet dimension:</strong> 825 x 927 x 500 mm<br>
                     <strong>Empty pallet box weight:</strong> 50 kg<br>
                     <strong>Stuffed pallet box weight:</strong> 1,194.80 kg<br>
-                    <strong>Pallet boxes / 20ft container:</strong> 22<br>
-                    <strong>Approx. container weight:</strong> 26.29 MT
+                    <strong>Pallet boxes / 20 ft container:</strong> 22<br>
+                    <strong>Approx. container weight:</strong> 26.29 mt
                   </p>
                 </div>
                 <div class="pkg-table-wrapper">
@@ -778,8 +790,8 @@
                     <strong>Internal usable pallet dimension:</strong> 825 x 927 x 500 mm<br>
                     <strong>Empty pallet box weight:</strong> 50 kg<br>
                     <strong>Stuffed pallet box weight:</strong> 1,063.34 kg<br>
-                    <strong>Pallet boxes / 20ft container:</strong> 25<br>
-                    <strong>Approx. container weight:</strong> 26.58 MT
+                    <strong>Pallet boxes / 20 ft container:</strong> 25<br>
+                    <strong>Approx. container weight:</strong> 26.58 mt
                   </p>
                 </div>
                 <div class="pkg-table-wrapper">
@@ -804,7 +816,7 @@
                 </div>
                 <div class="pkg-table-wrapper">
                   <table class="pkg-table">
-                    <thead><tr><th>Cladding Pack Type</th><th>Pieces / Pack</th><th>Coverage / Pack (sq.m.)</th><th>Recommended Pallet Size (mm)</th><th>Box Weight (kg)</th><th>Pallet Boxes / 20ft Container</th><th>Stuffed Pack Weight (kg)</th><th>Approx. Container Weight (MT)</th><th>Approx. Coverage / Container (sq.m.)</th></tr></thead>
+                    <thead><tr><th>Cladding Pack Type</th><th>Pieces / Pack</th><th>Coverage / Pack (sq.m.)</th><th>Recommended Pallet Size (mm)</th><th>Box Weight (kg)</th><th>Pallet Boxes / 20 ft Container</th><th>Stuffed Pack Weight (kg)</th><th>Approx. Container Weight (mt)</th><th>Approx. Coverage / Container (sq.m.)</th></tr></thead>
                     <tbody>
                       <tr><td>Jumbo Size Pack</td><td>768</td><td>13.82</td><td><span class="size-badge">1200×1000×350</span></td><td>50</td><td>32</td><td>819</td><td>26.21</td><td class="highlight-val">442.24</td></tr>
                       <tr><td>Double Size Pack</td><td>384</td><td>6.91</td><td><span class="size-badge">1200×800×250</span></td><td>35</td><td>62</td><td>420</td><td>26.04</td><td class="highlight-val">428.42</td></tr>
@@ -824,13 +836,13 @@
                     <strong>Internal usable pallet dimension:</strong> 1150 x 980 x 400 mm<br>
                     <strong>Empty pallet box weight:</strong> 65 kg<br>
                     <strong>Stuffed pallet box weight:</strong> 944 kg<br>
-                    <strong>Pallet boxes / 20ft container:</strong> 28<br>
-                    <strong>Approx. container weight:</strong> 26.43 MT
+                    <strong>Pallet boxes / 20 ft container:</strong> 28<br>
+                    <strong>Approx. container weight:</strong> 26.43 mt
                   </p>
                 </div>
                 <div class="pkg-table-wrapper">
                   <table class="pkg-table">
-                    <thead><tr><th>Edging Pack Type</th><th>Pieces / Pack</th><th>Coverage / Pack (LM)</th><th>Pallet Boxes Required</th><th>Approx. Coverage / Container (LM)</th></tr></thead>
+                    <thead><tr><th>Edging Pack Type</th><th>Pieces / Pack</th><th>Coverage / Pack (lm)</th><th>Pallet Boxes Required</th><th>Approx. Coverage / Container (lm)</th></tr></thead>
                     <tbody>
                       <tr><td>Single Size Pack</td><td>150</td><td>90</td><td>1</td><td class="highlight-val">2520</td></tr>
                       <tr><td>Double Size Pack</td><td>300</td><td>180</td><td>2</td><td class="highlight-val">2520</td></tr>
@@ -849,11 +861,11 @@
               <div class="packaging-block" data-aos="fade-up" data-aos-delay="120">
                 <h3 class="pkg-subtitle">Ceramic &amp; Porcelain Packaging</h3>
                 <p class="packaging-intro">20 ft mixed pallet (8 mm) and 40 ft full-iron (20 mm) datasets are shown below for quick comparison.</p>
-                <h4 class="pkg-section-heading">20 FT Container (8 mm)</h4>
+                <h4 class="pkg-section-heading">20 ft Container (8 mm)</h4>
                 <div class="mb-4">
                   <div class="pkg-table-wrapper">
                     <table class="pkg-table ceramic-table">
-                      <thead><tr><th>Size (cm)</th><th>Pallet Type</th><th>Pcs / Box</th><th>SQM / Box</th><th>Approx Box Weight (kg)</th><th>Pallet Dimension (Big)</th><th>Pallet Dimension (Small)</th><th>Pallets / Container (Big)</th><th>Pallets / Container (Small)</th><th>Boxes / Pallet (Big)</th><th>Boxes / Pallet (Small)</th><th>Total Boxes</th><th>Pallet Weight (Big)</th><th>Pallet Weight (Small)</th><th>Total Pallet Weight (kg)</th><th>Net Weight (MT)</th><th>Total SQM</th><th>Gross Weight (MT)</th></tr></thead>
+                      <thead><tr><th>Size (cm)</th><th>Pallet Type</th><th>Pcs / Box</th><th>sqm / Box</th><th>Approx Box Weight (kg)</th><th>Pallet Dimension (Big)</th><th>Pallet Dimension (Small)</th><th>Pallets / Container (Big)</th><th>Pallets / Container (Small)</th><th>Boxes / Pallet (Big)</th><th>Boxes / Pallet (Small)</th><th>Total Boxes</th><th>Pallet Weight (Big)</th><th>Pallet Weight (Small)</th><th>Total Pallet Weight (kg)</th><th>Net Weight (mt)</th><th>Total sqm</th><th>Gross Weight (mt)</th></tr></thead>
                       <tbody>
                         <tr><td><span class="size-badge">60×60</span></td><td>Wooden</td><td>4</td><td>1.44</td><td>27.25</td><td>37&quot; × 44&quot;</td><td>-</td><td>24</td><td>0</td><td>42</td><td>0</td><td>1008</td><td>20</td><td>0</td><td>480</td><td>27.46</td><td class="highlight-val">1451.52</td><td>27.94</td></tr>
                         <tr><td><span class="size-badge">60×120</span></td><td>Wooden</td><td>2</td><td>1.44</td><td>27.50</td><td>37&quot; × 44&quot;</td><td>49&quot; × 30&quot;</td><td>12</td><td>6</td><td>68</td><td>30</td><td>996</td><td>20</td><td>25</td><td>390</td><td>27.39</td><td class="highlight-val">1434.24</td><td>27.78</td></tr>
@@ -871,11 +883,11 @@
                   </div>
                 </div>
 
-                <h4 class="pkg-section-heading">40 FT Container (20 mm)</h4>
+                <h4 class="pkg-section-heading">40 ft Container (20 mm)</h4>
                 <div>
                   <div class="pkg-table-wrapper">
                     <table class="pkg-table ceramic-table">
-                      <thead><tr><th>Pallet Type</th><th>Size (cm)</th><th>Pcs / Box</th><th>SQM / Box</th><th>Approx Box Weight (kg)</th><th>Pallet Dimension</th><th>Pallets / Container</th><th>Boxes / Pallet</th><th>Total Boxes</th><th>Pallet Weight (kg)</th><th>Total Pallet Weight (kg)</th><th>Net Weight (MT)</th><th>Total SQM</th><th>Gross Weight (MT)</th></tr></thead>
+                      <thead><tr><th>Pallet Type</th><th>Size (cm)</th><th>Pcs / Box</th><th>sqm / Box</th><th>Approx Box Weight (kg)</th><th>Pallet Dimension</th><th>Pallets / Container</th><th>Boxes / Pallet</th><th>Total Boxes</th><th>Pallet Weight (kg)</th><th>Total Pallet Weight (kg)</th><th>Net Weight (mt)</th><th>Total sqm</th><th>Gross Weight (mt)</th></tr></thead>
                       <tbody>
                         <tr><td>Full Iron A-Frame</td><td><span class="size-badge">120×240</span></td><td>1</td><td>2.88</td><td>153</td><td>100&quot; × 30&quot; × 54&quot;</td><td>12</td><td>14</td><td>168</td><td>95</td><td>1140</td><td>25.64</td><td class="highlight-val">483.84</td><td>26.78</td></tr>
                         <tr><td>Full Iron</td><td><span class="size-badge">160×320</span></td><td>1</td><td>5.12</td><td>271</td><td>132&quot; × 40&quot; × 54&quot;</td><td>10</td><td>9</td><td>90</td><td>95</td><td>950</td><td>24.42</td><td class="highlight-val">460.80</td><td>25.37</td></tr>
@@ -898,7 +910,7 @@
                   <li>Stretch wrapping and moisture-resistant protective sheets</li>
                   <li>Container load securing systems</li>
                 </ul>
-                <p style="margin-top: 0.75rem; margin-bottom: 0;"><strong>Container loading:</strong> Natural stone products are generally shipped in 20 FT containers with typical payload ranges of 24-27 metric tons, depending on product type, thickness, and packaging configuration.</p>
+                <p style="margin-top: 0.75rem; margin-bottom: 0;"><strong>Container loading:</strong> Natural stone products are generally shipped in 20 ft containers with typical payload ranges of 24-27 metric tons, depending on product type, thickness, and packaging configuration.</p>
               </div>
             </div>
           </div>

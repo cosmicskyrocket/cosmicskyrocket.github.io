@@ -929,12 +929,35 @@ body {
    ============================================ */
 .service-section {
   padding: 60px 0;
-  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  isolation: isolate;
+}
+.service-parallax-bg {
+  position: absolute;
+  inset: -30% 0;
+  background-image: url('./../img/NS/Natural\ Stones\ Images/mint.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform;
+  z-index: 0;
+}
+.service-parallax-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 1;
+}
+.service-section > .container-fluid.px-0 {
+  position: relative;
+  z-index: 2;
 }
 
 @media (min-width: 992px) {
   .service-section {
-    min-height: 100vh;
+    min-height: 130vh;
     display: flex;
     align-items: center;
   }
@@ -951,19 +974,12 @@ body {
   flex-direction: column;
   justify-content: center;
 
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.4)
-    ),
-    url('./../img/index/ext2.jpg');
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
 }
 
 .service-title h1 {
@@ -972,8 +988,22 @@ body {
   font-style: italic;
   font-family: 'Lora', serif;
   color: #ffffff;
+  display: inline-block;
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
   margin-bottom: 1.5rem;
   line-height: 1.2;
+}
+
+.service-title h1::before {
+  content: none;
 }
 
 .service-title p {
@@ -986,9 +1016,12 @@ body {
 .service-item {
   overflow: hidden;
   padding: 30px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
   border-radius: 10px;
-  border: 1px solid rgba(68, 68, 68, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
   transition: all 0.4s ease;
   height: 100%;
   min-height: 260px;
@@ -1007,8 +1040,9 @@ body {
 
 .service-item:hover {
   transform: translateY(-15px);
-  box-shadow: 0 15px 40px rgba(133, 109, 70, 0.25);
-  border-color: #000000;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+  border-color: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .service-item .btn-square {
@@ -1018,7 +1052,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(133, 109, 70, 0.1);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 10px;
   transition: all 0.3s ease;
   grid-column: 1;
@@ -1035,7 +1070,7 @@ body {
 .service-item .service-description {
   grid-column: 1 / -1;
   grid-row: 2;
-  color: #444444;
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
   margin-bottom: 0;
   margin-top: 0;
@@ -1043,17 +1078,18 @@ body {
 }
 
 .service-item:hover .btn-square {
-  background-color: #000000;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.8);
   transform: scale(1.1);
 }
 
 .service-item .btn-square i {
-  color: #000000;
+  color: #ffffff;
   transition: color 0.3s ease;
 }
 
 .service-item:hover .btn-square i {
-  color: #fff;
+  color: #ffffff;
 }
 
 .service-item h3 {
@@ -1061,14 +1097,14 @@ body {
   font-weight: 500;
   font-style: italic;
   font-family: 'Lora', serif;
-  color: #151515;
+  color: #ffffff;
   margin-bottom: 0;
   margin-top: 0;
   transition: color 0.3s ease;
 }
 
 .service-item:hover h3 {
-  color: #000000;
+  color: #ffffff;
 }
 
 .service-item a {
@@ -1077,7 +1113,7 @@ body {
   font-size: 14px;
   line-height: 14px;
   text-transform: uppercase;
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
@@ -1085,7 +1121,7 @@ body {
 }
 
 .service-item a:hover {
-  color: #000000;
+  color: #ffffff;
   padding-left: 5px;
 }
 
@@ -1096,7 +1132,7 @@ body {
   height: 2px;
   left: 0;
   bottom: -3px;
-  background-color: #000000;
+  background-color: #ffffff;
   transition: width 0.3s ease;
 }
 

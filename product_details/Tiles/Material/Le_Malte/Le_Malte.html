@@ -689,18 +689,18 @@
           color: #151515;
         }
       }
-
       .thickness-layout {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         gap: 20px;
-        justify-content: flex-start;
+        justify-content: center;
       }
 
       .thickness-label-wrap {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: flex-end;
       }
 
       .thickness-label {
@@ -713,13 +713,12 @@
         color: #333;
         white-space: nowrap;
       }
-
       .thickness-content {
         flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-left: 70px;
+        margin-left: 0;
       }
 
       .thickness-badge {
@@ -1300,19 +1299,33 @@
       }
 
       /* Size Comparison Chart Styles */
+      .size-reference-section > .container {
+        width: 100vw;
+        max-width: none;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding-left: 0;
+        padding-right: 0;
+      }
       .size-comparison-wrapper {
         padding: 2rem 0;
-        overflow-x: auto;
+        overflow-x: visible;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
       }
 
       .size-comparison-container {
         display: flex;
         align-items: flex-end;
-        justify-content: center;
-        gap: 40px;
+        justify-content: center !important;
+        gap: 20px 32px !important;
         min-height: 340px;
-        padding: 20px;
+        padding: 20px 0;
         flex-wrap: wrap;
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box;
       }
 
       .size-item {
@@ -1837,7 +1850,7 @@
         
 
                                                 <!-- SIZE COMPARISON CHART SECTION -->
-        <section class="py-8" style="background-color: #ffffff;">
+        <section class="py-8 size-reference-section" style="background-color: #ffffff;">
           <div class="container">
             
             <!-- Section Title -->

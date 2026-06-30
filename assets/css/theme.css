@@ -18601,7 +18601,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .cs-page-navbar {
   padding: 0 !important;
   background: rgba(255, 255, 255, 0.12) !important;
-  backdrop-filter: blur(22px) saturate(180%) !important;
+  backdrop-filter: blur(7px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(22px) saturate(180%) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);

@@ -90,7 +90,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     
     <!-- Inline Styles -->
-    <link href="assets/css/inline-styles.css?v=20260623-mapfix" rel="stylesheet" />
+    <link href="assets/css/inline-styles.css?v=20260629-services-blurfix" rel="stylesheet" />
     
     <style>
       /* All styles have been extracted to assets/css/inline-styles.css */
@@ -471,14 +471,17 @@
         </section>
 
         <!-- SERVICE SECTION -->
-        <section id="services" class="service-section">
+        <!-- SERVICE SECTION -->
+        <section id="services" class="service-section" data-parallax-section="services">
+          <div class="service-parallax-bg" id="indexServicesBg" aria-hidden="true"></div>
+          <div class="service-parallax-overlay" aria-hidden="true"></div>
           <div class="container-fluid px-0" style="max-width: 92vw; margin: 0 auto;">
             <div class="row g-5">
               
               <!-- Service Title Column -->
               <div class="col-md-12 col-lg-4 col-xl-3" data-aos="fade-right" data-aos-delay="0">
                 <div class="service-title" >
-                  <h1>Our Services</h1>
+                  <h1 style="text-align: center;">Our Services</h1>
                   
                 </div>
               </div>
@@ -1236,6 +1239,28 @@
     <script src="assets/js/faq.js"></script>
     <script src="assets/js/circular-nav.js"></script>
 
+    <!-- Services parallax scroll driver -->
+    <script>
+      (function () {
+        var section = document.querySelector('[data-parallax-section="services"]');
+        var bg = document.getElementById('indexServicesBg');
+        if (!section || !bg) return;
+        var SPEED = 0.35;
+        function updateParallax() {
+          var rect = section.getBoundingClientRect();
+          var sectionH = section.offsetHeight;
+          var viewH = window.innerHeight;
+          var progress = 1 - (rect.bottom / (sectionH + viewH));
+          var range = sectionH * 0.6;
+          var offset = (progress - 0.5) * range * (1 - SPEED);
+          bg.style.transform = 'translateY(' + offset.toFixed(2) + 'px)';
+        }
+        window.addEventListener('scroll', updateParallax, { passive: true });
+        window.addEventListener('resize', updateParallax, { passive: true });
+        updateParallax();
+      })();
+    </script>
+
     <!-- Navbar Scroll Animation -->
     <script>
       let hasScrolled = false;
@@ -1251,6 +1276,7 @@
         navbar.style.setProperty('background-image', 'none', 'important');
         navbar.style.setProperty('backdrop-filter', 'none', 'important');
         navbar.style.setProperty('-webkit-backdrop-filter', 'none', 'important');
+        navbar.style.removeProperty('border-bottom');
         navbar.style.setProperty('box-shadow', 'none', 'important');
         navbar.classList.remove('backdrop');
         navbar.classList.remove('shadow-transition');
@@ -1284,8 +1310,9 @@
         tagline.style.display = 'none';
         navbar.style.setProperty('background-color', 'rgba(255, 255, 255, 0.12)', 'important');
         navbar.style.setProperty('background-image', 'none', 'important');
-        navbar.style.setProperty('backdrop-filter', 'blur(22px) saturate(180%)', 'important');
+        navbar.style.setProperty('backdrop-filter', 'blur(7px) saturate(180%)', 'important');
         navbar.style.setProperty('-webkit-backdrop-filter', 'blur(22px) saturate(180%)', 'important');
+        navbar.style.setProperty('border-bottom', '1px solid rgba(255, 255, 255, 0.25)', 'important');
         navbar.style.setProperty('box-shadow', '0 2px 16px rgba(0, 0, 0, 0.06)', 'important');
         navbar.classList.remove('backdrop');
         navbar.classList.remove('shadow-transition');
@@ -1429,8 +1456,9 @@
           brand.style.fontSize = '1.5rem';
           navbar.style.setProperty('background-color', 'rgba(255, 255, 255, 0.12)', 'important');
           navbar.style.setProperty('background-image', 'none', 'important');
-          navbar.style.setProperty('backdrop-filter', 'blur(22px) saturate(180%)', 'important');
+          navbar.style.setProperty('backdrop-filter', 'blur(7px) saturate(180%)', 'important');
           navbar.style.setProperty('-webkit-backdrop-filter', 'blur(22px) saturate(180%)', 'important');
+          navbar.style.setProperty('border-bottom', '1px solid rgba(255, 255, 255, 0.25)', 'important');
           navbar.style.setProperty('box-shadow', '0 2px 16px rgba(0, 0, 0, 0.06)', 'important');
           navbar.classList.add('backdrop');
           navbar.classList.add('shadow-transition');
