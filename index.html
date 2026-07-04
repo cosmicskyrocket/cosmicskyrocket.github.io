@@ -110,9 +110,9 @@
     <main class="main" id="top">
         
         <!-- NAVBAR -->
-        <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light fixed-top d-block" data-navbar-on-scroll="data-navbar-on-scroll" style="transition: all 0.7s ease; padding-top: 16rem; padding-bottom: 3rem;">
+        <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light fixed-top d-block" data-navbar-on-scroll="data-navbar-on-scroll" style="transition: padding 0.7s ease; padding-top: 16rem; padding-bottom: 3rem;">
           <div class="container d-flex flex-column justify-content-center align-items-center">
-            <a id="cosmicBrand" class="navbar-brand d-inline-flex text-center" href="index.html" style="transition: all 0.7s ease; font-size: 7rem; margin: 0;">
+            <a id="cosmicBrand" class="navbar-brand d-inline-flex text-center" href="index.html" style="transition: font-size 0.7s ease; font-size: 7rem; margin: 0;">
               <span class="fw-bold">COSMIC SKYROCKET</span>
             </a>
             <p id="tagline" class="text-center mb-0" style="font-size: 3rem; margin-top: 0.1rem; color: black;">Elevate Spaces, Inspire Designs</p>
@@ -1264,6 +1264,7 @@
     <!-- Navbar Scroll Animation -->
     <script>
       let hasScrolled = false;
+      let navbarShrinkTimer = null;
       const mobileMediaQuery = window.matchMedia('(max-width: 767px)');
       let iconsOriginalParent = null;
       let iconsOriginalNextSibling = null;
@@ -1450,40 +1451,48 @@
         
         if (window.scrollY > 10 && !hasScrolled) {
           hasScrolled = true;
-          // Shrink to normal size
+          // Shrink size immediately (transition animates this over 0.7s)
           navbar.style.paddingTop = '1rem';
           navbar.style.paddingBottom = '1rem';
           brand.style.fontSize = '1.5rem';
-          navbar.style.setProperty('background-color', 'rgba(255, 255, 255, 0.12)', 'important');
-          navbar.style.setProperty('background-image', 'none', 'important');
-          navbar.style.setProperty('backdrop-filter', 'blur(7px) saturate(180%)', 'important');
-          navbar.style.setProperty('-webkit-backdrop-filter', 'blur(22px) saturate(180%)', 'important');
-          navbar.style.setProperty('border-bottom', '1px solid rgba(255, 255, 255, 0.25)', 'important');
-          navbar.style.setProperty('box-shadow', '0 2px 16px rgba(0, 0, 0, 0.06)', 'important');
-          navbar.classList.add('backdrop');
-          navbar.classList.add('shadow-transition');
-          // Change text color to black and remove 3D effect
           brandText.style.color = '#000';
           brandText.style.textShadow = 'none';
-          // Hide tagline completely (remove from layout)
           tagline.style.display = 'none';
-          // Move cards section up to fill the space
           if (cardsSection) {
             cardsSection.style.marginTop = '-23rem';
           }
+          // Apply glass background/shadow only AFTER the shrink animation finishes (700ms)
+          if (navbarShrinkTimer) clearTimeout(navbarShrinkTimer);
+          navbarShrinkTimer = setTimeout(function() {
+            navbar.style.setProperty('background-color', 'rgba(255, 255, 255, 0.12)', 'important');
+            navbar.style.setProperty('background-image', 'none', 'important');
+            navbar.style.setProperty('backdrop-filter', 'blur(7px) saturate(180%)', 'important');
+            navbar.style.setProperty('-webkit-backdrop-filter', 'blur(22px) saturate(180%)', 'important');
+            navbar.style.setProperty('border-bottom', '1px solid rgba(255, 255, 255, 0.25)', 'important');
+            navbar.style.setProperty('box-shadow', '0 2px 16px rgba(0, 0, 0, 0.06)', 'important');
+            navbar.classList.add('backdrop');
+            navbar.classList.add('shadow-transition');
+          }, 700);
         } else if (window.scrollY <= 10 && hasScrolled) {
           hasScrolled = false;
+          // Cancel pending glass style application if user scrolled back up fast
+          if (navbarShrinkTimer) { clearTimeout(navbarShrinkTimer); navbarShrinkTimer = null; }
+          // Immediately strip glass/shadow before animating back to large
+          navbar.style.setProperty('background-color', 'transparent', 'important');
+          navbar.style.setProperty('background-image', 'none', 'important');
+          navbar.style.setProperty('backdrop-filter', 'none', 'important');
+          navbar.style.setProperty('-webkit-backdrop-filter', 'none', 'important');
+          navbar.style.removeProperty('border-bottom');
+          navbar.style.setProperty('box-shadow', 'none', 'important');
+          navbar.classList.remove('backdrop');
+          navbar.classList.remove('shadow-transition');
           // Return to large size
           navbar.style.paddingTop = '16rem';
           navbar.style.paddingBottom = '3rem';
           brand.style.fontSize = '7rem';
-          forceDesktopTopTransparent(navbar);
-          // Change text color to white and remove shadow
           brandText.style.color = '#fff';
           brandText.style.textShadow = 'none';
-          // Show tagline
           tagline.style.display = 'block';
-          // Return cards section to original position
           if (cardsSection) {
             cardsSection.style.marginTop = '-5rem';
           }
