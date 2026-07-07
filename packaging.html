@@ -2,7 +2,17 @@
 <html lang="en-US" dir="ltr">
 
   <head>
-    <meta charset="utf-8">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-495R65628F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+
+      gtag("config", "G-495R65628F");
+    </script>
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -367,8 +377,40 @@
       .export-section { padding: 80px 0; background: #f8f8f8; }
       .export-card { background: #fff; border-radius: 12px; padding: 2rem 1.75rem; box-shadow: 0 2px 15px rgba(0,0,0,0.06); height: 100%; }
 
-      .notes-section { padding: 70px 0; background: #fff; }
-      .note-item { display: flex; align-items: flex-start; gap: 14px; padding: 1.25rem 1.5rem; border-radius: 10px; background: #fafafa; border-left: 4px solid #FFA15C; margin-bottom: 1rem; }
+      .notes-section { padding: 70px 0; background: transparent; position: relative; overflow: hidden; isolation: isolate; }
+      .notes-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url('assets/img/index/IMG_0103.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 0;
+      }
+      .notes-section::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(10, 10, 10, 0.38);
+        z-index: 1;
+      }
+      .notes-section > .container {
+        position: relative;
+        z-index: 2;
+      }
+      .notes-section .section-badge {
+        background: rgba(255,255,255,0.12);
+        color: rgba(255,255,255,0.75);
+      }
+      .notes-section .section-title {
+        color: #fff;
+      }
+      .notes-section .section-line {
+        background: linear-gradient(90deg, rgba(255,255,255,0.5), transparent);
+      }
+      .note-item { display: flex; align-items: flex-start; gap: 14px; padding: 1.25rem 1.5rem; border-radius: 10px; background: rgba(255, 255, 255, 0.14); backdrop-filter: blur(12px) saturate(160%); -webkit-backdrop-filter: blur(12px) saturate(160%); border: 1px solid rgba(255, 255, 255, 0.35); box-shadow: 0 10px 28px rgba(0,0,0,0.2); border-left: 4px solid #ffffff; margin-bottom: 1rem; color: #fff; }
+      .note-item i { color: #ffffff; }
 
       .why-section { padding: 80px 0; background: linear-gradient(135deg, #1a1a1a, #2a2a2a); }
       .why-section .section-title, .why-text, .why-point span { color: #fff; }
@@ -800,27 +842,75 @@
 
               <div class="packaging-block" data-aos="fade-up" data-aos-delay="170">
                 <h3 class="pkg-subtitle">Stone Circle Kit Packaging</h3>
-                <p class="packaging-intro">Circle kit packaging includes per-kit area, kits per pallet box, and container-level area output for each circle diameter.</p>
+                <p class="packaging-intro">Circle kit packaging is available in three loading options with updated crate dimensions, calibrated kit counts, and container-level coverage outputs.</p>
+                <h4 class="pkg-section-heading">Option 1: 44&quot; x 44&quot; x 30&quot; Crates (19 Crates)</h4>
                 <div class="packaging-meta">
                   <p>
-                    <strong>Box size:</strong> 34&quot; x 37&quot; x 24&quot;<br>
+                    <strong>Box size:</strong> 44&quot; x 44&quot; x 30&quot;<br>
                     <strong>Thickness:</strong> 22 mm<br>
-                    <strong>Internal usable pallet dimension:</strong> 825 x 927 x 500 mm<br>
+                    <strong>Internal usable pallet dimension:</strong> ~ 1079 x 1079 x 650 mm<br>
                     <strong>Empty pallet box weight:</strong> 50 kg<br>
-                    <strong>Stuffed pallet box weight:</strong> 1,063.34 kg<br>
-                    <strong>Pallet boxes / 20 ft container:</strong> 25<br>
-                    <strong>Approx. container weight:</strong> 26.58 mt
+                    <strong>Pallet boxes / 20 ft container:</strong> 19<br>
+                    <strong>Stuffed pallet box weight:</strong> Varies by kit (1,046 kg - 1,391 kg)<br>
+                    <strong>Approx. container weight:</strong> Varies by kit (19.89 mt - 26.44 mt)
                   </p>
                 </div>
                 <div class="pkg-table-wrapper">
                   <table class="pkg-table">
                     <thead><tr><th>Circle Kit Size</th><th>Pieces / Kit</th><th>Coverage / Kit (sq.m.)</th><th>Kits / Pallet Box</th><th>Coverage / Pallet Box (sq.m.)</th><th>Approx. Coverage / Container (sq.m.)</th></tr></thead>
                     <tbody>
-                      <tr><td><span class="size-badge">1.5 Metre Circle Kit</span></td><td>9</td><td>1.77</td><td>20</td><td>35.34</td><td class="highlight-val">883.50</td></tr>
-                      <tr><td><span class="size-badge">2.4 Metre Circle Kit</span></td><td>25</td><td>4.52</td><td>8</td><td>36.19</td><td class="highlight-val">904.75</td></tr>
-                      <tr><td><span class="size-badge">3.3 Metre Circle Kit</span></td><td>41</td><td>8.55</td><td>4</td><td>34.21</td><td class="highlight-val">855.25</td></tr>
+                      <tr><td><span class="size-badge">1.5 Metre Circle Kit</span></td><td>9</td><td>1.77</td><td>13</td><td>23.01</td><td class="highlight-val">437.19</td></tr>
+                      <tr><td><span class="size-badge">2.4 Metre Circle Kit</span></td><td>25</td><td>4.52</td><td>5</td><td>22.60</td><td class="highlight-val">429.40</td></tr>
+                      <tr><td><span class="size-badge">3.3 Metre Circle Kit</span></td><td>41</td><td>8.55</td><td>2</td><td>17.10</td><td class="highlight-val">324.90</td></tr>
                     </tbody>
                   </table>
+                </div>
+
+                <h4 class="pkg-section-heading">Option 2: 44&quot; x 32&quot; x 30&quot; Crates (26 Crates)</h4>
+                <div class="packaging-meta">
+                  <p>
+                    <strong>Box size:</strong> 44&quot; x 32&quot; x 30&quot;<br>
+                    <strong>Thickness:</strong> 22 mm<br>
+                    <strong>Empty pallet box weight:</strong> 50 kg<br>
+                    <strong>Pallet boxes / 20 ft container:</strong> 26<br>
+                    <strong>Stuffed pallet box weight:</strong> Varies (548 kg - 978 kg)<br>
+                    <strong>Approx. container weight:</strong> Varies (14.26 mt - 25.44 mt)
+                  </p>
+                </div>
+                <div class="pkg-table-wrapper">
+                  <table class="pkg-table">
+                    <thead><tr><th>Circle Kit Size</th><th>Pieces / Kit</th><th>Coverage / Kit (sq.m.)</th><th>Kits / Pallet Box</th><th>Coverage / Pallet Box (sq.m.)</th><th>Approx. Coverage / Container (sq.m.)</th></tr></thead>
+                    <tbody>
+                      <tr><td><span class="size-badge">1.5 Metre Circle Kit</span></td><td>9</td><td>1.77</td><td>9</td><td>15.93</td><td class="highlight-val">414.18</td></tr>
+                      <tr><td><span class="size-badge">2.4 Metre Circle Kit</span></td><td>25</td><td>4.52</td><td>3</td><td>13.56</td><td class="highlight-val">352.56</td></tr>
+                      <tr><td><span class="size-badge">3.3 Metre Circle Kit</span></td><td>41</td><td>8.55</td><td>1</td><td>8.55</td><td class="highlight-val">222.30</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h4 class="pkg-section-heading">Option 3: Mixed Crate Stuffing (10 Large + 12 Small = 22 Crates)</h4>
+                <div class="packaging-meta">
+                  <p>
+                    <strong>Box sizes:</strong> 44&quot; x 44&quot; x 30&quot; (Large) and 44&quot; x 32&quot; x 30&quot; (Small)<br>
+                    <strong>Thickness:</strong> 22 mm<br>
+                    <strong>Pallet boxes / 20 ft container:</strong> 22 (10 Large + 12 Small)<br>
+                    <strong>Approx. container weight:</strong> Varies (17.04 mt - 25.64 mt)
+                  </p>
+                </div>
+                <div class="pkg-table-wrapper">
+                  <table class="pkg-table">
+                    <thead><tr><th>Circle Kit Size</th><th>Pieces / Kit</th><th>Coverage / Kit (sq.m.)</th><th>Kits / Large Box</th><th>Kits / Small Box</th><th>Approx. Coverage / Container (sq.m.)</th></tr></thead>
+                    <tbody>
+                      <tr><td><span class="size-badge">1.5 Metre Circle Kit</span></td><td>9</td><td>1.77</td><td>13</td><td>9</td><td class="highlight-val">421.26</td></tr>
+                      <tr><td><span class="size-badge">2.4 Metre Circle Kit</span></td><td>25</td><td>4.52</td><td>5</td><td>3</td><td class="highlight-val">388.72</td></tr>
+                      <tr><td><span class="size-badge">3.3 Metre Circle Kit</span></td><td>41</td><td>8.55</td><td>2</td><td>1</td><td class="highlight-val">273.60</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="packaging-meta">
+                  <p>
+                    <strong>Container coverage formula (Option 3):</strong> [Kits / Large Box x 10] + [Kits / Small Box x 12] = Total Kits per Container; Total Kits x Coverage / Kit = Approx. Coverage / Container.
+                  </p>
                 </div>
               </div>
 

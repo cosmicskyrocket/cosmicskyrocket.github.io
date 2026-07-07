@@ -937,7 +937,7 @@ body {
 .service-parallax-bg {
   position: absolute;
   inset: -30% 0;
-  background-image: url('./../img/index/Home page pic.jpg');
+  background-image: url('./../img/index/wdcefve.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -975,7 +975,7 @@ body {
   justify-content: center;
 
   background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(12px) saturate(160%);
+  backdrop-filter: blur(5px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.35);
@@ -1017,7 +1017,7 @@ body {
   overflow: hidden;
   padding: 30px;
   background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(12px) saturate(160%);
+  backdrop-filter: blur(5px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.35);
